@@ -1,5 +1,6 @@
 # Ignore keys directory
 keys/
 # Mac stuff
-.DS_Store.venv/
+.DS_Store
+.venv/
 __pycache__/
