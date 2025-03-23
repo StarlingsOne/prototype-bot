@@ -1,0 +1,74 @@
+#!/usr/bin/env python3
+import json
+import requests
+from input.postgres_handler import PostgresHandler  # Ensure your input/ directory is in PYTHONPATH
+
+# this betting bot is set to run once per day based upon a machine's crontab
+# we would need to set the crontab in the run scripts
+# this betting bot is dependant upon the input bot also having been run once per day
+# we'll say it's at 350PM EST, right before stock market close
+# the assumption is we'll follow stock market prices
+
+def get_latest_conviction(identifier):
+    """
+    Fetch the most recent sentiment result for a given identifier.
+    Assumes the sentiment_results table returns a row like (id, sentiment, inserted_at, identifier)
+    where sentiment is a JSON string containing a key "conviction".
+    """
+    db = PostgresHandler()  # Uses default connection params; adjust as needed.
+    results = db.fetch_sentiment_results(identifier)
+    db.close()
+    if not results:
+        return None
+    sentiment_raw = results[0][1]
+    return json.loads(sentiment_raw) if isinstance(sentiment_raw, str) else sentiment_raw
+
+def calculate_bet_amount(conviction, market_price, user_balance, scale=100):
+    """
+    Calculate bet amount based on conviction vs. market price difference.
+    Only places a bet if conviction > market_price.
+    The bet size scales with the difference but is capped by user_balance.
+    """
+    if conviction <= market_price:
+        return 0
+    return min(int((conviction - market_price) * scale), user_balance)
+
+def place_bet(username, market_id, amount, outcome="yes"):
+    """
+    Place a bet via the SocialPredict API.
+    Assumes the internal endpoint /v0/bet is available.
+    """
+    payload = {
+        "username": username,
+        "marketId": market_id,
+        "amount": amount,
+        "outcome": outcome
+    }
+    response = requests.post("http://localhost:8080/v0/bet", json=payload)
+    if response.ok:
+        print("Bet placed successfully!")
+    else:
+        print("Failed to place bet:", response.text)
+
+def run_betting_bot(identifier, username, market_id, market_price, user_balance):
+    conviction_data = get_latest_conviction(identifier)
+    if not conviction_data:
+        print("No conviction data found for identifier:", identifier)
+        return
+    conviction = conviction_data.get("conviction", 0)
+    amount = calculate_bet_amount(conviction, market_price, user_balance)
+    if amount > 0:
+        print(f"Placing bet of {amount} (conviction: {conviction}, market price: {market_price})")
+        place_bet(username, market_id, amount)
+    else:
+        print("Conviction not high enough; no bet placed.")
+
+if __name__ == "__main__":
+    # These values can be set via environment variables or config files for production.
+    IDENTIFIER = "NVIDIA"        # Identifier for today's sentiment on NVIDIA
+    USERNAME = "conviction_bot"  # Bot account name in SocialPredict
+    MARKET_ID = 1                # The single market ID for NVIDIA sentiment
+    MARKET_PRICE = 0.5           # Dummy market price; ideally fetched from the prediction market API
+    USER_BALANCE = 1000          # Assumed available balance for the bot's account
+
+    run_betting_bot(IDENTIFIER, USERNAME, MARKET_ID, MARKET_PRICE, USER_BALANCE)
