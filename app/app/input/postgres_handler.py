@@ -59,12 +59,13 @@ class PostgresHandler:
             records = cur.fetchall()
         return [record[0] for record in records]
 
-    def fetch_sentiment_results(self, identifier_filter):
+    def fetch_sentiment_results(self, identifier_filter, since=None):
         """
-        Fetch sentiment results that match the given identifier filter.
+        Fetch sentiment results that match the given identifier and are newer than `since` timestamp.
 
         Parameters:
-            identifier_filter (str): A string to filter the identifier column (using a case-insensitive match).
+            identifier_filter (str): String to filter the identifier column (case-insensitive).
+            since (datetime, optional): Only return rows inserted after this timestamp.
 
         Returns:
             list of tuple: Each tuple represents a row in the sentiment_results table.
@@ -74,9 +75,15 @@ class PostgresHandler:
                 SELECT id, sentiment, inserted_at, identifier
                 FROM sentiment_results
                 WHERE identifier ILIKE %s
-                ORDER BY inserted_at DESC;
             """
-            cur.execute(query, (f"%{identifier_filter}%",))
+            params = [f"%{identifier_filter}%"]
+
+            if since:
+                query += " AND inserted_at >= %s"
+                params.append(since)
+
+            query += " ORDER BY inserted_at DESC;"
+            cur.execute(query, tuple(params))
             return cur.fetchall()
 
     def insert_news_items(self, news_items):
