@@ -23,7 +23,9 @@ Test out a bot designed to use LLM's to classify sentiment and conviction level 
 6. Do `exit`, which will allow you to exit from the container. You can get back into the container with `./run bash`.
 7. Having confirmed that, you can run a few different python scripts.
 
-* `./app/test [QUERY]` will generate a response from an input query.
+* `./app/input/test [QUERY]` will generate a response from an input query.
+
+#### Osnat, fix the rest of the commands later
 * `./app/readnews --output [FILE] [TOPIC]` will read news about "TOPIC" to the file "OUTPUT" with the default being `news_result.csv`
 * `./app/sentiment --topic [TOPIC] --file [FILE] --output [OUTPUT]` gives a `json` formatted output sentiment and conviction level on a particular topic found in a particular file, based upon `gemini-1.5-flash`.
 * For example: `./app/sentiment --topic "nvidia" --file "exported_news.csv" --output "sentiment_result_20250202"`
