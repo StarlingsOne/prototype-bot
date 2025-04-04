@@ -25,7 +25,7 @@ fi
 
 COMMAND=$1
 CONTAINER_NAME="local-llm-conviction-bot"
-KEYS_DIR="./app/keys"
+KEYS_DIR="$HOME/playground_keys/"
 
 # Ensure keys directory exists
 if [ ! -d "$KEYS_DIR" ]; then
