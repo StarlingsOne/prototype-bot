@@ -1,11 +1,12 @@
 #!/usr/local/bin/python
 
+import os
 import google.generativeai as genai
 import argparse
 import sys
 
 # Define the path to the API key file
-KEY_FILE_PATH = "../../keys/gemini/gemini_key"
+KEY_FILE_PATH = os.path.join(os.environ["KEYS_DIR"], "gemini", "gemini_key")
 
 # Read the API key from the file
 try:
