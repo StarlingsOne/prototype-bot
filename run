@@ -9,7 +9,7 @@ display_help() {
     echo ""
     echo "Commands:"
     echo "  start   Build and start the containerized service, and log into it"
-    echo "  stop    Stop the GPU service on DigitalOcean"
+    echo "  stop    Stop the containerized service."
     echo "  kill    Kill the service, stop the container, and clean up"
     echo "  bash    Access the running container"
     echo ""
@@ -25,7 +25,7 @@ fi
 
 COMMAND=$1
 CONTAINER_NAME="local-llm-conviction-bot"
-KEYS_DIR="./app/keys"
+KEYS_DIR="$HOME/playground_keys/"
 
 # Ensure keys directory exists
 if [ ! -d "$KEYS_DIR" ]; then

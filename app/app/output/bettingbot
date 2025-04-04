@@ -1,0 +1,145 @@
+#!/usr/bin/env python3
+import json
+import argparse
+import requests
+from datetime import datetime, timedelta
+import json
+from input.postgres_handler import PostgresHandler
+
+
+def fetch_market_price(domain, market_id):
+    """
+    Fetch the current market price (probability) from the SocialPredict API.
+    """
+    url = f"{domain}/v0/markets/{market_id}"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        return data["market"]["probability"]  # This assumes market.probability is the value we're betting on
+    except Exception as e:
+        print(f"❌ Error fetching market price from {url}: {e}")
+        return 0.0  # fallback to zero so no bet is placed
+
+
+def fetch_user_balance(domain, username):
+    """
+    Fetch the current user's account balance from the SocialPredict API.
+    """
+    url = f"{domain}/v0/userinfo/{username}"
+    try:
+        response = requests.get(url)
+        response.raise_for_status()
+        data = response.json()
+        return int(data.get("accountBalance", 0))
+    except Exception as e:
+        print(f"❌ Error fetching user balance from {url}: {e}")
+        return 0
+
+
+def get_latest_conviction(identifier, since_hours_ago=24):
+    """
+    Fetch the most recent conviction from sentiment_results for a given identifier,
+    restricted to entries inserted within the last `since_hours_ago` hours.
+
+    Returns:
+        dict: A conviction JSON object, e.g., { "assessment": 0.25, "conviction": 0.85 }
+        or None if no qualifying entry is found.
+    """
+    db = PostgresHandler()
+    since = datetime.utcnow() - timedelta(hours=since_hours_ago)
+
+    # Get all matching results within the timeframe, ordered from newest to oldest
+    results = db.fetch_sentiment_results(identifier, since=since)
+    db.close()
+
+    if not results:
+        return None
+
+    # Use only the most recent result (first one due to DESC ordering)
+    sentiment_raw = results[0][1]
+    return json.loads(sentiment_raw) if isinstance(sentiment_raw, str) else sentiment_raw
+
+
+def calculate_bet_amount(conviction, market_price, user_balance, scale=100):
+    """
+    Linear Surplus Betting Strategy:
+    --------------------------------
+    This strategy calculates the bet amount based on how much the model's conviction
+    exceeds the market's current price (i.e., its implied probability).
+
+    - If conviction is less than or equal to market price, no bet is placed.
+    - Otherwise, the surplus (conviction - market_price) is scaled linearly.
+    - The result is capped by the user's available balance.
+
+    Example:
+    - conviction = 0.72, market_price = 0.60
+    - surplus = 0.12, scaled bet = 0.12 * 100 = 12
+    - if user_balance >= 12, bet 12; otherwise bet user_balance
+
+    Params:
+        conviction (float): Model's confidence (0.0 - 1.0)
+        market_price (float): Current market probability
+        user_balance (int): User's available funds
+        scale (int): Multiplier for converting probability difference to a dollar amount
+
+    Returns:
+        int: Amount to bet (0 if no bet should be placed)
+    """
+    if conviction <= market_price:
+        return 0
+    return min(int((conviction - market_price) * scale), user_balance)
+
+
+def place_bet(username, market_id, amount, outcome="yes"):
+    payload = {
+        "username": username,
+        "marketId": market_id,
+        "amount": amount,
+        "outcome": outcome
+    }
+    response = requests.post("http://localhost:8080/v0/bet", json=payload)
+    if response.ok:
+        print("✅ Bet placed successfully!")
+    else:
+        print("❌ Failed to place bet:", response.text)
+
+
+def run_betting_bot(user_id, username, api_key, identifier, market_id, domain):
+    conviction_data = get_latest_conviction(identifier)
+
+    if not conviction_data:
+        print(f"⚠️ No conviction found for '{identifier}' in the last 24 hours — skipping bet.")
+        return
+
+    conviction = conviction_data.get("conviction", 0)
+    market_price = fetch_market_price(domain, market_id)
+    user_balance = fetch_user_balance(domain, username)
+
+    amount = calculate_bet_amount(conviction, market_price, user_balance)
+
+    if amount > 0:
+        print(f"📈 Placing bet of {amount} (conviction: {conviction}, market price: {market_price})")
+        place_bet(username, market_id, amount)
+    else:
+        print(f"🛑 Conviction ({conviction}) not greater than market price ({market_price}); no bet placed.")
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="Run daily conviction betting bot.")
+    parser.add_argument("--domain", required=True, help="Domain for SocialPredict API (e.g. https://api.socialpredict.com)")
+    parser.add_argument("--user_id", required=True, help="Bot user ID (used to fetch balance)")
+    parser.add_argument("--username", required=True, help="Bot username in SocialPredict")
+    parser.add_argument("--api_key", required=True, help="SocialPredict API Key (currently unused)")
+    parser.add_argument("--identifier", required=True, help="Asset or entity identifier (e.g., 'NVIDIA')")
+    parser.add_argument("--market_id", type=int, required=True, help="Market ID for the prediction market")
+
+    args = parser.parse_args()
+    run_betting_bot(
+        domain=args.domain,
+        user_id=args.user_id,
+        username=args.username,
+        api_key=args.api_key,
+        identifier=args.identifier,
+        market_id=args.market_id,
+    )

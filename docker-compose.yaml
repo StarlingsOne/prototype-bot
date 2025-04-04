@@ -3,7 +3,7 @@ services:
     image: local-llm-conviction-bot
     container_name: local-llm-conviction-bot
     volumes:
-      - ./app/keys:/app/keys:ro       # Mount keys directory as read-only
+      - ~/playground_keys:/app/keys       # Read and write to keys directory. Let's see if this fixes anything
       - ./app/app:/app/app
     tty: true
     environment:

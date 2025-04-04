@@ -2,5 +2,6 @@
 keys/
 # Mac stuff
 .DS_Store
+# Python Stuff
 .venv/
 __pycache__/
