@@ -9,7 +9,7 @@ display_help() {
     echo ""
     echo "Commands:"
     echo "  start   Build and start the containerized service, and log into it"
-    echo "  stop    Stop the GPU service on DigitalOcean"
+    echo "  stop    Stop the containerized service."
     echo "  kill    Kill the service, stop the container, and clean up"
     echo "  bash    Access the running container"
     echo ""

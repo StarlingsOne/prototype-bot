@@ -9,7 +9,6 @@ from postgres_handler import PostgresHandler
 
 RSS_URL_TEMPLATE = "https://news.google.com/rss/search?q={query}&ceid=US:en&hl=en-US&gl=US"
 
-
 def fetch_rss_feed(search_term):
     """Fetch the RSS feed from Google News for the given search term."""
     url = RSS_URL_TEMPLATE.format(query=search_term)
