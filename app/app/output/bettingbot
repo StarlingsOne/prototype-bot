@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+
 import json
 import argparse
 import requests
@@ -127,7 +128,7 @@ def run_betting_bot(user_id, username, api_key, identifier, market_id, domain):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run daily conviction betting bot.")
-    parser.add_argument("--domain", required=True, help="Domain for SocialPredict API (e.g. https://api.socialpredict.com)")
+    parser.add_argument("--domain", required=True, help="Domain for SocialPredict API")
     parser.add_argument("--user_id", required=True, help="Bot user ID (used to fetch balance)")
     parser.add_argument("--username", required=True, help="Bot username in SocialPredict")
     parser.add_argument("--api_key", required=True, help="SocialPredict API Key (currently unused)")
