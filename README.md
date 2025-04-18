@@ -32,11 +32,3 @@ mkdir playground_keys/
 
 * `./app/input/test [QUERY]` will generate a response from an input query, presuming you are in the `/app` directory.
 
-#### Osnat, fix the rest of the commands later
-
-* `./app/readnews --output [FILE] [TOPIC]` will read news about "TOPIC" to the file "OUTPUT" with the default being `news_result.csv`
-* `./app/sentiment --topic [TOPIC] --file [FILE] --output [OUTPUT]` gives a `json` formatted output sentiment and conviction level on a particular topic found in a particular file, based upon `gemini-1.5-flash`.
-* For example: `./app/sentiment --topic "nvidia" --file "exported_news.csv" --output "sentiment_result_20250202"`
-
-### to do: figure out ways for bot to connect to SocialPredict API endpoints and place bets
-
