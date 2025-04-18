@@ -45,10 +45,10 @@ def get_latest_sentiment(identifier, since_hours_ago=24):
     sentiment_raw = results[0][1]
     return json.loads(sentiment_raw) if isinstance(sentiment_raw, str) else sentiment_raw
 
-def calculate_bet_amount(conviction, market_price, user_balance, scale=100):
+def calculate_bet_amount(conviction, assessment, market_price, user_balance, scale=100):
     if conviction <= market_price:
         return 0
-    return min(int((conviction - market_price) * scale), user_balance)
+    return min(int((conviction - market_price) * scale * assessment), user_balance)
 
 def place_bet(username, market_id, amount, outcome="yes"):
     payload = {
@@ -79,7 +79,7 @@ def run_betting_bot(identifier):
     # market_price = fetch_market_price(domain, market_id)
     # user_balance = fetch_user_balance(domain, username)
 
-    # amount = calculate_bet_amount(conviction, market_price, user_balance)
+    # amount = calculate_bet_amount(conviction, assessment, market_price, user_balance)
 
     # if amount > 0:
     #    print(f"📈 Placing bet of {amount} (conviction: {conviction}, market price: {market_price})")
