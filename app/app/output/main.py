@@ -33,9 +33,9 @@ def fetch_user_balance(domain, username):
         print(f"❌ Error fetching user balance from {url}: {e}")
         return 0
 
-def get_latest_conviction(identifier, since_hours_ago=24):
+def get_latest_sentiment(identifier, since_hours_ago=24):
     db = PostgresHandler()
-    since = datetime.utcnow() - timedelta(hours=since_hours_ago)
+    since = datetime.now() - timedelta(hours=since_hours_ago)
     results = db.fetch_sentiment_results(identifier, since=since)
     db.close()
 
@@ -64,14 +64,17 @@ def place_bet(username, market_id, amount, outcome="yes"):
         print("❌ Failed to place bet:", response.text)
 
 def run_betting_bot(identifier):
-    conviction_data = get_latest_conviction(identifier)
+    sentiment_data = get_latest_sentiment(identifier)
 
-    if not conviction_data:
-        print(f"⚠️ No conviction found for '{identifier}' in the last 24 hours — skipping bet.")
+    if not sentiment_data:
+        print(f"⚠️ No sentiment data found for '{identifier}' in the last 24 hours — skipping bet.")
         return
 
-    conviction = conviction_data.get("conviction", 0)
-    print(f"conviction {conviction}")
+    print(f"conviction {sentiment_data["conviction"]}")
+    print(f"conviction type: {type(sentiment_data["conviction"])}")
+
+    print(f"assessment {sentiment_data["assessment"]}")
+    print(f"assessment type: {type(sentiment_data["assessment"])}")
 
     # market_price = fetch_market_price(domain, market_id)
     # user_balance = fetch_user_balance(domain, username)
