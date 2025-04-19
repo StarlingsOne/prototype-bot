@@ -37,10 +37,12 @@ def fetch_user_balance(domain, username):
         response = requests.get(url)
         response.raise_for_status()
         data = response.json()
+
         return int(data.get("accountBalance", 0))
     except Exception as e:
         print(f"❌ Error fetching user balance from {url}: {e}")
         return 0
+
 
 def get_latest_sentiment(identifier, since_hours_ago=24):
     db = PostgresHandler()
@@ -101,9 +103,18 @@ def run_betting_bot(identifier, domain, market_id):
     print(f"market_price: {market_price}")
 
     # user_balance = fetch_user_balance(domain, username)
+    user_balance = 500
 
-    # amount = calculate_bet_amount(conviction, assessment, market_price, user_balance)
-    # outcome = calculate_bet_direction(assessment, market_price)
+    amount = calculate_bet_amount(
+        sentiment_data["conviction"], 
+        sentiment_data["assessment"], 
+        market_price, 
+        user_balance
+    )
+    print(f"amount {amount}")
+
+    outcome = calculate_bet_direction(sentiment_data["assessment"], market_price)
+    print(f"outcome: {outcome}")
 
     # place_bet(username, market_id, amount, outcome)
 
