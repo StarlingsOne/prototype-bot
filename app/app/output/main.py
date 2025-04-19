@@ -33,9 +33,9 @@ def fetch_user_balance(domain, username):
         print(f"❌ Error fetching user balance from {url}: {e}")
         return 0
 
-def get_latest_conviction(identifier, since_hours_ago=24):
+def get_latest_sentiment(identifier, since_hours_ago=24):
     db = PostgresHandler()
-    since = datetime.utcnow() - timedelta(hours=since_hours_ago)
+    since = datetime.now() - timedelta(hours=since_hours_ago)
     results = db.fetch_sentiment_results(identifier, since=since)
     db.close()
 
@@ -45,45 +45,56 @@ def get_latest_conviction(identifier, since_hours_ago=24):
     sentiment_raw = results[0][1]
     return json.loads(sentiment_raw) if isinstance(sentiment_raw, str) else sentiment_raw
 
-def calculate_bet_amount(conviction, market_price, user_balance, scale=100):
-    if conviction <= market_price:
-        return 0
-    return min(int((conviction - market_price) * scale), user_balance)
-
-def place_bet(username, market_id, amount, outcome="yes"):
-    payload = {
-        "username": username,
-        "marketId": market_id,
-        "amount": amount,
-        "outcome": outcome
-    }
-    response = requests.post("http://localhost:8080/v0/bet", json=payload)
-    if response.ok:
-        print("✅ Bet placed successfully!")
+def calculate_bet_amount(conviction, assessment, market_price, user_balance, scale=100):
+    if assessment != market_price:
+        return min(int((conviction - market_price) * scale * assessment), user_balance)
     else:
-        print("❌ Failed to place bet:", response.text)
+        return 0
+
+def calculate_bet_direction(assessment, market_price):
+    if assessment > market_price:
+        return "YES"
+    if assessment < market_price:
+        return "NO"
+    else:
+        return "NULL"
+
+def place_bet(username, market_id, amount, outcome):
+    if outcome == "NULL":
+        print("No bet.")
+    else:
+        payload = {
+            "username": username,
+            "marketId": market_id,
+            "amount": amount,
+            "outcome": outcome
+        }
+        response = requests.post("http://localhost:8080/v0/bet", json=payload)
+        if response.ok:
+            print("✅ Bet placed successfully!")
+        else:
+            print("❌ Failed to place bet:", response.text)
 
 def run_betting_bot(identifier):
-    conviction_data = get_latest_conviction(identifier)
+    sentiment_data = get_latest_sentiment(identifier)
 
-    if not conviction_data:
-        print(f"⚠️ No conviction found for '{identifier}' in the last 24 hours — skipping bet.")
+    if not sentiment_data:
+        print(f"⚠️ No sentiment data found for '{identifier}' in the last 24 hours — skipping bet.")
         return
 
-    conviction = conviction_data.get("conviction", 0)
-    print(f"conviction {conviction}")
+    print(f"conviction {sentiment_data["conviction"]}")
+    print(f"conviction type: {type(sentiment_data["conviction"])}")
+
+    print(f"assessment {sentiment_data["assessment"]}")
+    print(f"assessment type: {type(sentiment_data["assessment"])}")
 
     # market_price = fetch_market_price(domain, market_id)
     # user_balance = fetch_user_balance(domain, username)
 
-    # amount = calculate_bet_amount(conviction, market_price, user_balance)
+    # amount = calculate_bet_amount(conviction, assessment, market_price, user_balance)
+    # outcome = calculate_bet_direction(assessment, market_price)
 
-    # if amount > 0:
-    #    print(f"📈 Placing bet of {amount} (conviction: {conviction}, market price: {market_price})")
-    #    place_bet(username, market_id, amount)
-    # else:
-    #    print(f"🛑 Conviction ({conviction}) not greater than market price ({market_price}); no bet placed.")
-
+    # place_bet(username, market_id, amount, outcome)
 
 
 def main():
