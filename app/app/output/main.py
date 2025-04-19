@@ -12,15 +12,24 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from input.postgres_handler import PostgresHandler
 
 def fetch_market_price(domain, market_id):
-    url = f"{domain}/v0/markets/{market_id}"
+    url = f"{domain}/api/v0/markets/{market_id}"
     try:
         response = requests.get(url)
         response.raise_for_status()
         data = response.json()
-        return data["market"]["probability"]
+
+        changes = data.get("probabilityChanges", [])
+        if not changes:
+            print(f"⚠️ No probability changes found for market {market_id}")
+            return 0.0
+
+        # Sort by timestamp to get the most recent
+        latest = max(changes, key=lambda x: x["timestamp"])
+        return latest.get("probability", 0.0)
     except Exception as e:
         print(f"❌ Error fetching market price from {url}: {e}")
         return 0.0
+
 
 def fetch_user_balance(domain, username):
     url = f"{domain}/v0/userinfo/{username}"
@@ -28,10 +37,12 @@ def fetch_user_balance(domain, username):
         response = requests.get(url)
         response.raise_for_status()
         data = response.json()
+
         return int(data.get("accountBalance", 0))
     except Exception as e:
         print(f"❌ Error fetching user balance from {url}: {e}")
         return 0
+
 
 def get_latest_sentiment(identifier, since_hours_ago=24):
     db = PostgresHandler()
@@ -75,7 +86,7 @@ def place_bet(username, market_id, amount, outcome):
         else:
             print("❌ Failed to place bet:", response.text)
 
-def run_betting_bot(identifier):
+def run_betting_bot(identifier, domain, market_id):
     sentiment_data = get_latest_sentiment(identifier)
 
     if not sentiment_data:
@@ -88,11 +99,22 @@ def run_betting_bot(identifier):
     print(f"assessment {sentiment_data["assessment"]}")
     print(f"assessment type: {type(sentiment_data["assessment"])}")
 
-    # market_price = fetch_market_price(domain, market_id)
-    # user_balance = fetch_user_balance(domain, username)
+    market_price = fetch_market_price(domain, market_id)
+    print(f"market_price: {market_price}")
 
-    # amount = calculate_bet_amount(conviction, assessment, market_price, user_balance)
-    # outcome = calculate_bet_direction(assessment, market_price)
+    # user_balance = fetch_user_balance(domain, username)
+    user_balance = 500
+
+    amount = calculate_bet_amount(
+        sentiment_data["conviction"], 
+        sentiment_data["assessment"], 
+        market_price, 
+        user_balance
+    )
+    print(f"amount {amount}")
+
+    outcome = calculate_bet_direction(sentiment_data["assessment"], market_price)
+    print(f"outcome: {outcome}")
 
     # place_bet(username, market_id, amount, outcome)
 
@@ -100,15 +122,17 @@ def run_betting_bot(identifier):
 def main():
     parser = argparse.ArgumentParser(description="Run daily conviction betting bot.")
     parser.add_argument("--domain", required=False, help="Domain for SocialPredict API")
+    parser.add_argument("--market_id", type=int, required=False, help="MarketID for Market In Question")    
     parser.add_argument("--user_id", required=False, help="Bot user ID (used to fetch balance)")
     parser.add_argument("--username", required=False, help="Bot username in SocialPredict")
     parser.add_argument("--api_key", required=False, help="SocialPredict API Key (currently unused)")
     parser.add_argument("--identifier", required=True, help="Asset or entity identifier (e.g., 'NVIDIA')")
-    parser.add_argument("--market_id", type=int, required=False, help="Market ID for the prediction market")
 
     args = parser.parse_args()
     run_betting_bot(
 
         identifier=args.identifier,
+        domain=args.domain,
+        market_id=args.market_id
 
     )

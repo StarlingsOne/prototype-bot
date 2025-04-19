@@ -9,7 +9,6 @@ display_help() {
     echo ""
     echo "Commands:"
     echo "  start   Build and start the containerized service, and log into it"
-    echo "  stop    Stop the containerized service."
     echo "  kill    Kill the service, stop the container, and clean up"
     echo "  bash    Access the running container"
     echo ""
@@ -50,7 +49,7 @@ case "$COMMAND" in
         ;;
     kill)
         echo "Killing the service and cleaning up..."
-        "$0" stop
+        "$0" kill
         docker compose down
         echo "Local container stopped and removed."
         ;;

@@ -4,7 +4,7 @@ import psycopg2
 from psycopg2 import sql
 
 class PostgresHandler:
-    def __init__(self, host="postgres", port=5432, dbname="newsdb", user="youruser", password="yourpassword"):
+    def __init__(self, host="localhost", port=5440, dbname="newsdb", user="user", password="password"):
         self.config = {
             "host": host,
             "port": port,
@@ -128,11 +128,11 @@ if __name__ == "__main__":
     try:
         # Use default connection parameters or override with your own values
         handler = PostgresHandler(
-            host="postgres",   # or "localhost" if testing locally
-            port=5432,
+            host="localhost",   # or "localhost" if testing locally
+            port=5440,
             dbname="newsdb",
-            user="youruser",
-            password="yourpassword"
+            user="user",
+            password="password"
         )
         print("Connection to Postgres established and table ensured.")
     except Exception as e:

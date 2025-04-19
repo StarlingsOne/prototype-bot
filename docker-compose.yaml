@@ -1,20 +1,31 @@
+version: '3.8'
+
 services:
   local-conviction-bot:
     image: local-llm-conviction-bot
     container_name: local-llm-conviction-bot
+    network_mode: "host"
     volumes:
-      - ~/playground_keys:/app/keys       # Read and write to keys directory. Let's see if this fixes anything
+      - ~/playground_keys:/app/keys
       - ./app/app:/app/app
     tty: true
     environment:
       - KEYS_DIR=/app/keys
+      #- POSTGRES_HOST=localhost
+      #- POSTGRES_PORT=5433
+      #- POSTGRES_USER=user
+      #- POSTGRES_PASSWORD=password
+      #- POSTGRES_DB=newsdb
 
   postgres:
     image: postgres:13
     container_name: postgres
+    restart: unless-stopped
+    ports:
+      - "5440:5432"
     environment:
-      - POSTGRES_USER=youruser
-      - POSTGRES_PASSWORD=yourpassword
+      - POSTGRES_USER=user
+      - POSTGRES_PASSWORD=password
       - POSTGRES_DB=newsdb
     volumes:
       - postgres_data:/var/lib/postgresql/data
