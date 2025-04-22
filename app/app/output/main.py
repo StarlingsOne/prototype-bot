@@ -5,11 +5,8 @@ from datetime import datetime, timedelta
 import sys
 import os
 
-# Add the parent directory to the sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-# Now import PostgresHandler
-from input.postgres_handler import PostgresHandler
+from database_tools.postgres_handler import PostgresHandler
 
 def fetch_market_price(domain, market_id):
     domain = domain.rstrip("/")

@@ -1,0 +1,33 @@
+#!/usr/local/bin/python
+
+import argparse
+import sys
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from database_tools.postgres_handler import PostgresHandler
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Show news results for a given topic (identifier filter)."
+    )
+    parser.add_argument("--topic", type=str, required=True, help="Topic to filter sentiment results (identifier).")
+    args = parser.parse_args()
+
+    db_handler = PostgresHandler()
+
+    results = db_handler.fetch_news_headlines(args.topic)
+    if not results:
+        print(f"No news headlines found for topic: {args.topic}", file=sys.stderr)
+    else:
+        print("News Headlines Results:")
+        for row in results:
+            # Each row: (id, sentiment, inserted_at, identifier)
+            print(f"ID: {row[0]}, Headline: {row[1]}, Inserted at: {row[2]}, Identifier: {row[3]}")
+
+    db_handler.close()
+
+
+if __name__ == "__main__":
+    main()

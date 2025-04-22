@@ -34,7 +34,8 @@ class PostgresHandler:
                     id SERIAL PRIMARY KEY,
                     title TEXT NOT NULL,
                     pub_date TEXT,
-                    source TEXT
+                    source TEXT,
+                    search_term TEXT
                 )
             """)
             print("Ensured that the 'news' table exists.")
@@ -52,12 +53,33 @@ class PostgresHandler:
             """)
             print("Ensured that the 'sentiment_results' table exists.")
 
-    def fetch_news_headlines(self):
-        """Fetch all news headlines from the database."""
+    def fetch_news_headlines(self, identifier_filter=None, since=None):
+        """
+        Fetch news items from the database, optionally filtered by keyword and date.
+
+        Returns:
+            list of tuple: Each tuple contains (id, title, pub_date, source)
+        """
+        query = "SELECT id, title, pub_date, source FROM news"
+        clauses = []
+        params = []
+
+        if identifier_filter:
+            clauses.append("search_term = %s")
+            params.append(identifier_filter)
+
+        if since:
+            clauses.append("pub_date >= %s")
+            params.append(since)
+
+        if clauses:
+            query += " WHERE " + " AND ".join(clauses)
+
+        query += " ORDER BY id;"
+
         with self.conn.cursor() as cur:
-            cur.execute("SELECT title FROM news ORDER BY id;")
-            records = cur.fetchall()
-        return [record[0] for record in records]
+            cur.execute(query, tuple(params))
+            return cur.fetchall()
 
     def fetch_sentiment_results(self, identifier_filter, since=None):
         """
@@ -86,19 +108,20 @@ class PostgresHandler:
             cur.execute(query, tuple(params))
             return cur.fetchall()
 
-    def insert_news_items(self, news_items):
+    def insert_news_items(self, news_items, search_term):
         """
         Insert multiple news items into the database.
 
         Parameters:
             news_items (list of tuple): Each tuple should have (title, pub_date, source)
+            search_term (str): Topic identifier to associate with the news items
         """
         with self.conn.cursor() as cur:
             insert_query = sql.SQL("""
-                INSERT INTO news (title, pub_date, source)
-                VALUES (%s, %s, %s)
+                INSERT INTO news (title, pub_date, source, search_term)
+                VALUES (%s, %s, %s, %s)
             """)
-            cur.executemany(insert_query, news_items)
+            cur.executemany(insert_query, [(title, pub_date, source, search_term) for title, pub_date, source in news_items])
             print(f"Inserted {len(news_items)} news items into the database.")
 
     def insert_sentiment_result(self, sentiment_json, identifier=None):
