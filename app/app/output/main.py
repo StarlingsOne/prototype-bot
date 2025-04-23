@@ -55,10 +55,6 @@ def get_latest_sentiment(identifier, since_hours_ago=24):
     _, sentiment_raw, _, _ = row
     return json.loads(sentiment_raw) if isinstance(sentiment_raw, str) else sentiment_raw
 
-
-    sentiment_raw = results[0][1]
-    return json.loads(sentiment_raw) if isinstance(sentiment_raw, str) else sentiment_raw
-
 def calculate_bet_amount(conviction, assessment, market_price, user_balance, scale=100):
     if assessment != market_price:
         delta = abs(assessment - market_price)

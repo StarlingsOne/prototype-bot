@@ -3,6 +3,7 @@
 import json
 import psycopg2
 from psycopg2 import sql
+from dateutil import parser as date_parser
 
 class PostgresHandler:
     def __init__(self, host="localhost", port=5440, dbname="newsdb", user="user", password="password"):
@@ -27,12 +28,20 @@ class PostgresHandler:
             print(f"Error connecting to Postgres: {e}")
             raise
 
+    def parse_pub_date(raw_date):
+        try:
+            return date_parser.parse(raw_date)
+        except Exception as e:
+            print(f"Error parsing date: {raw_date}\n{e}", file=sys.stderr)
+            return None
+
     def create_news_table(self):
         """Create the news table if it doesn't already exist."""
         with self.conn.cursor() as cur:
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS news (
                     id SERIAL PRIMARY KEY,
+                    inserted_at TIMESTAMPTZ DEFAULT NOW(),                        
                     title TEXT NOT NULL,
                     pub_date TEXT,
                     source TEXT,
@@ -47,8 +56,8 @@ class PostgresHandler:
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS sentiment_results (
                     id SERIAL PRIMARY KEY,
+                    inserted_at TIMESTAMPTZ DEFAULT NOW(),                        
                     sentiment JSON NOT NULL,
-                    inserted_at TIMESTAMPTZ DEFAULT NOW(),
                     identifier TEXT
                 )
             """)
@@ -150,7 +159,13 @@ class PostgresHandler:
                 INSERT INTO news (title, pub_date, source, search_term)
                 VALUES (%s, %s, %s, %s)
             """)
-            cur.executemany(insert_query, [(title, pub_date, source, search_term) for title, pub_date, source in news_items])
+            cur.executemany(
+                insert_query,
+                [
+                    (title, parse_pub_date(pub_date), source, search_term)
+                    for title, pub_date, source in news_items
+                ]
+            )
             print(f"Inserted {len(news_items)} news items into the database.")
 
     def insert_sentiment_result(self, sentiment_json, identifier=None):

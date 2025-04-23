@@ -96,12 +96,19 @@ def main():
     parser = argparse.ArgumentParser(description="Assess sentiment of news headlines on a given topic.")
     parser.add_argument("--topic", type=str, required=True, help="The topic to analyze sentiment for.")
     parser.add_argument("--output", type=str, default="sentiment_result.txt", help="Output filename (default: sentiment_result.txt)")
+    parser.add_argument("--since_hours", type=int, default=24,
+        help="Only analyze headlines newer than this many hours (default: 24)")
 
     args = parser.parse_args()
 
     db_handler = PostgresHandler()
 
-    headlines = db_handler.fetch_news_headlines()
+    since = datetime.utcnow() - timedelta(hours=args.since_hours)
+
+    headlines = db_handler.fetch_news_headlines(
+        identifier_filter=args.topic, 
+        since=since
+    )
     if not headlines:
         print("Error: No headlines found in the database.", file=sys.stderr)
         db_handler.close()
