@@ -43,7 +43,7 @@ class PostgresHandler:
                     id SERIAL PRIMARY KEY,
                     inserted_at TIMESTAMPTZ DEFAULT NOW(),                        
                     title TEXT NOT NULL,
-                    pub_date TEXT,
+                    pub_date TIMESTAMPTZ,
                     source TEXT,
                     search_term TEXT
                 )
@@ -159,14 +159,21 @@ class PostgresHandler:
                 INSERT INTO news (title, pub_date, source, search_term)
                 VALUES (%s, %s, %s, %s)
             """)
-            cur.executemany(
-                insert_query,
-                [
-                    (title, parse_pub_date(pub_date), source, search_term)
-                    for title, pub_date, source in news_items
-                ]
-            )
-            print(f"Inserted {len(news_items)} news items into the database.")
+
+            rows_to_insert = []
+            for title, raw_date, source in news_items:
+                parsed_date = parse_pub_date(raw_date)
+                if parsed_date is None:
+                    print(f"Skipping insertion due to invalid date: {raw_date}", file=sys.stderr)
+                    continue
+                rows_to_insert.append((title, parsed_date, source, search_term))
+
+            if not rows_to_insert:
+                print("No valid news items to insert.")
+                return
+
+            cur.executemany(insert_query, rows_to_insert)
+            print(f"Inserted {len(rows_to_insert)} news items into the database.")
 
     def insert_sentiment_result(self, sentiment_json, identifier=None):
         """

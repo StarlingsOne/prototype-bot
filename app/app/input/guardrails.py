@@ -1,5 +1,4 @@
-from typing import Optional, Union
-
+from typing import Union
 
 def has_valid_keys(data: dict) -> bool:
     """Ensure exactly 'assessment' and 'conviction' keys exist."""
