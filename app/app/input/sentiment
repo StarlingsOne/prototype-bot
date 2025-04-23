@@ -2,10 +2,12 @@
 
 import google.generativeai as genai
 import argparse
+import json
 import sys
 import csv
 import os
 from datetime import datetime
+from guardrails import validate_sentiment_output
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from database_tools.postgres_handler import PostgresHandler
@@ -71,11 +73,22 @@ def analyze_sentiment(topic, headlines):
 
     response = model.generate_content(prompt)
 
-    if hasattr(response, "text"):
-        return response.text
-    else:
+    if not hasattr(response, "text"):
         print("Error: No text response received from the model.", file=sys.stderr)
         sys.exit(1)
+
+    try:
+        parsed = json.loads(response.text)
+    except json.JSONDecodeError:
+        print(f"Error: Failed to parse JSON from model response:\n{response.text}", file=sys.stderr)
+        sys.exit(1)
+
+    validated = validate_sentiment_output(parsed)
+    if not validated:
+        print(f"Error: Output did not pass guardrails:\n{parsed}", file=sys.stderr)
+        sys.exit(1)
+
+    return validated
 
 
 def main():
@@ -97,7 +110,7 @@ def main():
     sentiment_result = analyze_sentiment(args.topic, headlines)
 
     # Generate an identifier using the topic and the current datetime.
-    identifier = f"{args.topic}-analysis-{datetime.now().strftime('%Y-%m-%d_%H-%M-%S')}"
+    identifier = f"{args.topic}"
     db_handler.insert_sentiment_result(sentiment_result, identifier=identifier)
 
     print(f"Sentiment analysis saved with identifier: {identifier}")

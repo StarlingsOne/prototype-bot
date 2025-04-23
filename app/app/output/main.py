@@ -43,13 +43,18 @@ def fetch_user_balance(domain, username):
 
 
 def get_latest_sentiment(identifier, since_hours_ago=24):
+
     db = PostgresHandler()
     since = datetime.now() - timedelta(hours=since_hours_ago)
-    results = db.fetch_sentiment_results(identifier, since=since)
+    row = db.get_most_recent_sentiment_result(identifier, since=since)
     db.close()
 
-    if not results:
+    if not row:
         return None
+
+    _, sentiment_raw, _, _ = row
+    return json.loads(sentiment_raw) if isinstance(sentiment_raw, str) else sentiment_raw
+
 
     sentiment_raw = results[0][1]
     return json.loads(sentiment_raw) if isinstance(sentiment_raw, str) else sentiment_raw

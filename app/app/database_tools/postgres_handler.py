@@ -1,5 +1,6 @@
 #!/usr/local/bin/python
 
+import json
 import psycopg2
 from psycopg2 import sql
 
@@ -107,6 +108,34 @@ class PostgresHandler:
             query += " ORDER BY inserted_at DESC;"
             cur.execute(query, tuple(params))
             return cur.fetchall()
+        
+    def get_most_recent_sentiment_result(self, identifier: str, since=None):
+        """
+        Fetch the most recent sentiment result for an exact identifier, optionally filtered by timestamp.
+
+        Parameters:
+            identifier (str): Exact match for the identifier column (e.g., "sp500").
+            since (datetime, optional): Only return results inserted at or after this timestamp.
+
+        Returns:
+            tuple or None: A single row as (id, sentiment, inserted_at, identifier), or None if not found.
+        """
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT id, sentiment, inserted_at, identifier
+                FROM sentiment_results
+                WHERE identifier = %s
+            """
+            params = [identifier]
+
+            if since:
+                query += " AND inserted_at >= %s"
+                params.append(since)
+
+            query += " ORDER BY inserted_at DESC LIMIT 1;"
+
+            cur.execute(query, tuple(params))
+            return cur.fetchone()    
 
     def insert_news_items(self, news_items, search_term):
         """
@@ -137,7 +166,7 @@ class PostgresHandler:
                 INSERT INTO sentiment_results (sentiment, identifier)
                 VALUES (%s, %s)
             """)
-            cur.execute(insert_query, (sentiment_json, identifier))
+            cur.execute(insert_query, (json.dumps(sentiment_json), identifier))
             print("Inserted sentiment result into the database.")
 
     def close(self):
