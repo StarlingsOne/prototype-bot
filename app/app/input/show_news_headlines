@@ -3,6 +3,7 @@
 import argparse
 import sys
 import os
+from datetime import datetime, timedelta, timezone
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from database_tools.postgres_handler import PostgresHandler
@@ -10,21 +11,29 @@ from database_tools.postgres_handler import PostgresHandler
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Show news results for a given topic (identifier filter)."
+        description="Show news results for a given topic (search_term filter)."
     )
-    parser.add_argument("--topic", type=str, required=True, help="Topic to filter sentiment results (identifier).")
+    parser.add_argument("--topic", type=str, required=True,
+                        help="Topic to filter news results (search_term).")
+    parser.add_argument("--since_hours", type=int, default=168,
+                        help="Only show news newer than this many hours (default: 168 = 1 week).")
     args = parser.parse_args()
+
+    since = datetime.now(timezone.utc) - timedelta(hours=args.since_hours)
 
     db_handler = PostgresHandler()
 
-    results = db_handler.fetch_news_headlines(args.topic)
+    # Fetch news filtered by topic and pub_date
+    results = db_handler.fetch_news_headlines(identifier_filter=args.topic, since=since)
+
     if not results:
-        print(f"No news headlines found for topic: {args.topic}", file=sys.stderr)
+        print(f"No news headlines found for topic '{args.topic}' in the past {args.since_hours} hours.",
+              file=sys.stderr)
     else:
-        print("News Headlines Results:")
+        print(f"News Headlines for topic '{args.topic}' (last {args.since_hours}h):\n")
         for row in results:
-            # Each row: (id, sentiment, inserted_at, identifier)
-            print(f"ID: {row[0]}, Headline: {row[1]}, Inserted at: {row[2]}, Identifier: {row[3]}")
+            # row = (id, title, pub_date, source)
+            print(f"[{row[2].strftime('%Y-%m-%d %H:%M:%S %Z')}] {row[1]} ({row[3]})")
 
     db_handler.close()
 

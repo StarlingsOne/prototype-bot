@@ -1,0 +1,55 @@
+#!/usr/bin/env python3
+import subprocess
+import time
+import datetime
+import os
+import yaml
+import pytz
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ORCHESTRATE_PATH = os.path.join(SCRIPT_DIR, "../orchestration/orchestrate")
+CONFIG_PATH = os.path.join(SCRIPT_DIR, "../orchestration/config.yaml")
+SCHEDULE_PATH = os.path.join(SCRIPT_DIR, "schedule.yaml")
+DEFAULT_SCHEDULE_NAME = "four_times_daily"
+
+def load_schedule_config(schedule_name=DEFAULT_SCHEDULE_NAME):
+    with open(SCHEDULE_PATH, "r") as f:
+        all_schedules = yaml.safe_load(f)
+
+    if schedule_name not in all_schedules:
+        raise KeyError(f"Schedule '{schedule_name}' not found in {SCHEDULE_PATH}")
+
+    schedule = all_schedules[schedule_name]
+    run_hours = schedule.get("run_hours", [])
+    timezone = schedule.get("timezone", "UTC")
+    return run_hours, pytz.timezone(timezone)
+
+def current_time(tz):
+    return datetime.datetime.now(tz)
+
+def sleep_until(target_hour, tz):
+    now = current_time(tz)
+    today_target = now.replace(hour=target_hour, minute=0, second=0, microsecond=0)
+    if now > today_target:
+        print(f"⏩ Skipping {target_hour}:00 (already passed)")
+        return
+    seconds_to_wait = (today_target - now).total_seconds()
+    print(f"⏳ Sleeping {seconds_to_wait/60:.1f} minutes until {target_hour}:00 {tz.zone}...")
+    time.sleep(seconds_to_wait)
+
+def run_orchestration(tz):
+    now = current_time(tz)
+    print(f"🚀 Running orchestrate at {now.strftime('%Y-%m-%d %H:%M:%S %Z')}")
+    subprocess.run([ORCHESTRATE_PATH, CONFIG_PATH], check=True)
+
+def main():
+    run_hours, tz = load_schedule_config()
+
+    for hour in run_hours:
+        sleep_until(hour, tz)
+        run_orchestration(tz)
+
+    print("\n✅ All scheduled runs completed. Exiting.")
+
+if __name__ == "__main__":
+    main()

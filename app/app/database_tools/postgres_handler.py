@@ -3,7 +3,9 @@
 import json
 import psycopg2
 from psycopg2 import sql
+import psycopg2.extras
 from dateutil import parser as date_parser
+import sys
 
 class PostgresHandler:
     def __init__(self, host="localhost", port=5440, dbname="newsdb", user="user", password="password"):
@@ -28,6 +30,7 @@ class PostgresHandler:
             print(f"Error connecting to Postgres: {e}")
             raise
 
+    @staticmethod
     def parse_pub_date(raw_date):
         try:
             return date_parser.parse(raw_date)
@@ -68,7 +71,7 @@ class PostgresHandler:
         Fetch news items from the database, optionally filtered by keyword and date.
 
         Returns:
-            list of tuple: Each tuple contains (id, title, pub_date, source)
+            list of dict: Each dict has keys: id, title, pub_date, source
         """
         query = "SELECT id, title, pub_date, source FROM news"
         clauses = []
@@ -87,9 +90,10 @@ class PostgresHandler:
 
         query += " ORDER BY id;"
 
-        with self.conn.cursor() as cur:
+        with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
             cur.execute(query, tuple(params))
             return cur.fetchall()
+
 
     def fetch_sentiment_results(self, identifier_filter, since=None):
         """
@@ -162,7 +166,7 @@ class PostgresHandler:
 
             rows_to_insert = []
             for title, raw_date, source in news_items:
-                parsed_date = parse_pub_date(raw_date)
+                parsed_date = self.parse_pub_date(raw_date)
                 if parsed_date is None:
                     print(f"Skipping insertion due to invalid date: {raw_date}", file=sys.stderr)
                     continue

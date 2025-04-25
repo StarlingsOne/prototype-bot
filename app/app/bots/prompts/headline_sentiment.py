@@ -11,6 +11,9 @@ Here are the headlines:
 Based on these headlines below, think, in a chain of thought manner:
 - A sentiment analysis of the general tone (positive, negative, or neutral).
 - Any relevant insights you find.
+
+Your response must be:
+
 - The numerical sentiment score is between 0.00 (very negative) to 1.00 (very positive) and a conviction score between 0.00 (uncertain) to 1.00 (very certain).
 Respond in a JSON Format only, with two values, one key/value for assessment, and one key/value for conviction level of that assessment.
 

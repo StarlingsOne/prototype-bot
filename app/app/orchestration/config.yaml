@@ -1,0 +1,7 @@
+test:
+  api_key: a79ddb16-7792-4496-9e43-34b0aa941a9f
+  domain: http://localhost
+  market_id: 3
+  since_hours: 6
+  username: test
+  topic: sp500

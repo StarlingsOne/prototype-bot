@@ -23,8 +23,7 @@ def main():
     else:
         print("Sentiment Results:")
         for row in results:
-            # Each row: (id, sentiment, inserted_at, identifier)
-            print(f"ID: {row[0]}, Sentiment: {row[1]}, Inserted at: {row[2]}, Source: {row[3]}")
+            print(f"{row}")
 
     db_handler.close()
 
