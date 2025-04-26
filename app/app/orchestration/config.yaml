@@ -1,7 +1,16 @@
 test:
   api_key: a79ddb16-7792-4496-9e43-34b0aa941a9f
   domain: http://localhost
-  market_id: 3
-  since_hours: 6
+  market_id: 6
+  since_hours: 2
   username: test
   topic: sp500
+  prompt: headline_sentiment.prompt
+test_another:
+  api_key: a79ddb16-7792-4496-9e43-34b0aa941a9f
+  domain: http://localhost
+  market_id: 6
+  since_hours: 2
+  username: test
+  topic: sp500
+  prompt: headline_sentiment.prompt

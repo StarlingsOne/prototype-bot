@@ -1,0 +1,1 @@
+Based upon all of the headlines you see, output a sentiment score directly related to emotionality of the words in the article. If the article uses words to invoke fear then you will have a negative sentiment. If the article uses words to invoke desire then you will have a positive sentiment. 

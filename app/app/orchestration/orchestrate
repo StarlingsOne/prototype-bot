@@ -4,6 +4,7 @@ import argparse
 import subprocess
 import yaml
 import os
+import random
 from datetime import datetime
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -16,6 +17,7 @@ DEFAULT_CONFIG = {
     "username": "default",
     "api_key": "MISSING_API_KEY",
     "topic": None,
+    "prompt": "headline_sentiment.prompt",    
 }
 
 def run_cmd(cmd_list):
@@ -30,6 +32,8 @@ def run_cmd(cmd_list):
 
 def run_pipeline(bot_name: str, config: dict):
     topic = config.get("topic")
+    prompt = config.get("prompt")  # <-- New line
+
     if not topic:
         raise ValueError(f"Missing topic for bot '{bot_name}'")
 
@@ -37,7 +41,14 @@ def run_pipeline(bot_name: str, config: dict):
     print(f"📅 {datetime.now().isoformat()}")
 
     run_cmd(["./input/readnews", topic])
-    run_cmd(["./input/sentiment", "--topic", topic, "--since_hours", str(config["since_hours"])])
+
+    run_cmd([
+        "./input/sentiment",
+        "--prompt_name", prompt,            # <-- Pass the prompt
+        "--topic", topic,
+        "--since_hours", str(config["since_hours"]),
+    ])
+
     run_cmd([
         "./output/bettingbot",
         "--domain", config["domain"],

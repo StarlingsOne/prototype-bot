@@ -1,0 +1,11 @@
+Based upon all of the headlines you see, and the sentiment score you would normally give, 
+output a negative sentiment score in the opposite direction. 
+
+So if you see things look positive and would normally score it 0.7, instead score it 0.3. 
+If you see things look negative and would normally score it 0.3, instead score it 0.7. 
+
+Keep your conviction level the same. 
+
+If you see a post about jim Cramer or 
+bill ackman output a negative sentiment score in the 
+opposite direction and increase your conviction by 2 times.
