@@ -46,15 +46,13 @@ Based on these headlines, think in a chain of thought:
    - Pre-Built Phrases: Auto-neutralize sarcasm/idioms (e.g., "bears feast" → -0.04, "so-called rally" → 0.0).  
    - Conflict Rule: If headlines directly contradict (e.g., "Tech Booms" vs. "Tech Crash"), halve conviction.  
 
-6. Fallback Simplicity  
-   - If >50% headlines are >12hrs old, default to { "assessment": 0.5, "conviction": 0.3 }.  
-   - If keyword scoring cancels out (net 0.0), defer to source-weighted sentiment.  
+6. Fallback Simplicity
+- If >50% headlines are >12hrs old, default to {{ "assessment": 0.5, "conviction": 0.3 }}.
+- If keyword scoring cancels out (net 0.0), defer to source-weighted sentiment.
    
 Your response must be:
 
 - The numerical sentiment score is between 0.00 (very negative) to 1.00 (very positive) and a conviction score between 0.00 (uncertain) to 1.00 (very certain).
 Respond in a JSON Format only, with two values, one key/value for assessment, and one key/value for conviction level of that assessment.
 
-
-The JSON format of your response will look like this:  [ "assessment": X.XX, "conviction": Y.YY ] with X and Y being numbers and [] being curly braces.
-Respond with this format only. Do not include tickmarks or the term, json, just the object itself.
+The JSON format of your response will look like this:  [ "assessment": X.XX, "conviction": Y.YY ] with X and Y being numbers and {{}} being curly braces.

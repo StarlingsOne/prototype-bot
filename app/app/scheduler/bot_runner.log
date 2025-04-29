@@ -1,0 +1,2349 @@
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 101 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.65, 'conviction': 0.78}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853638.805907     725 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.78
+conviction type: <class 'float'>
+assessment 0.65
+assessment type: <class 'float'>
+market_price: 0.5501519756838906
+amount 38
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:20:38.912249096Z', 'UpdatedAt': '2025-04-28T15:20:38.912249096Z', 'DeletedAt': None, 'action': '', 'id': 11, 'username': 'robotofrollstreet', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 38, 'placedAt': '2025-04-28T15:20:38.910428721Z', 'outcome': 'YES'}
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T15:20:28.905294
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 101 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.58, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853648.053798     746 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.58
+assessment type: <class 'float'>
+market_price: 0.5967302452316077
+amount 5
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:20:48.153225711Z', 'UpdatedAt': '2025-04-28T15:20:48.153225711Z', 'DeletedAt': None, 'action': '', 'id': 12, 'username': 'robotofrollstreet', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 5, 'placedAt': '2025-04-28T15:20:48.152565919Z', 'outcome': 'NO'}
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T15:20:38.940694
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.5, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853861.839712     774 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.5
+assessment type: <class 'float'>
+market_price: 0.5887096774193549
+amount 35
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:24:21.941243504Z', 'UpdatedAt': '2025-04-28T15:24:21.941243504Z', 'DeletedAt': None, 'action': '', 'id': 13, 'username': 'emotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 35, 'placedAt': '2025-04-28T15:24:21.939469504Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.65, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853871.195075     793 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.65
+assessment type: <class 'float'>
+market_price: 0.538083538083538
+amount 39
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:24:31.2968988Z', 'UpdatedAt': '2025-04-28T15:24:31.2968988Z', 'DeletedAt': None, 'action': '', 'id': 14, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 39, 'placedAt': '2025-04-28T15:24:31.29599255Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.55, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853880.509239     811 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.55
+assessment type: <class 'float'>
+market_price: 0.57847533632287
+amount 8
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:24:40.620615555Z', 'UpdatedAt': '2025-04-28T15:24:40.620615555Z', 'DeletedAt': None, 'action': '', 'id': 15, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 8, 'placedAt': '2025-04-28T15:24:40.619671555Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853889.934956     830 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5682819383259912
+amount 38
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:24:50.042713795Z', 'UpdatedAt': '2025-04-28T15:24:50.042713795Z', 'DeletedAt': None, 'action': '', 'id': 16, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 38, 'placedAt': '2025-04-28T15:24:50.041754753Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.35, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853899.213832     848 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.35
+assessment type: <class 'float'>
+market_price: 0.524390243902439
+amount 69
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:24:59.317435341Z', 'UpdatedAt': '2025-04-28T15:24:59.317435341Z', 'DeletedAt': None, 'action': '', 'id': 17, 'username': 'opposebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 69, 'placedAt': '2025-04-28T15:24:59.316556758Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.55, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853908.578887     866 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.55
+assessment type: <class 'float'>
+market_price: 0.45989304812834225
+amount 27
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:25:08.681728471Z', 'UpdatedAt': '2025-04-28T15:25:08.681728471Z', 'DeletedAt': None, 'action': '', 'id': 18, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 27, 'placedAt': '2025-04-28T15:25:08.680775596Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.58, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853918.127019     884 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.58
+assessment type: <class 'float'>
+market_price: 0.4846938775510204
+amount 30
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:25:18.229765627Z', 'UpdatedAt': '2025-04-28T15:25:18.229765627Z', 'DeletedAt': None, 'action': '', 'id': 19, 'username': 'robotofrollstreet', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 30, 'placedAt': '2025-04-28T15:25:18.228775419Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.5, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853927.530831     902 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.5
+assessment type: <class 'float'>
+market_price: 0.5097087378640777
+amount 0
+outcome: NO
+❌ Failed to place bet: Buy amount must be greater than or equal to 1
+
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-28T15:24:12.139546
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-28T15:24:21.950483
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-28T15:24:31.306372
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-28T15:24:40.629549
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-28T15:24:50.051629
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-28T15:24:59.326639
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T15:25:08.690506
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-28T15:25:18.238561
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.65, 'conviction': 0.78}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853936.938973     921 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.78
+conviction type: <class 'float'>
+assessment 0.65
+assessment type: <class 'float'>
+market_price: 0.5097087378640777
+amount 54
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:25:37.041514761Z', 'UpdatedAt': '2025-04-28T15:25:37.041514761Z', 'DeletedAt': None, 'action': '', 'id': 20, 'username': 'emotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 54, 'placedAt': '2025-04-28T15:25:37.040748678Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.55, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853946.494477     939 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.55
+assessment type: <class 'float'>
+market_price: 0.5491071428571429
+amount 0
+outcome: YES
+❌ Failed to place bet: Buy amount must be greater than or equal to 1
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.55, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853955.974556     957 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.55
+assessment type: <class 'float'>
+market_price: 0.5491071428571429
+amount 0
+outcome: YES
+❌ Failed to place bet: Buy amount must be greater than or equal to 1
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853965.504708     975 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5491071428571429
+amount 29
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:26:05.610646219Z', 'UpdatedAt': '2025-04-28T15:26:05.610646219Z', 'DeletedAt': None, 'action': '', 'id': 21, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 29, 'placedAt': '2025-04-28T15:26:05.609579219Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 101 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.3, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853975.603884     993 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.3
+assessment type: <class 'float'>
+market_price: 0.5263908701854494
+amount 90
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:26:15.708288543Z', 'UpdatedAt': '2025-04-28T15:26:15.708288543Z', 'DeletedAt': None, 'action': '', 'id': 22, 'username': 'opposebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 90, 'placedAt': '2025-04-28T15:26:15.707743168Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 101 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.65, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853985.145157    1011 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.65
+assessment type: <class 'float'>
+market_price: 0.4664981036662453
+amount 55
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:26:25.250730506Z', 'UpdatedAt': '2025-04-28T15:26:25.250730506Z', 'DeletedAt': None, 'action': '', 'id': 23, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 55, 'placedAt': '2025-04-28T15:26:25.249853797Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 101 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.65, 'conviction': 0.78}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745853994.795363    1029 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.78
+conviction type: <class 'float'>
+assessment 0.65
+assessment type: <class 'float'>
+market_price: 0.5011820330969267
+amount 58
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:26:34.89713626Z', 'UpdatedAt': '2025-04-28T15:26:34.89713626Z', 'DeletedAt': None, 'action': '', 'id': 24, 'username': 'robotofrollstreet', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 58, 'placedAt': '2025-04-28T15:26:34.895694677Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 101 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.75, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745854004.301363    1047 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.75
+assessment type: <class 'float'>
+market_price: 0.5331858407079646
+amount 8
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T15:26:44.407136334Z', 'UpdatedAt': '2025-04-28T15:26:44.407136334Z', 'DeletedAt': None, 'action': '', 'id': 25, 'username': 'vancebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 8, 'placedAt': '2025-04-28T15:26:44.405902501Z', 'outcome': 'YES'}
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-28T15:25:27.667174
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-28T15:25:37.050117
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-28T15:25:46.598337
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-28T15:25:56.084312
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-28T15:26:05.619690
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-28T15:26:15.717476
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T15:26:25.259794
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-28T15:26:34.906395
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 92 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745859609.883616    1067 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5372807017543859
+amount 30
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T17:00:09.992134137Z', 'UpdatedAt': '2025-04-28T17:00:09.992134137Z', 'DeletedAt': None, 'action': '', 'id': 26, 'username': 'emotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 30, 'placedAt': '2025-04-28T17:00:09.990951846Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 92 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745859619.037231    1085 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5201698513800425
+amount 21
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T17:00:19.137994544Z', 'UpdatedAt': '2025-04-28T17:00:19.137994544Z', 'DeletedAt': None, 'action': '', 'id': 27, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 21, 'placedAt': '2025-04-28T17:00:19.137284752Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 92 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745859628.204392    1103 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5088265835929388
+amount 17
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T17:00:28.306930923Z', 'UpdatedAt': '2025-04-28T17:00:28.306930923Z', 'DeletedAt': None, 'action': '', 'id': 28, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 17, 'placedAt': '2025-04-28T17:00:28.305915798Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 92 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.35, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745859637.323423    1121 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.35
+assessment type: <class 'float'>
+market_price: 0.5
+amount 60
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T17:00:37.426108969Z', 'UpdatedAt': '2025-04-28T17:00:37.426108969Z', 'DeletedAt': None, 'action': '', 'id': 29, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 60, 'placedAt': '2025-04-28T17:00:37.425652719Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 92 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.7, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745859646.445603    1139 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.7
+assessment type: <class 'float'>
+market_price: 0.47115384615384615
+amount 91
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T17:00:46.548324543Z', 'UpdatedAt': '2025-04-28T17:00:46.548324543Z', 'DeletedAt': None, 'action': '', 'id': 30, 'username': 'opposebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 91, 'placedAt': '2025-04-28T17:00:46.547369501Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 92 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745859655.524546    1157 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5137046861184792
+amount 19
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T17:00:55.61547738Z', 'UpdatedAt': '2025-04-28T17:00:55.61547738Z', 'DeletedAt': None, 'action': '', 'id': 31, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 19, 'placedAt': '2025-04-28T17:00:55.61480688Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 92 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.15, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745859664.610525    1175 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.15
+assessment type: <class 'float'>
+market_price: 0.5052173913043478
+amount 106
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T17:01:04.70594951Z', 'UpdatedAt': '2025-04-28T17:01:04.70594951Z', 'DeletedAt': None, 'action': '', 'id': 32, 'username': 'robotofrollstreet', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 106, 'placedAt': '2025-04-28T17:01:04.705261926Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 92 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745859673.774992    1193 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4625796178343949
+amount 0
+outcome: NO
+❌ Failed to place bet: Buy amount must be greater than or equal to 1
+
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-28T17:00:00.053700
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-28T17:00:10.001521
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-28T17:00:19.146730
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-28T17:00:28.316146
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-28T17:00:37.434912
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-28T17:00:46.556978
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T17:00:55.624473
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-28T17:01:04.715086
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.35, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869056.005002    1216 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.35
+assessment type: <class 'float'>
+market_price: 0.4625796178343949
+amount 45
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:37:36.109569168Z', 'UpdatedAt': '2025-04-28T19:37:36.109569168Z', 'DeletedAt': None, 'action': '', 'id': 33, 'username': 'emotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 45, 'placedAt': '2025-04-28T19:37:36.107605793Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869065.131391    1234 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4465795541890853
+amount 1
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:37:45.232208256Z', 'UpdatedAt': '2025-04-28T19:37:45.232208256Z', 'DeletedAt': None, 'action': '', 'id': 34, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 1, 'placedAt': '2025-04-28T19:37:45.231492631Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869074.141859    1252 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4470046082949309
+amount 0
+outcome: YES
+❌ Failed to place bet: Buy amount must be greater than or equal to 1
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869083.238944    1270 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4470046082949309
+amount 0
+outcome: YES
+❌ Failed to place bet: Buy amount must be greater than or equal to 1
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.7, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869092.337961    1288 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.7
+assessment type: <class 'float'>
+market_price: 0.4470046082949309
+amount 101
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:38:12.435334921Z', 'UpdatedAt': '2025-04-28T19:38:12.435334921Z', 'DeletedAt': None, 'action': '', 'id': 35, 'username': 'opposebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 101, 'placedAt': '2025-04-28T19:38:12.433892588Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869101.395935    1306 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4868139700641482
+amount 11
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:38:21.501483301Z', 'UpdatedAt': '2025-04-28T19:38:21.501483301Z', 'DeletedAt': None, 'action': '', 'id': 36, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 11, 'placedAt': '2025-04-28T19:38:21.500778551Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.15, 'conviction': 0.55}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869110.597566    1324 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.55
+conviction type: <class 'float'>
+assessment 0.15
+assessment type: <class 'float'>
+market_price: 0.48302687411598305
+amount 91
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:38:30.699759222Z', 'UpdatedAt': '2025-04-28T19:38:30.699759222Z', 'DeletedAt': None, 'action': '', 'id': 37, 'username': 'robotofrollstreet', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 91, 'placedAt': '2025-04-28T19:38:30.698209138Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869119.700516    1342 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.45382059800664454
+amount 0
+outcome: NO
+❌ Failed to place bet: Buy amount must be greater than or equal to 1
+
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-28T19:37:26.264419
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-28T19:37:36.118340
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-28T19:37:45.241562
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-28T19:37:54.249884
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-28T19:38:03.351547
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-28T19:38:12.444784
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T19:38:21.510747
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-28T19:38:30.708714
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.25, 'conviction': 0.85}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869128.866564    1361 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.85
+conviction type: <class 'float'>
+assessment 0.25
+assessment type: <class 'float'>
+market_price: 0.45382059800664454
+amount 86
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:38:48.970777758Z', 'UpdatedAt': '2025-04-28T19:38:48.970777758Z', 'DeletedAt': None, 'action': '', 'id': 38, 'username': 'emotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 86, 'placedAt': '2025-04-28T19:38:48.970125716Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869138.013906    1379 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.42928975487115023
+amount 7
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:38:58.115891054Z', 'UpdatedAt': '2025-04-28T19:38:58.115891054Z', 'DeletedAt': None, 'action': '', 'id': 39, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 7, 'placedAt': '2025-04-28T19:38:58.114892595Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869147.253008    1397 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.43178973717146435
+amount 5
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:39:07.355086586Z', 'UpdatedAt': '2025-04-28T19:39:07.355086586Z', 'DeletedAt': None, 'action': '', 'id': 40, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 5, 'placedAt': '2025-04-28T19:39:07.354342377Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869156.365716    1415 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4335620711166563
+amount 5
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:39:16.468967048Z', 'UpdatedAt': '2025-04-28T19:39:16.468967048Z', 'DeletedAt': None, 'action': '', 'id': 41, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 5, 'placedAt': '2025-04-28T19:39:16.468048465Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.7, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869165.583848    1433 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.7
+assessment type: <class 'float'>
+market_price: 0.43532338308457713
+amount 105
+outcome: YES
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869174.804058    1451 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.43532338308457713
+amount 4
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:39:34.896280918Z', 'UpdatedAt': '2025-04-28T19:39:34.896280918Z', 'DeletedAt': None, 'action': '', 'id': 42, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 4, 'placedAt': '2025-04-28T19:39:34.895472501Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.15, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869184.388899    1469 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.15
+assessment type: <class 'float'>
+market_price: 0.43672456575682383
+amount 86
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:39:44.492617172Z', 'UpdatedAt': '2025-04-28T19:39:44.492617172Z', 'DeletedAt': None, 'action': '', 'id': 43, 'username': 'robotofrollstreet', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 86, 'placedAt': '2025-04-28T19:39:44.491693631Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869193.573028    1487 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.41460541813898705
+amount 1
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:39:53.674116843Z', 'UpdatedAt': '2025-04-28T19:39:53.674116843Z', 'DeletedAt': None, 'action': '', 'id': 44, 'username': 'vancebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 1, 'placedAt': '2025-04-28T19:39:53.673210593Z', 'outcome': 'YES'}
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-28T19:38:39.829899
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-28T19:38:48.980306
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-28T19:38:58.125039
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-28T19:39:07.363932
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-28T19:39:16.478279
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-28T19:39:25.694579
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T19:39:34.905156
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-28T19:39:44.501414
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.35, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869202.795095    1506 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.35
+assessment type: <class 'float'>
+market_price: 0.4149499705709241
+amount 22
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:40:02.897111167Z', 'UpdatedAt': '2025-04-28T19:40:02.897111167Z', 'DeletedAt': None, 'action': '', 'id': 45, 'username': 'emotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 22, 'placedAt': '2025-04-28T19:40:02.896101208Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869212.074531    1524 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4096455549099361
+amount 14
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:40:12.167830588Z', 'UpdatedAt': '2025-04-28T19:40:12.167830588Z', 'DeletedAt': None, 'action': '', 'id': 46, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 14, 'placedAt': '2025-04-28T19:40:12.167003421Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869221.379119    1542 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4144092219020173
+amount 10
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:40:21.481658259Z', 'UpdatedAt': '2025-04-28T19:40:21.481658259Z', 'DeletedAt': None, 'action': '', 'id': 47, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 10, 'placedAt': '2025-04-28T19:40:21.481004217Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869230.611474    1560 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4177650429799427
+amount 10
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:40:30.71386318Z', 'UpdatedAt': '2025-04-28T19:40:30.71386318Z', 'DeletedAt': None, 'action': '', 'id': 48, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 10, 'placedAt': '2025-04-28T19:40:30.71298343Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.7, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869239.863199    1578 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.7
+assessment type: <class 'float'>
+market_price: 0.42108262108262107
+amount 111
+outcome: YES
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869249.071529    1596 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.42108262108262107
+amount 8
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:40:49.157138883Z', 'UpdatedAt': '2025-04-28T19:40:49.157138883Z', 'DeletedAt': None, 'action': '', 'id': 49, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 8, 'placedAt': '2025-04-28T19:40:49.156054424Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.15, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869258.244799    1614 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.15
+assessment type: <class 'float'>
+market_price: 0.4237095859330686
+amount 88
+outcome: NO
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869267.534691    1632 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4237095859330686
+amount 1
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:41:07.636515836Z', 'UpdatedAt': '2025-04-28T19:41:07.636515836Z', 'DeletedAt': None, 'action': '', 'id': 50, 'username': 'vancebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 1, 'placedAt': '2025-04-28T19:41:07.635621127Z', 'outcome': 'YES'}
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-28T19:39:53.703465
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-28T19:40:02.906681
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-28T19:40:12.177049
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-28T19:40:21.490763
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-28T19:40:30.722609
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-28T19:40:39.973347
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T19:40:49.166643
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-28T19:40:58.357305
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.25, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869276.791323    1651 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.25
+assessment type: <class 'float'>
+market_price: 0.42403628117913833
+amount 69
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:41:16.892360882Z', 'UpdatedAt': '2025-04-28T19:41:16.892360882Z', 'DeletedAt': None, 'action': '', 'id': 51, 'username': 'emotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 69, 'placedAt': '2025-04-28T19:41:16.891476382Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869286.107713    1669 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.40807419530823785
+amount 13
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:41:26.210576428Z', 'UpdatedAt': '2025-04-28T19:41:26.210576428Z', 'DeletedAt': None, 'action': '', 'id': 52, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 13, 'placedAt': '2025-04-28T19:41:26.209500344Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869295.437836    1687 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4122426868905742
+amount 11
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:41:35.539161501Z', 'UpdatedAt': '2025-04-28T19:41:35.539161501Z', 'DeletedAt': None, 'action': '', 'id': 53, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 11, 'placedAt': '2025-04-28T19:41:35.538242335Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869305.450203    1705 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4157242864835757
+amount 10
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:41:45.556158881Z', 'UpdatedAt': '2025-04-28T19:41:45.556158881Z', 'DeletedAt': None, 'action': '', 'id': 54, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 10, 'placedAt': '2025-04-28T19:41:45.555276423Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.7, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869314.786230    1723 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.7
+assessment type: <class 'float'>
+market_price: 0.41885377611140867
+amount 112
+outcome: YES
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869324.054144    1741 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.41885377611140867
+amount 9
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:42:04.155916876Z', 'UpdatedAt': '2025-04-28T19:42:04.155916876Z', 'DeletedAt': None, 'action': '', 'id': 55, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 9, 'placedAt': '2025-04-28T19:42:04.154967626Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.15, 'conviction': 0.55}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869333.428291    1759 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.55
+conviction type: <class 'float'>
+assessment 0.15
+assessment type: <class 'float'>
+market_price: 0.4216417910447761
+amount 74
+outcome: NO
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745869342.779221    1777 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4216417910447761
+amount 1
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T19:42:22.879346718Z', 'UpdatedAt': '2025-04-28T19:42:22.879346718Z', 'DeletedAt': None, 'action': '', 'id': 56, 'username': 'vancebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 1, 'placedAt': '2025-04-28T19:42:22.878447635Z', 'outcome': 'YES'}
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-28T19:41:07.665561
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-28T19:41:16.901088
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-28T19:41:26.219419
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-28T19:41:35.548217
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-28T19:41:45.565291
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-28T19:41:54.896028
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T19:42:04.164887
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-28T19:42:13.536750
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+⏩ Skipping 8:00 (already passed)
+🚀 Running orchestrate at 2025-04-28 14:37:26 CDT
+⏩ Skipping 10:00 (already passed)
+🚀 Running orchestrate at 2025-04-28 14:38:39 CDT
+⏩ Skipping 12:00 (already passed)
+🚀 Running orchestrate at 2025-04-28 14:39:53 CDT
+⏩ Skipping 14:00 (already passed)
+🚀 Running orchestrate at 2025-04-28 14:41:07 CDT
+
+✅ All scheduled runs completed. Exiting.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.5, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745875634.130286    1796 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.5
+assessment type: <class 'float'>
+market_price: 0.4219499200852424
+amount 27
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T21:27:14.23427372Z', 'UpdatedAt': '2025-04-28T21:27:14.23427372Z', 'DeletedAt': None, 'action': '', 'id': 57, 'username': 'emotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 27, 'placedAt': '2025-04-28T21:27:14.233219636Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745875643.343247    1814 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.43014705882352944
+amount 6
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T21:27:23.446082668Z', 'UpdatedAt': '2025-04-28T21:27:23.446082668Z', 'DeletedAt': None, 'action': '', 'id': 58, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 6, 'placedAt': '2025-04-28T21:27:23.445414001Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745875652.561243    1832 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4319371727748691
+amount 5
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T21:27:32.663720756Z', 'UpdatedAt': '2025-04-28T21:27:32.663720756Z', 'DeletedAt': None, 'action': '', 'id': 59, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 5, 'placedAt': '2025-04-28T21:27:32.662779756Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745875661.856363    1850 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.43342036553524804
+amount 5
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T21:27:41.953825594Z', 'UpdatedAt': '2025-04-28T21:27:41.953825594Z', 'DeletedAt': None, 'action': '', 'id': 60, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 5, 'placedAt': '2025-04-28T21:27:41.952774344Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.35, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745875671.099662    1868 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.35
+assessment type: <class 'float'>
+market_price: 0.4348958333333333
+amount 33
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T21:27:51.201408959Z', 'UpdatedAt': '2025-04-28T21:27:51.201408959Z', 'DeletedAt': None, 'action': '', 'id': 61, 'username': 'opposebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 33, 'placedAt': '2025-04-28T21:27:51.200461459Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745875680.354788    1886 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.427547363031234
+amount 6
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T21:28:00.457951463Z', 'UpdatedAt': '2025-04-28T21:28:00.457951463Z', 'DeletedAt': None, 'action': '', 'id': 62, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 6, 'placedAt': '2025-04-28T21:28:00.457028171Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745875689.730569    1904 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.42930066360387953
+amount 6
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-28T21:28:09.824605718Z', 'UpdatedAt': '2025-04-28T21:28:09.824605718Z', 'DeletedAt': None, 'action': '', 'id': 63, 'username': 'robotofrollstreet', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 6, 'placedAt': '2025-04-28T21:28:09.823805343Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745875699.056634    1922 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4310432569974555
+amount 0
+outcome: YES
+❌ Failed to place bet: Buy amount must be greater than or equal to 1
+
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-28T21:27:04.248935
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-28T21:27:14.243166
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-28T21:27:23.455298
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-28T21:27:32.672908
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-28T21:27:41.962639
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-28T21:27:51.210239
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-28T21:28:00.467216
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-28T21:28:09.833413
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+⏩ Skipping 8:00 (already passed)
+🚀 Running orchestrate at 2025-04-28 10:24:12 CDT
+⏩ Skipping 10:00 (already passed)
+🚀 Running orchestrate at 2025-04-28 10:25:27 CDT
+⏳ Sleeping 93.3 minutes until 12:00 America/Chicago...
+🚀 Running orchestrate at 2025-04-28 11:59:59 CDT
+⏳ Sleeping 118.8 minutes until 14:00 America/Chicago...
+🚀 Running orchestrate at 2025-04-28 16:27:04 CDT
+
+✅ All scheduled runs completed. Exiting.
+[HEALTH] 2025-04-29 10:14:51 Scheduler alive.
+[HEALTH] 2025-04-29 10:15:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:16:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:17:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:18:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:19:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:20:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:21:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:22:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:23:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:24:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:25:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:26:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:27:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:28:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:29:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:30:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:31:01 Scheduler alive.
+[HEALTH] 2025-04-29 10:36:15 Scheduler alive.
