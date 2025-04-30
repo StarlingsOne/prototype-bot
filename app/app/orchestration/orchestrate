@@ -21,18 +21,21 @@ DEFAULT_CONFIG = {
 }
 
 def run_cmd(cmd_list):
-    # Adjust command paths if they are relative
     adjusted_cmd_list = [
         os.path.join(PROJECT_ROOT, cmd) if cmd.startswith("./input") or cmd.startswith("./output") else cmd
         for cmd in cmd_list
     ]
     print(f"\n→ Running: {' '.join(map(str, adjusted_cmd_list))}")
-    subprocess.run(adjusted_cmd_list, check=True)
-
+    try:
+        subprocess.run(adjusted_cmd_list, check=True)
+        return True
+    except subprocess.CalledProcessError as e:
+        print(f"❌ Command failed: {e}")
+        return False
 
 def run_pipeline(bot_name: str, config: dict):
     topic = config.get("topic")
-    prompt = config.get("prompt")  # <-- New line
+    prompt = config.get("prompt")
 
     if not topic:
         raise ValueError(f"Missing topic for bot '{bot_name}'")
@@ -40,23 +43,29 @@ def run_pipeline(bot_name: str, config: dict):
     print(f"\n=== Running bot '{bot_name}' for topic '{topic}' ===")
     print(f"📅 {datetime.now().isoformat()}")
 
-    run_cmd(["./input/readnews", topic])
+    steps = [
+        ["./input/readnews", topic],
+        [
+            "./input/sentiment",
+            "--prompt_name", prompt,
+            "--topic", topic,
+            "--since_hours", str(config["since_hours"]),
+        ],
+        [
+            "./output/bettingbot",
+            "--domain", config["domain"],
+            "--market_id", str(config["market_id"]),
+            "--username", config["username"],
+            "--api_key", config["api_key"],
+            "--identifier", topic
+        ],
+    ]
 
-    run_cmd([
-        "./input/sentiment",
-        "--prompt_name", prompt,            # <-- Pass the prompt
-        "--topic", topic,
-        "--since_hours", str(config["since_hours"]),
-    ])
+    for step in steps:
+        if not run_cmd(step):
+            print(f"⚠️ Skipping remaining steps for bot '{bot_name}' due to previous failure.")
+            return  # Stop running commands for this bot only
 
-    run_cmd([
-        "./output/bettingbot",
-        "--domain", config["domain"],
-        "--market_id", str(config["market_id"]),
-        "--username", config["username"],
-        "--api_key", config["api_key"],
-        "--identifier", topic
-    ])
 
 def load_all_bot_configs(yaml_path):
     if not yaml_path or not os.path.exists(yaml_path):

@@ -2347,3 +2347,2009 @@ outcome: YES
 [HEALTH] 2025-04-29 10:30:01 Scheduler alive.
 [HEALTH] 2025-04-29 10:31:01 Scheduler alive.
 [HEALTH] 2025-04-29 10:36:15 Scheduler alive.
+[HEALTH] 2025-04-29 10:37:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:38:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:39:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:40:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:41:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:42:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:43:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:44:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:45:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:46:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:47:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:48:05 Scheduler alive.
+[HEALTH] 2025-04-29 10:49:13 Scheduler alive.
+[HEALTH] 2025-04-29 10:54:12 Scheduler alive.
+[HEALTH] 2025-04-29 10:55:02 Scheduler alive.
+[HEALTH] 2025-04-29 10:56:02 Scheduler alive.
+[HEALTH] 2025-04-29 10:57:02 Scheduler alive.
+[HEALTH] 2025-04-29 10:58:03 Scheduler alive.
+[HEALTH] 2025-04-29 10:59:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:00:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:01:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:02:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:03:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:04:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:05:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:06:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:07:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:08:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:14:56 Scheduler alive.
+[HEALTH] 2025-04-29 11:15:06 Scheduler alive.
+[HEALTH] 2025-04-29 11:32:02 Scheduler alive.
+[HEALTH] 2025-04-29 11:33:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:34:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:35:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:36:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:37:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:38:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:39:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:55:53 Scheduler alive.
+[HEALTH] 2025-04-29 11:56:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:57:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:58:03 Scheduler alive.
+[HEALTH] 2025-04-29 11:59:03 Scheduler alive.
+[HEALTH] 2025-04-29 12:00:03 Scheduler alive.
+🚀 Running orchestrate at 2025-04-29 12:00:03 CDT
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.1, 'conviction': 0.85}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745946013.576772    2111 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.85
+conviction type: <class 'float'>
+assessment 0.1
+assessment type: <class 'float'>
+market_price: 0.4242864054184809
+amount 137
+outcome: NO
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745946022.900147    2129 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.4242864054184809
+amount 8
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T17:00:23.001049541Z', 'UpdatedAt': '2025-04-29T17:00:23.001049541Z', 'DeletedAt': None, 'action': '', 'id': 72, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 8, 'placedAt': '2025-04-29T17:00:22.999761666Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745946032.197351    2147 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.42650602409638555
+amount 7
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T17:00:32.299572296Z', 'UpdatedAt': '2025-04-29T17:00:32.299572296Z', 'DeletedAt': None, 'action': '', 'id': 73, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 7, 'placedAt': '2025-04-29T17:00:32.298651629Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745946041.335162    2165 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.42843419788664744
+amount 7
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T17:00:41.439149592Z', 'UpdatedAt': '2025-04-29T17:00:41.439149592Z', 'DeletedAt': None, 'action': '', 'id': 74, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 7, 'placedAt': '2025-04-29T17:00:41.438106425Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.7, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745946050.541453    2183 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.7
+assessment type: <class 'float'>
+market_price: 0.43034944949736714
+amount 107
+outcome: YES
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745946059.755163    2201 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.43034944949736714
+amount 5
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T17:00:59.860594295Z', 'UpdatedAt': '2025-04-29T17:00:59.860594295Z', 'DeletedAt': None, 'action': '', 'id': 75, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 5, 'placedAt': '2025-04-29T17:00:59.859809961Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.27, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745946068.946494    2219 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.27
+assessment type: <class 'float'>
+market_price: 0.43170964660936006
+amount 52
+outcome: NO
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745946078.188403    2237 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.43170964660936006
+amount 0
+outcome: YES
+❌ Failed to place bet: Buy amount must be greater than or equal to 1
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745946087.516928    2255 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.43170964660936006
+amount 5
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T17:01:27.613305585Z', 'UpdatedAt': '2025-04-29T17:01:27.613305585Z', 'DeletedAt': None, 'action': '', 'id': 76, 'username': 'fabulousbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 5, 'placedAt': '2025-04-29T17:01:27.611696127Z', 'outcome': 'YES'}
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-29T17:00:03.830067
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-29T17:00:13.690417
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-29T17:00:23.010152
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-29T17:00:32.308483
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-29T17:00:41.448728
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-29T17:00:50.652494
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-29T17:00:59.869551
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-29T17:01:09.055966
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+
+=== Running bot 'fabulousbot' for topic 'sp500' ===
+📅 2025-04-29T17:01:18.297577
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name fabulousbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username fabulousbot --api_key 8aabb7b5-c046-42a3-b29a-25f6c02ab342 --identifier sp500
+[HEALTH] 2025-04-29 12:01:37 Scheduler alive.
+[HEALTH] 2025-04-29 12:02:07 Scheduler alive.
+[HEALTH] 2025-04-29 12:03:07 Scheduler alive.
+[HEALTH] 2025-04-29 12:04:07 Scheduler alive.
+[HEALTH] 2025-04-29 12:05:07 Scheduler alive.
+[HEALTH] 2025-04-29 12:06:07 Scheduler alive.
+[HEALTH] 2025-04-29 12:07:07 Scheduler alive.
+[HEALTH] 2025-04-29 12:08:07 Scheduler alive.
+[HEALTH] 2025-04-29 12:09:07 Scheduler alive.
+[HEALTH] 2025-04-29 12:10:08 Scheduler alive.
+[HEALTH] 2025-04-29 12:11:08 Scheduler alive.
+[HEALTH] 2025-04-29 12:12:08 Scheduler alive.
+[HEALTH] 2025-04-29 12:13:08 Scheduler alive.
+[HEALTH] 2025-04-29 12:14:08 Scheduler alive.
+[HEALTH] 2025-04-29 12:15:08 Scheduler alive.
+[HEALTH] 2025-04-29 12:29:15 Scheduler alive.
+[HEALTH] 2025-04-29 12:30:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:31:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:32:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:33:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:34:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:35:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:36:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:37:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:38:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:39:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:40:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:41:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:42:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:43:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:44:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:45:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:46:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:47:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:48:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:49:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:50:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:51:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:52:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:53:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:54:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:55:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:56:05 Scheduler alive.
+[HEALTH] 2025-04-29 12:57:06 Scheduler alive.
+[HEALTH] 2025-04-29 12:58:06 Scheduler alive.
+[HEALTH] 2025-04-29 12:59:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:00:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:01:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:02:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:03:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:04:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:05:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:06:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:07:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:08:06 Scheduler alive.
+[HEALTH] 2025-04-29 13:11:39 Scheduler alive.
+[HEALTH] 2025-04-29 13:12:11 Scheduler alive.
+[HEALTH] 2025-04-29 13:13:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:14:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:15:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:16:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:17:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:18:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:19:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:20:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:21:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:22:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:23:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:24:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:25:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:26:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:27:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:28:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:29:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:30:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:31:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:32:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:33:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:34:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:35:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:36:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:37:01 Scheduler alive.
+[HEALTH] 2025-04-29 13:38:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:39:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:40:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:41:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:42:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:43:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:44:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:45:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:46:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:47:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:48:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:49:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:50:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:51:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:52:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:53:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:54:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:55:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:56:02 Scheduler alive.
+[HEALTH] 2025-04-29 13:57:03 Scheduler alive.
+[HEALTH] 2025-04-29 13:58:03 Scheduler alive.
+[HEALTH] 2025-04-29 13:59:03 Scheduler alive.
+[HEALTH] 2025-04-29 14:00:03 Scheduler alive.
+🚀 Running orchestrate at 2025-04-29 14:00:03 CDT
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 102 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.75, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745953213.522791    2274 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.75
+assessment type: <class 'float'>
+market_price: 0.43306336350643165
+amount 126
+outcome: YES
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 102 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.75, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745953222.541307    2292 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.75
+assessment type: <class 'float'>
+market_price: 0.43306336350643165
+amount 126
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T19:00:22.622788757Z', 'UpdatedAt': '2025-04-29T19:00:22.622788757Z', 'DeletedAt': None, 'action': '', 'id': 77, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 126, 'placedAt': '2025-04-29T19:00:22.620826174Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 102 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.75, 'conviction': 0.85}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745953231.632516    2310 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.85
+conviction type: <class 'float'>
+assessment 0.75
+assessment type: <class 'float'>
+market_price: 0.4651685393258427
+amount 121
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T19:00:31.697793428Z', 'UpdatedAt': '2025-04-29T19:00:31.697793428Z', 'DeletedAt': None, 'action': '', 'id': 78, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 121, 'placedAt': '2025-04-29T19:00:31.696936511Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 102 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.65, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745953240.670594    2328 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.65
+assessment type: <class 'float'>
+market_price: 0.4927536231884058
+amount 62
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T19:00:40.774901835Z', 'UpdatedAt': '2025-04-29T19:00:40.774901835Z', 'DeletedAt': None, 'action': '', 'id': 79, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 62, 'placedAt': '2025-04-29T19:00:40.77387496Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 102 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.3, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745953249.778531    2346 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.3
+assessment type: <class 'float'>
+market_price: 0.5058139534883721
+amount 82
+outcome: NO
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 102 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.65, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745953258.955091    2364 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.65
+assessment type: <class 'float'>
+market_price: 0.5058139534883721
+amount 43
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T19:00:59.05730151Z', 'UpdatedAt': '2025-04-29T19:00:59.05730151Z', 'DeletedAt': None, 'action': '', 'id': 80, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 43, 'placedAt': '2025-04-29T19:00:59.05641901Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 102 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.78, 'conviction': 0.75}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745953268.129550    2382 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.75
+conviction type: <class 'float'>
+assessment 0.78
+assessment type: <class 'float'>
+market_price: 0.514483884128927
+amount 99
+outcome: YES
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 102 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.75, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745953277.383014    2400 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.75
+assessment type: <class 'float'>
+market_price: 0.514483884128927
+amount 9
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T19:01:17.486502463Z', 'UpdatedAt': '2025-04-29T19:01:17.486502463Z', 'DeletedAt': None, 'action': '', 'id': 81, 'username': 'vancebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 9, 'placedAt': '2025-04-29T19:01:17.485565255Z', 'outcome': 'YES'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 102 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.75, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1745953286.500092    2418 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.75
+assessment type: <class 'float'>
+market_price: 0.516260162601626
+amount 75
+outcome: YES
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-29T19:01:26.602210176Z', 'UpdatedAt': '2025-04-29T19:01:26.602210176Z', 'DeletedAt': None, 'action': '', 'id': 82, 'username': 'fabulousbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 75, 'placedAt': '2025-04-29T19:01:26.601153342Z', 'outcome': 'YES'}
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-29T19:00:03.728088
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-29T19:00:13.628915
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-29T19:00:22.633135
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-29T19:00:31.706604
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-29T19:00:40.784231
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-29T19:00:49.882386
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-29T19:00:59.065936
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-29T19:01:08.243523
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+
+=== Running bot 'fabulousbot' for topic 'sp500' ===
+📅 2025-04-29T19:01:17.495291
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name fabulousbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username fabulousbot --api_key 8aabb7b5-c046-42a3-b29a-25f6c02ab342 --identifier sp500
+[HEALTH] 2025-04-29 14:01:36 Scheduler alive.
+[HEALTH] 2025-04-29 14:02:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:03:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:04:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:05:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:06:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:07:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:08:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:09:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:10:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:11:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:12:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:13:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:14:07 Scheduler alive.
+[HEALTH] 2025-04-29 14:15:07 Scheduler alive.
+[HEALTH] 2025-04-29 14:16:07 Scheduler alive.
+[HEALTH] 2025-04-29 14:17:07 Scheduler alive.
+[HEALTH] 2025-04-29 14:18:07 Scheduler alive.
+[HEALTH] 2025-04-29 14:19:07 Scheduler alive.
+[HEALTH] 2025-04-29 14:20:07 Scheduler alive.
+[HEALTH] 2025-04-29 14:21:07 Scheduler alive.
+[HEALTH] 2025-04-29 14:22:01 Scheduler alive.
+[HEALTH] 2025-04-29 14:23:02 Scheduler alive.
+[HEALTH] 2025-04-29 14:24:04 Scheduler alive.
+[HEALTH] 2025-04-29 14:25:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:26:06 Scheduler alive.
+[HEALTH] 2025-04-29 14:27:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:28:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:29:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:30:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:31:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:32:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:33:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:34:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:35:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:36:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:37:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:38:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:39:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:40:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:41:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:42:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:43:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:44:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:45:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:46:08 Scheduler alive.
+[HEALTH] 2025-04-29 14:47:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:48:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:49:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:50:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:51:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:52:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:53:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:54:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:55:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:56:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:57:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:58:09 Scheduler alive.
+[HEALTH] 2025-04-29 14:59:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:00:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:01:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:02:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:03:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:04:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:05:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:06:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:07:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:08:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:09:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:10:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:11:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:12:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:13:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:14:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:15:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:16:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:17:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:18:09 Scheduler alive.
+[HEALTH] 2025-04-29 15:19:10 Scheduler alive.
+[HEALTH] 2025-04-29 15:20:00 Scheduler alive.
+[HEALTH] 2025-04-29 15:21:00 Scheduler alive.
+[HEALTH] 2025-04-29 15:22:00 Scheduler alive.
+[HEALTH] 2025-04-29 15:23:00 Scheduler alive.
+[HEALTH] 2025-04-29 15:24:00 Scheduler alive.
+[HEALTH] 2025-04-29 15:25:04 Scheduler alive.
+[HEALTH] 2025-04-29 15:26:02 Scheduler alive.
+[HEALTH] 2025-04-29 15:27:04 Scheduler alive.
+[HEALTH] 2025-04-29 15:34:57 Scheduler alive.
+[HEALTH] 2025-04-29 15:35:07 Scheduler alive.
+[HEALTH] 2025-04-29 15:42:54 Scheduler alive.
+[HEALTH] 2025-04-29 15:43:04 Scheduler alive.
+[HEALTH] 2025-04-29 15:46:48 Scheduler alive.
+[HEALTH] 2025-04-29 15:47:08 Scheduler alive.
+[HEALTH] 2025-04-29 15:48:28 Scheduler alive.
+[HEALTH] 2025-04-29 15:49:08 Scheduler alive.
+[HEALTH] 2025-04-29 15:59:14 Scheduler alive.
+[HEALTH] 2025-04-29 16:09:17 Scheduler alive.
+[HEALTH] 2025-04-29 16:10:07 Scheduler alive.
+[HEALTH] 2025-04-29 16:11:14 Scheduler alive.
+[HEALTH] 2025-04-29 16:12:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:13:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:14:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:15:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:16:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:17:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:18:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:19:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:20:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:21:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:22:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:23:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:24:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:25:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:26:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:27:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:28:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:29:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:30:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:31:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:32:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:33:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:34:04 Scheduler alive.
+[HEALTH] 2025-04-29 16:35:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:36:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:37:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:38:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:39:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:40:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:41:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:42:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:43:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:44:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:45:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:46:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:47:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:48:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:49:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:50:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:51:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:52:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:53:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:54:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:55:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:56:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:57:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:58:05 Scheduler alive.
+[HEALTH] 2025-04-29 16:59:05 Scheduler alive.
+[HEALTH] 2025-04-29 17:00:05 Scheduler alive.
+[HEALTH] 2025-04-29 17:01:05 Scheduler alive.
+[HEALTH] 2025-04-29 17:02:05 Scheduler alive.
+[HEALTH] 2025-04-29 17:03:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:04:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:05:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:06:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:07:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:08:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:09:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:10:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:11:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:12:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:13:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:14:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:15:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:16:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:17:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:18:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:19:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:20:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:26:43 Scheduler alive.
+[HEALTH] 2025-04-29 17:27:03 Scheduler alive.
+[HEALTH] 2025-04-29 17:28:07 Scheduler alive.
+[HEALTH] 2025-04-29 17:29:04 Scheduler alive.
+[HEALTH] 2025-04-29 17:32:01 Scheduler alive.
+[HEALTH] 2025-04-29 17:36:22 Scheduler alive.
+[HEALTH] 2025-04-29 17:37:02 Scheduler alive.
+[HEALTH] 2025-04-29 17:41:56 Scheduler alive.
+[HEALTH] 2025-04-29 17:42:06 Scheduler alive.
+[HEALTH] 2025-04-29 17:43:10 Scheduler alive.
+[HEALTH] 2025-04-29 17:46:09 Scheduler alive.
+[HEALTH] 2025-04-29 17:47:09 Scheduler alive.
+[HEALTH] 2025-04-29 17:48:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:49:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:50:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:51:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:52:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:53:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:54:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:55:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:56:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:57:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:58:00 Scheduler alive.
+[HEALTH] 2025-04-29 17:59:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:00:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:01:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:02:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:03:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:04:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:05:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:06:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:07:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:08:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:09:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:10:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:11:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:12:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:13:00 Scheduler alive.
+[HEALTH] 2025-04-29 18:14:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:15:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:16:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:17:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:18:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:19:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:20:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:21:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:22:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:23:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:24:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:25:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:26:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:27:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:28:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:29:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:30:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:31:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:32:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:33:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:34:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:35:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:36:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:37:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:38:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:39:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:40:01 Scheduler alive.
+[HEALTH] 2025-04-29 18:41:02 Scheduler alive.
+[HEALTH] 2025-04-29 18:42:02 Scheduler alive.
+[HEALTH] 2025-04-29 18:43:02 Scheduler alive.
+[HEALTH] 2025-04-29 18:44:02 Scheduler alive.
+[HEALTH] 2025-04-29 18:45:02 Scheduler alive.
+[HEALTH] 2025-04-29 18:46:02 Scheduler alive.
+[HEALTH] 2025-04-29 19:03:05 Scheduler alive.
+[HEALTH] 2025-04-29 19:16:23 Scheduler alive.
+[HEALTH] 2025-04-29 19:17:03 Scheduler alive.
+[HEALTH] 2025-04-29 19:33:51 Scheduler alive.
+[HEALTH] 2025-04-29 19:34:01 Scheduler alive.
+[HEALTH] 2025-04-29 19:47:58 Scheduler alive.
+[HEALTH] 2025-04-29 19:48:08 Scheduler alive.
+[HEALTH] 2025-04-29 19:51:18 Scheduler alive.
+[HEALTH] 2025-04-29 19:52:08 Scheduler alive.
+[HEALTH] 2025-04-29 20:05:42 Scheduler alive.
+[HEALTH] 2025-04-29 20:06:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:07:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:08:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:09:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:10:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:11:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:12:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:13:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:14:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:15:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:16:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:17:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:18:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:19:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:20:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:21:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:22:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:23:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:24:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:25:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:26:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:27:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:28:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:29:02 Scheduler alive.
+[HEALTH] 2025-04-29 20:30:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:31:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:32:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:33:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:34:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:35:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:36:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:37:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:38:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:39:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:40:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:41:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:42:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:43:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:44:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:45:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:46:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:47:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:48:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:49:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:50:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:51:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:52:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:53:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:54:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:55:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:56:03 Scheduler alive.
+[HEALTH] 2025-04-29 20:57:04 Scheduler alive.
+[HEALTH] 2025-04-29 20:58:04 Scheduler alive.
+[HEALTH] 2025-04-29 20:59:04 Scheduler alive.
+[HEALTH] 2025-04-29 21:00:04 Scheduler alive.
+[HEALTH] 2025-04-29 21:01:04 Scheduler alive.
+[HEALTH] 2025-04-29 21:17:31 Scheduler alive.
+[HEALTH] 2025-04-29 21:18:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:34:12 Scheduler alive.
+[HEALTH] 2025-04-29 21:35:02 Scheduler alive.
+[HEALTH] 2025-04-29 21:40:46 Scheduler alive.
+[HEALTH] 2025-04-29 21:41:06 Scheduler alive.
+[HEALTH] 2025-04-29 21:47:50 Scheduler alive.
+[HEALTH] 2025-04-29 21:48:00 Scheduler alive.
+[HEALTH] 2025-04-29 21:49:00 Scheduler alive.
+[HEALTH] 2025-04-29 21:50:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:51:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:52:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:53:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:54:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:55:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:56:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:57:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:58:01 Scheduler alive.
+[HEALTH] 2025-04-29 21:59:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:00:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:01:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:02:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:03:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:04:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:05:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:06:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:07:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:08:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:09:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:10:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:11:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:12:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:13:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:14:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:15:01 Scheduler alive.
+[HEALTH] 2025-04-29 22:16:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:17:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:18:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:19:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:20:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:21:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:22:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:23:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:24:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:25:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:26:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:27:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:28:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:29:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:30:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:31:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:32:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:33:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:34:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:35:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:36:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:37:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:38:02 Scheduler alive.
+[HEALTH] 2025-04-29 22:39:03 Scheduler alive.
+[HEALTH] 2025-04-29 22:40:03 Scheduler alive.
+[HEALTH] 2025-04-29 22:41:03 Scheduler alive.
+[HEALTH] 2025-04-29 22:42:03 Scheduler alive.
+[HEALTH] 2025-04-29 22:43:03 Scheduler alive.
+[HEALTH] 2025-04-29 22:44:03 Scheduler alive.
+[HEALTH] 2025-04-29 22:45:08 Scheduler alive.
+[HEALTH] 2025-04-29 23:01:10 Scheduler alive.
+[HEALTH] 2025-04-29 23:02:02 Scheduler alive.
+[HEALTH] 2025-04-29 23:18:18 Scheduler alive.
+[HEALTH] 2025-04-29 23:19:08 Scheduler alive.
+[HEALTH] 2025-04-29 23:35:03 Scheduler alive.
+[HEALTH] 2025-04-29 23:51:28 Scheduler alive.
+[HEALTH] 2025-04-30 00:07:10 Scheduler alive.
+🕛 Midnight reached, resetting already_run_today list.
+[HEALTH] 2025-04-30 00:08:00 Scheduler alive.
+[HEALTH] 2025-04-30 00:25:29 Scheduler alive.
+[HEALTH] 2025-04-30 00:26:09 Scheduler alive.
+[HEALTH] 2025-04-30 00:32:30 Scheduler alive.
+[HEALTH] 2025-04-30 00:44:25 Scheduler alive.
+[HEALTH] 2025-04-30 00:45:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:01:15 Scheduler alive.
+[HEALTH] 2025-04-30 01:02:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:03:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:04:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:05:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:06:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:07:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:08:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:09:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:10:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:11:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:12:05 Scheduler alive.
+[HEALTH] 2025-04-30 01:13:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:14:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:15:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:16:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:17:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:18:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:19:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:20:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:21:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:22:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:23:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:24:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:25:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:26:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:27:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:28:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:29:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:30:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:31:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:32:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:33:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:34:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:35:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:36:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:37:06 Scheduler alive.
+[HEALTH] 2025-04-30 01:38:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:39:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:40:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:41:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:42:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:43:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:44:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:45:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:46:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:47:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:48:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:49:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:50:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:51:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:52:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:53:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:54:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:55:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:56:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:57:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:58:07 Scheduler alive.
+[HEALTH] 2025-04-30 01:59:07 Scheduler alive.
+[HEALTH] 2025-04-30 02:00:07 Scheduler alive.
+[HEALTH] 2025-04-30 02:01:07 Scheduler alive.
+[HEALTH] 2025-04-30 02:02:07 Scheduler alive.
+[HEALTH] 2025-04-30 02:18:19 Scheduler alive.
+[HEALTH] 2025-04-30 02:19:09 Scheduler alive.
+[HEALTH] 2025-04-30 02:35:13 Scheduler alive.
+[HEALTH] 2025-04-30 02:36:03 Scheduler alive.
+[HEALTH] 2025-04-30 02:52:11 Scheduler alive.
+[HEALTH] 2025-04-30 03:09:44 Scheduler alive.
+[HEALTH] 2025-04-30 03:10:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:11:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:12:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:13:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:14:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:15:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:16:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:17:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:18:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:19:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:20:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:21:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:22:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:23:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:24:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:25:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:26:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:27:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:28:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:29:04 Scheduler alive.
+[HEALTH] 2025-04-30 03:30:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:31:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:32:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:33:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:34:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:35:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:36:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:37:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:38:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:39:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:40:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:41:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:42:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:43:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:44:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:45:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:46:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:47:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:48:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:49:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:50:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:51:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:52:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:53:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:54:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:55:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:56:05 Scheduler alive.
+[HEALTH] 2025-04-30 03:57:06 Scheduler alive.
+[HEALTH] 2025-04-30 04:11:57 Scheduler alive.
+[HEALTH] 2025-04-30 04:12:07 Scheduler alive.
+[HEALTH] 2025-04-30 04:29:00 Scheduler alive.
+[HEALTH] 2025-04-30 04:45:14 Scheduler alive.
+[HEALTH] 2025-04-30 05:01:23 Scheduler alive.
+[HEALTH] 2025-04-30 05:02:03 Scheduler alive.
+[HEALTH] 2025-04-30 05:06:17 Scheduler alive.
+[HEALTH] 2025-04-30 05:07:07 Scheduler alive.
+[HEALTH] 2025-04-30 05:13:07 Scheduler alive.
+[HEALTH] 2025-04-30 05:28:51 Scheduler alive.
+[HEALTH] 2025-04-30 05:29:01 Scheduler alive.
+[HEALTH] 2025-04-30 05:30:06 Scheduler alive.
+[HEALTH] 2025-04-30 05:46:30 Scheduler alive.
+[HEALTH] 2025-04-30 05:47:00 Scheduler alive.
+[HEALTH] 2025-04-30 05:48:00 Scheduler alive.
+[HEALTH] 2025-04-30 05:49:00 Scheduler alive.
+[HEALTH] 2025-04-30 06:03:01 Scheduler alive.
+[HEALTH] 2025-04-30 06:04:01 Scheduler alive.
+[HEALTH] 2025-04-30 06:08:31 Scheduler alive.
+[HEALTH] 2025-04-30 06:09:01 Scheduler alive.
+[HEALTH] 2025-04-30 06:14:00 Scheduler alive.
+[HEALTH] 2025-04-30 06:15:00 Scheduler alive.
+[HEALTH] 2025-04-30 06:31:01 Scheduler alive.
+[HEALTH] 2025-04-30 06:32:01 Scheduler alive.
+[HEALTH] 2025-04-30 06:48:42 Scheduler alive.
+[HEALTH] 2025-04-30 06:49:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:50:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:51:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:52:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:53:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:54:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:55:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:56:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:57:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:58:02 Scheduler alive.
+[HEALTH] 2025-04-30 06:59:02 Scheduler alive.
+[HEALTH] 2025-04-30 07:00:02 Scheduler alive.
+[HEALTH] 2025-04-30 07:01:03 Scheduler alive.
+[HEALTH] 2025-04-30 07:02:03 Scheduler alive.
+[HEALTH] 2025-04-30 07:03:03 Scheduler alive.
+[HEALTH] 2025-04-30 07:04:03 Scheduler alive.
+[HEALTH] 2025-04-30 07:05:03 Scheduler alive.
+[HEALTH] 2025-04-30 07:06:03 Scheduler alive.
+[HEALTH] 2025-04-30 07:07:03 Scheduler alive.
+[HEALTH] 2025-04-30 07:08:09 Scheduler alive.
+[HEALTH] 2025-04-30 07:14:59 Scheduler alive.
+[HEALTH] 2025-04-30 07:15:09 Scheduler alive.
+[HEALTH] 2025-04-30 07:30:35 Scheduler alive.
+[HEALTH] 2025-04-30 07:46:35 Scheduler alive.
+[HEALTH] 2025-04-30 07:47:05 Scheduler alive.
+[HEALTH] 2025-04-30 07:48:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:49:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:50:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:51:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:52:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:53:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:54:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:55:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:56:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:57:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:58:07 Scheduler alive.
+[HEALTH] 2025-04-30 07:59:07 Scheduler alive.
+[HEALTH] 2025-04-30 08:00:07 Scheduler alive.
+🚀 Running orchestrate at 2025-04-30 08:00:07 CDT
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746018017.189997    2437 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.7
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5305719921104537
+amount 28
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T13:00:17.299520421Z', 'UpdatedAt': '2025-04-30T13:00:17.299520421Z', 'DeletedAt': None, 'action': '', 'id': 83, 'username': 'emotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 28, 'placedAt': '2025-04-30T13:00:17.298217504Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746018026.240854    2455 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5247756535310183
+amount 22
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T13:00:26.3441088Z', 'UpdatedAt': '2025-04-30T13:00:26.3441088Z', 'DeletedAt': None, 'action': '', 'id': 84, 'username': 'followbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 22, 'placedAt': '2025-04-30T13:00:26.34328755Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746018035.364641    2473 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5203094777562862
+amount 21
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T13:00:35.46867618Z', 'UpdatedAt': '2025-04-30T13:00:35.46867618Z', 'DeletedAt': None, 'action': '', 'id': 85, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 21, 'placedAt': '2025-04-30T13:00:35.46769818Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746018044.527901    2491 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5161166538756715
+amount 21
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T13:00:44.631613378Z', 'UpdatedAt': '2025-04-30T13:00:44.631613378Z', 'DeletedAt': None, 'action': '', 'id': 86, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 21, 'placedAt': '2025-04-30T13:00:44.630609711Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.7, 'conviction': 0.8}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746018054.349808    2509 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.8
+conviction type: <class 'float'>
+assessment 0.7
+assessment type: <class 'float'>
+market_price: 0.5119908641035401
+amount 75
+outcome: YES
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.6}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746018063.591495    2527 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.6
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5119908641035401
+amount 18
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T13:01:03.694772304Z', 'UpdatedAt': '2025-04-30T13:01:03.694772304Z', 'DeletedAt': None, 'action': '', 'id': 87, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 18, 'placedAt': '2025-04-30T13:01:03.693907929Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.15, 'conviction': 0.55}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746018072.885839    2545 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.55
+conviction type: <class 'float'>
+assessment 0.15
+assessment type: <class 'float'>
+market_price: 0.5085066162570888
+amount 98
+outcome: NO
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.08}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746018082.088999    2563 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.08
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5085066162570888
+amount 2
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T13:01:22.193608673Z', 'UpdatedAt': '2025-04-30T13:01:22.193608673Z', 'DeletedAt': None, 'action': '', 'id': 88, 'username': 'vancebot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 2, 'placedAt': '2025-04-30T13:01:22.192658423Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746018091.421633    2581 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.45
+assessment type: <class 'float'>
+market_price: 0.5081224027200605
+amount 18
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T13:01:31.525328969Z', 'UpdatedAt': '2025-04-30T13:01:31.525328969Z', 'DeletedAt': None, 'action': '', 'id': 89, 'username': 'fabulousbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 18, 'placedAt': '2025-04-30T13:01:31.524387594Z', 'outcome': 'NO'}
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-30T13:00:07.444178
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-30T13:00:17.309155
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-30T13:00:26.353341
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-30T13:00:35.477625
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-30T13:00:44.640684
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-30T13:00:54.465727
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-30T13:01:03.704189
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username robotofrollstreet --api_key 9e0b6a01-9071-4601-9da7-82d565925568 --identifier sp500
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-04-30T13:01:12.995898
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username vancebot --api_key 6e00ee82-3647-4001-86fd-3a3d690efc34 --identifier sp500
+
+=== Running bot 'fabulousbot' for topic 'sp500' ===
+📅 2025-04-30T13:01:22.202827
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name fabulousbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username fabulousbot --api_key 8aabb7b5-c046-42a3-b29a-25f6c02ab342 --identifier sp500
+[HEALTH] 2025-04-30 08:01:41 Scheduler alive.
+[HEALTH] 2025-04-30 08:02:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:03:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:04:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:05:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:06:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:07:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:08:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:09:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:10:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:11:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:12:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:13:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:14:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:15:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:16:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:17:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:18:01 Scheduler alive.
+[HEALTH] 2025-04-30 08:19:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:20:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:21:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:22:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:23:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:24:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:25:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:26:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:27:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:28:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:29:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:30:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:31:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:32:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:33:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:34:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:35:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:36:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:37:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:38:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:39:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:40:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:41:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:42:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:43:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:44:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:45:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:46:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:47:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:48:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:49:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:50:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:51:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:52:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:53:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:54:02 Scheduler alive.
+[HEALTH] 2025-04-30 08:55:03 Scheduler alive.
+[HEALTH] 2025-04-30 08:56:03 Scheduler alive.
+[HEALTH] 2025-04-30 08:57:03 Scheduler alive.
+[HEALTH] 2025-04-30 08:58:03 Scheduler alive.
+[HEALTH] 2025-04-30 08:59:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:00:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:01:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:02:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:03:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:04:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:05:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:06:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:07:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:08:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:09:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:10:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:11:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:12:03 Scheduler alive.
+[HEALTH] 2025-04-30 09:27:45 Scheduler alive.
+[HEALTH] 2025-04-30 09:28:05 Scheduler alive.
+[HEALTH] 2025-04-30 09:43:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:44:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:45:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:46:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:47:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:48:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:49:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:50:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:51:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:52:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:53:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:54:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:55:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:56:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:57:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:58:00 Scheduler alive.
+[HEALTH] 2025-04-30 09:59:00 Scheduler alive.
+[HEALTH] 2025-04-30 10:00:00 Scheduler alive.
+🚀 Running orchestrate at 2025-04-30 10:00:00 CDT
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.15, 'conviction': 0.95}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746025210.655797    2600 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.95
+conviction type: <class 'float'>
+assessment 0.15
+assessment type: <class 'float'>
+market_price: 0.5046904315196998
+amount 168
+outcome: NO
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.15, 'conviction': 0.95}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746025219.765891    2618 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.95
+conviction type: <class 'float'>
+assessment 0.15
+assessment type: <class 'float'>
+market_price: 0.5046904315196998
+amount 168
+outcome: NO
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.15, 'conviction': 0.95}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746025228.867837    2636 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.95
+conviction type: <class 'float'>
+assessment 0.15
+assessment type: <class 'float'>
+market_price: 0.5046904315196998
+amount 168
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T15:00:28.97294746Z', 'UpdatedAt': '2025-04-30T15:00:28.97294746Z', 'DeletedAt': None, 'action': '', 'id': 90, 'username': 'jimbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 168, 'placedAt': '2025-04-30T15:00:28.971553793Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.25, 'conviction': 0.85}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746025238.068495    2654 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.85
+conviction type: <class 'float'>
+assessment 0.25
+assessment type: <class 'float'>
+market_price: 0.47476173667490296
+amount 95
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T15:00:38.172705214Z', 'UpdatedAt': '2025-04-30T15:00:38.172705214Z', 'DeletedAt': None, 'action': '', 'id': 91, 'username': 'oppomotionbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 95, 'placedAt': '2025-04-30T15:00:38.171867756Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.7, 'conviction': 0.9}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746025247.227221    2672 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.9
+conviction type: <class 'float'>
+assessment 0.7
+assessment type: <class 'float'>
+market_price: 0.4593579234972678
+amount 108
+outcome: YES
+❌ Failed to place bet: Insufficient balance
+
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.25, 'conviction': 0.65}
+Inserted sentiment result into the database.
+Sentiment analysis saved with identifier: sp500
+Closed the database connection.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746025256.435779    2690 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+conviction 0.65
+conviction type: <class 'float'>
+assessment 0.25
+assessment type: <class 'float'>
+market_price: 0.4593579234972678
+amount 68
+outcome: NO
+✅ Bet placed successfully!
+📄 Response: {'ID': 0, 'CreatedAt': '2025-04-30T15:00:56.540817625Z', 'UpdatedAt': '2025-04-30T15:00:56.540817625Z', 'DeletedAt': None, 'action': '', 'id': 92, 'username': 'osnatbot', 'User': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}, 'marketId': 2, 'Market': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'questionTitle': '', 'description': '', 'outcomeType': '', 'resolutionDateTime': '0001-01-01T00:00:00Z', 'finalResolutionDateTime': '0001-01-01T00:00:00Z', 'utcOffset': 0, 'isResolved': False, 'resolutionResult': '', 'initialProbability': 0, 'creatorUsername': '', 'Creator': {'ID': 0, 'CreatedAt': '0001-01-01T00:00:00Z', 'UpdatedAt': '0001-01-01T00:00:00Z', 'DeletedAt': None, 'id': 0, 'username': '', 'displayname': '', 'usertype': '', 'initialAccountBalance': 0, 'accountBalance': 0, 'email': '', 'mustChangePassword': False}}, 'amount': 68, 'placedAt': '2025-04-30T15:00:56.540018625Z', 'outcome': 'NO'}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Closed the database connection.
+/app/app/./input/sentiment:76: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_hours)
+Error: Output did not pass guardrails:
+{'assessment': -0.15, 'conviction': 0.65}
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1746025265.749926    2708 init.cc:232] grpc_wait_for_shutdown_with_timeout() timed out.
+
+=== Running bot 'emotionbot' for topic 'sp500' ===
+📅 2025-04-30T15:00:00.824712
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name emotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username emotionbot --api_key 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7 --identifier sp500
+
+=== Running bot 'followbot' for topic 'sp500' ===
+📅 2025-04-30T15:00:10.768312
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name followbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username followbot --api_key 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4 --identifier sp500
+
+=== Running bot 'jimbot' for topic 'sp500' ===
+📅 2025-04-30T15:00:19.875189
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name jimbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username jimbot --api_key 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f --identifier sp500
+
+=== Running bot 'oppomotionbot' for topic 'sp500' ===
+📅 2025-04-30T15:00:28.981803
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name oppomotionbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username oppomotionbot --api_key f57cb7b1-8245-42fb-a19d-7e56b667da92 --identifier sp500
+
+=== Running bot 'opposebot' for topic 'sp500' ===
+📅 2025-04-30T15:00:38.181495
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name opposebot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username opposebot --api_key ae5c1875-0525-42db-8b3b-1300ebbf1b5c --identifier sp500
+
+=== Running bot 'osnatbot' for topic 'sp500' ===
+📅 2025-04-30T15:00:47.334976
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name osnatbot_2025WK18.prompt --topic sp500 --since_hours 2
+
+→ Running: /app/app/./output/bettingbot --domain http://localhost --market_id 2 --username osnatbot --api_key a6d8af38-a38b-4e0c-a3f7-48373ce9778c --identifier sp500
+
+=== Running bot 'robotofrollstreet' for topic 'sp500' ===
+📅 2025-04-30T15:00:56.549914
+
+→ Running: /app/app/./input/readnews sp500
+
+→ Running: /app/app/./input/sentiment --prompt_name robotofrollstreet_2025WK18.prompt --topic sp500 --since_hours 2
+Traceback (most recent call last):
+  File "/app/app/scheduler/../orchestration/orchestrate", line 97, in <module>
+    main()
+  File "/app/app/scheduler/../orchestration/orchestrate", line 94, in main
+    run_pipeline(bot_name, config)
+  File "/app/app/scheduler/../orchestration/orchestrate", line 45, in run_pipeline
+    run_cmd([
+  File "/app/app/scheduler/../orchestration/orchestrate", line 30, in run_cmd
+    subprocess.run(adjusted_cmd_list, check=True)
+  File "/usr/local/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/app/app/./input/sentiment', '--prompt_name', 'robotofrollstreet_2025WK18.prompt', '--topic', 'sp500', '--since_hours', '2']' returned non-zero exit status 1.
+Traceback (most recent call last):
+  File "/app/app/scheduler/./bot_runner", line 61, in <module>
+    main()
+  File "/app/app/scheduler/./bot_runner", line 55, in main
+    run_orchestration(tz)
+  File "/app/app/scheduler/./bot_runner", line 34, in run_orchestration
+    subprocess.run([ORCHESTRATE_PATH, CONFIG_PATH], check=True)
+  File "/usr/local/lib/python3.12/subprocess.py", line 571, in run
+    raise CalledProcessError(retcode, process.args,
+subprocess.CalledProcessError: Command '['/app/app/scheduler/../orchestration/orchestrate', '/app/app/scheduler/../orchestration/config.yaml']' returned non-zero exit status 1.
+[HEALTH] 2025-04-30 10:24:58 Scheduler alive.
+[HEALTH] 2025-04-30 10:25:08 Scheduler alive.
