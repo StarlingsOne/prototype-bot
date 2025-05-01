@@ -1,0 +1,61 @@
+#!/usr/bin/env python3
+
+import subprocess
+import time
+import datetime
+import os
+import yaml
+import pytz
+
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
+ORCHESTRATE_PATH = os.path.join(SCRIPT_DIR, "../orchestration/orchestrate")
+CONFIG_PATH = os.path.join(SCRIPT_DIR, "../orchestration/config.yaml")
+SCHEDULE_PATH = os.path.join(SCRIPT_DIR, "schedule.yaml")
+DEFAULT_SCHEDULE_NAME = "four_times_daily"
+
+def load_schedule_config(schedule_name=DEFAULT_SCHEDULE_NAME):
+    with open(SCHEDULE_PATH, "r") as f:
+        all_schedules = yaml.safe_load(f)
+
+    if schedule_name not in all_schedules:
+        raise KeyError(f"Schedule '{schedule_name}' not found in {SCHEDULE_PATH}")
+
+    schedule = all_schedules[schedule_name]
+    run_hours = schedule.get("run_hours", [])
+    timezone = schedule.get("timezone", "UTC")
+    return run_hours, pytz.timezone(timezone)
+
+def current_time(tz):
+    return datetime.datetime.now(tz)
+
+def run_orchestration(tz):
+    now = current_time(tz)
+    print(f"🚀 Running orchestrate at {now.strftime('%Y-%m-%d %H:%M:%S %Z')}", flush=True)
+    subprocess.run([ORCHESTRATE_PATH, CONFIG_PATH], check=True)
+
+def main():
+    run_hours, tz = load_schedule_config()
+    already_run_today = set()
+    last_health_minute = -1  # Track the last minute we logged health
+
+    while True:
+        now = current_time(tz)
+
+        # Only log once per minute, when the minute changes
+        if now.minute != last_health_minute:
+            print(f"[HEALTH] {now.strftime('%Y-%m-%d %H:%M:%S')} Scheduler alive.", flush=True)
+            last_health_minute = now.minute
+
+        # Reset at midnight
+        if now.hour == 0 and already_run_today:
+            already_run_today.clear()
+            print("🕛 Midnight reached, resetting already_run_today list.", flush=True)
+
+        if now.hour in run_hours and now.hour not in already_run_today and now.minute < 5:
+            run_orchestration(tz)
+            already_run_today.add(now.hour)
+
+        time.sleep(10)
+
+if __name__ == "__main__":
+    main()

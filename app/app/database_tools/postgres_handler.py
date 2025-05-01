@@ -1,7 +1,11 @@
 #!/usr/local/bin/python
 
+import json
 import psycopg2
 from psycopg2 import sql
+import psycopg2.extras
+from dateutil import parser as date_parser
+import sys
 
 class PostgresHandler:
     def __init__(self, host="localhost", port=5440, dbname="newsdb", user="user", password="password"):
@@ -26,15 +30,25 @@ class PostgresHandler:
             print(f"Error connecting to Postgres: {e}")
             raise
 
+    @staticmethod
+    def parse_pub_date(raw_date):
+        try:
+            return date_parser.parse(raw_date)
+        except Exception as e:
+            print(f"Error parsing date: {raw_date}\n{e}", file=sys.stderr)
+            return None
+
     def create_news_table(self):
         """Create the news table if it doesn't already exist."""
         with self.conn.cursor() as cur:
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS news (
                     id SERIAL PRIMARY KEY,
+                    inserted_at TIMESTAMPTZ DEFAULT NOW(),                        
                     title TEXT NOT NULL,
-                    pub_date TEXT,
-                    source TEXT
+                    pub_date TIMESTAMPTZ,
+                    source TEXT,
+                    search_term TEXT
                 )
             """)
             print("Ensured that the 'news' table exists.")
@@ -45,19 +59,41 @@ class PostgresHandler:
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS sentiment_results (
                     id SERIAL PRIMARY KEY,
+                    inserted_at TIMESTAMPTZ DEFAULT NOW(),                        
                     sentiment JSON NOT NULL,
-                    inserted_at TIMESTAMPTZ DEFAULT NOW(),
                     identifier TEXT
                 )
             """)
             print("Ensured that the 'sentiment_results' table exists.")
 
-    def fetch_news_headlines(self):
-        """Fetch all news headlines from the database."""
-        with self.conn.cursor() as cur:
-            cur.execute("SELECT title FROM news ORDER BY id;")
-            records = cur.fetchall()
-        return [record[0] for record in records]
+    def fetch_news_headlines(self, identifier_filter=None, since=None):
+        """
+        Fetch news items from the database, optionally filtered by keyword and date.
+
+        Returns:
+            list of dict: Each dict has keys: id, title, pub_date, source
+        """
+        query = "SELECT id, title, pub_date, source FROM news"
+        clauses = []
+        params = []
+
+        if identifier_filter:
+            clauses.append("search_term = %s")
+            params.append(identifier_filter)
+
+        if since:
+            clauses.append("pub_date >= %s")
+            params.append(since)
+
+        if clauses:
+            query += " WHERE " + " AND ".join(clauses)
+
+        query += " ORDER BY id;"
+
+        with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
+            cur.execute(query, tuple(params))
+            return cur.fetchall()
+
 
     def fetch_sentiment_results(self, identifier_filter, since=None):
         """
@@ -85,21 +121,63 @@ class PostgresHandler:
             query += " ORDER BY inserted_at DESC;"
             cur.execute(query, tuple(params))
             return cur.fetchall()
+        
+    def get_most_recent_sentiment_result(self, identifier: str, since=None):
+        """
+        Fetch the most recent sentiment result for an exact identifier, optionally filtered by timestamp.
 
-    def insert_news_items(self, news_items):
+        Parameters:
+            identifier (str): Exact match for the identifier column (e.g., "sp500").
+            since (datetime, optional): Only return results inserted at or after this timestamp.
+
+        Returns:
+            tuple or None: A single row as (id, sentiment, inserted_at, identifier), or None if not found.
+        """
+        with self.conn.cursor() as cur:
+            query = """
+                SELECT id, sentiment, inserted_at, identifier
+                FROM sentiment_results
+                WHERE identifier = %s
+            """
+            params = [identifier]
+
+            if since:
+                query += " AND inserted_at >= %s"
+                params.append(since)
+
+            query += " ORDER BY inserted_at DESC LIMIT 1;"
+
+            cur.execute(query, tuple(params))
+            return cur.fetchone()    
+
+    def insert_news_items(self, news_items, search_term):
         """
         Insert multiple news items into the database.
 
         Parameters:
             news_items (list of tuple): Each tuple should have (title, pub_date, source)
+            search_term (str): Topic identifier to associate with the news items
         """
         with self.conn.cursor() as cur:
             insert_query = sql.SQL("""
-                INSERT INTO news (title, pub_date, source)
-                VALUES (%s, %s, %s)
+                INSERT INTO news (title, pub_date, source, search_term)
+                VALUES (%s, %s, %s, %s)
             """)
-            cur.executemany(insert_query, news_items)
-            print(f"Inserted {len(news_items)} news items into the database.")
+
+            rows_to_insert = []
+            for title, raw_date, source in news_items:
+                parsed_date = self.parse_pub_date(raw_date)
+                if parsed_date is None:
+                    print(f"Skipping insertion due to invalid date: {raw_date}", file=sys.stderr)
+                    continue
+                rows_to_insert.append((title, parsed_date, source, search_term))
+
+            if not rows_to_insert:
+                print("No valid news items to insert.")
+                return
+
+            cur.executemany(insert_query, rows_to_insert)
+            print(f"Inserted {len(rows_to_insert)} news items into the database.")
 
     def insert_sentiment_result(self, sentiment_json, identifier=None):
         """
@@ -114,7 +192,7 @@ class PostgresHandler:
                 INSERT INTO sentiment_results (sentiment, identifier)
                 VALUES (%s, %s)
             """)
-            cur.execute(insert_query, (sentiment_json, identifier))
+            cur.execute(insert_query, (json.dumps(sentiment_json), identifier))
             print("Inserted sentiment result into the database.")
 
     def close(self):

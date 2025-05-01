@@ -2,14 +2,17 @@
 
 import argparse
 import sys
-from postgres_handler import PostgresHandler
+import os
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from database_tools.postgres_handler import PostgresHandler
 
 
 def main():
     parser = argparse.ArgumentParser(
         description="Show sentiment results for a given topic (identifier filter)."
     )
-    parser.add_argument("--topic", type=str, required=True, help="Topic to filter sentiment results (identifier).")
+    parser.add_argument("--topic", type=str, required=True, help="Topic to filter news headlines results (identifier).")
     args = parser.parse_args()
 
     db_handler = PostgresHandler()
@@ -20,8 +23,7 @@ def main():
     else:
         print("Sentiment Results:")
         for row in results:
-            # Each row: (id, sentiment, inserted_at, identifier)
-            print(f"ID: {row[0]}, Sentiment: {row[1]}, Inserted at: {row[2]}, Identifier: {row[3]}")
+            print(f"{row}")
 
     db_handler.close()
 

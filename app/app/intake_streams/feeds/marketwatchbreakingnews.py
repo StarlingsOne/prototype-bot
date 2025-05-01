@@ -1,0 +1,1 @@
+RSS_URL_TEMPLATE = "https://feeds.content.dowjones.io/public/rss/mw_bulletins"

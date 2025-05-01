@@ -5,13 +5,11 @@ from datetime import datetime, timedelta
 import sys
 import os
 
-# Add the parent directory to the sys.path
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-# Now import PostgresHandler
-from input.postgres_handler import PostgresHandler
+from database_tools.postgres_handler import PostgresHandler
 
 def fetch_market_price(domain, market_id):
+    domain = domain.rstrip("/")
     url = f"{domain}/api/v0/markets/{market_id}"
     try:
         response = requests.get(url)
@@ -45,22 +43,26 @@ def fetch_user_balance(domain, username):
 
 
 def get_latest_sentiment(identifier, since_hours_ago=24):
+
     db = PostgresHandler()
     since = datetime.now() - timedelta(hours=since_hours_ago)
-    results = db.fetch_sentiment_results(identifier, since=since)
+    row = db.get_most_recent_sentiment_result(identifier, since=since)
     db.close()
 
-    if not results:
+    if not row:
         return None
 
-    sentiment_raw = results[0][1]
+    _, sentiment_raw, _, _ = row
     return json.loads(sentiment_raw) if isinstance(sentiment_raw, str) else sentiment_raw
 
-def calculate_bet_amount(conviction, assessment, market_price, user_balance, scale=100):
+def calculate_bet_amount(conviction, assessment, market_price, scale=100):
     if assessment != market_price:
-        return min(int((conviction - market_price) * scale * assessment), user_balance)
+        delta = abs(assessment - market_price)
+        amount = int(delta * scale * conviction)
+        return max(0, amount)
     else:
         return 0
+
 
 def calculate_bet_direction(assessment, market_price):
     if assessment > market_price:
@@ -70,23 +72,38 @@ def calculate_bet_direction(assessment, market_price):
     else:
         return "NULL"
 
-def place_bet(username, market_id, amount, outcome):
+def place_bet(domain, market_id, amount, outcome, api_key=None):
     if outcome == "NULL":
         print("No bet.")
-    else:
-        payload = {
-            "username": username,
-            "marketId": market_id,
-            "amount": amount,
-            "outcome": outcome
-        }
-        response = requests.post("http://localhost:8080/v0/bet", json=payload)
+        return
+
+    payload = {
+        "marketId": market_id,
+        "outcome": outcome,
+        "amount": amount
+    }
+
+    headers = {
+        "Content-Type": "application/json"
+    }
+
+    if api_key:
+        headers["X-API-Key"] = api_key
+
+    url = f"{domain}/api/v0/bet"
+
+    try:
+        response = requests.post(url, json=payload, headers=headers)
         if response.ok:
             print("✅ Bet placed successfully!")
+            print("📄 Response:", response.json())
         else:
             print("❌ Failed to place bet:", response.text)
+    except Exception as e:
+        print(f"❌ Exception during placing bet: {e}")
 
-def run_betting_bot(identifier, domain, market_id):
+
+def run_betting_bot(identifier, domain, market_id, api_key):
     sentiment_data = get_latest_sentiment(identifier)
 
     if not sentiment_data:
@@ -116,7 +133,7 @@ def run_betting_bot(identifier, domain, market_id):
     outcome = calculate_bet_direction(sentiment_data["assessment"], market_price)
     print(f"outcome: {outcome}")
 
-    # place_bet(username, market_id, amount, outcome)
+    place_bet(domain, market_id, amount, outcome, api_key)
 
 
 def main():
@@ -129,10 +146,12 @@ def main():
     parser.add_argument("--identifier", required=True, help="Asset or entity identifier (e.g., 'NVIDIA')")
 
     args = parser.parse_args()
+
     run_betting_bot(
 
         identifier=args.identifier,
         domain=args.domain,
-        market_id=args.market_id
+        market_id=args.market_id,
+        api_key=args.api_key
 
     )

@@ -1,0 +1,7 @@
+four_times_daily:
+  run_hours:
+    - 8
+    - 10
+    - 12
+    - 14
+  timezone: America/Chicago

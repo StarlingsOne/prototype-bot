@@ -1,0 +1,1 @@
+RSS_URL_TEMPLATE = "https://www.nasdaq.com/feed/nasdaq-original/rss.xml"

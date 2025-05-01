@@ -1,0 +1,42 @@
+#!/usr/local/bin/python
+
+import argparse
+import sys
+import os
+from datetime import datetime, timedelta, timezone
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from database_tools.postgres_handler import PostgresHandler
+
+
+def main():
+    parser = argparse.ArgumentParser(
+        description="Show news results for a given topic (search_term filter)."
+    )
+    parser.add_argument("--topic", type=str, required=True,
+                        help="Topic to filter news results (search_term).")
+    parser.add_argument("--since_hours", type=int, default=168,
+                        help="Only show news newer than this many hours (default: 168 = 1 week).")
+    args = parser.parse_args()
+
+    since = datetime.now(timezone.utc) - timedelta(hours=args.since_hours)
+
+    db_handler = PostgresHandler()
+
+    # Fetch news filtered by topic and pub_date
+    results = db_handler.fetch_news_headlines(identifier_filter=args.topic, since=since)
+
+    if not results:
+        print(f"No news headlines found for topic '{args.topic}' in the past {args.since_hours} hours.",
+              file=sys.stderr)
+    else:
+        print(f"News Headlines for topic '{args.topic}' (last {args.since_hours}h):\n")
+        for row in results:
+            # row = (id, title, pub_date, source)
+            print(f"[{row[2].strftime('%Y-%m-%d %H:%M:%S %Z')}] {row[1]} ({row[3]})")
+
+    db_handler.close()
+
+
+if __name__ == "__main__":
+    main()

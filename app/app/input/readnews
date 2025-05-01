@@ -2,10 +2,12 @@
 
 import argparse
 import requests
-import csv
+import os
 import sys
 import xml.etree.ElementTree as ET
-from postgres_handler import PostgresHandler
+
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+from database_tools.postgres_handler import PostgresHandler
 
 RSS_URL_TEMPLATE = "https://news.google.com/rss/search?q={query}&ceid=US:en&hl=en-US&gl=US"
 
@@ -36,16 +38,6 @@ def parse_rss_feed(xml_data):
     return news_items
 
 
-def save_to_csv(news_items, output_file):
-    """Save extracted news items to a CSV file."""
-    with open(output_file, mode="w", newline="", encoding="utf-8") as file:
-        writer = csv.writer(file)
-        writer.writerow(["Title", "Publication Date", "Source"])  # CSV Header
-        writer.writerows(news_items)
-
-    print(f"CSV file saved: {output_file}")
-
-
 def main():
     parser = argparse.ArgumentParser(
         description="Fetch Google News RSS feed and save headlines to Postgres."
@@ -58,7 +50,7 @@ def main():
     xml_data = fetch_rss_feed(args.search_term)
     news_items = parse_rss_feed(xml_data)
 
-    db_handler.insert_news_items(news_items)
+    db_handler.insert_news_items(news_items, args.search_term)
 
     db_handler.close()
 
