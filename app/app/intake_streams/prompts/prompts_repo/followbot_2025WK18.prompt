@@ -7,7 +7,8 @@ Respond with this format only. Do not include tickmarks or the term, json, just 
 Here are the headlines:
 {headlines}
 
-Based upon all of the headlines you see, output a sentiment score directly related to article sentiment. If the article has a strong conviction then have a high conviction. If the article has a low conviction then have a low conviction.
+Based upon all of the headlines you see, output a sentiment score directly related to article sentiment. 
+If the article has a strong conviction then have a high conviction. If the article has a low conviction then have a low conviction.
 
 Your response must be:
 
