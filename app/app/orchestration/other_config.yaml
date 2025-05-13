@@ -1,0 +1,80 @@
+emotionbot:
+  api_key: bdf61118-5598-4eab-8880-c1c5a19eac0d
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: emotionbot
+  topic: sp500
+  prompt: emotionbot_2025WK18.prompt
+
+followbot:
+  api_key: 2772a8de-2577-492c-8cd8-8ee48645dec6
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: followbot
+  topic: sp500
+  prompt: followbot_2025WK18.prompt
+
+jimbot:
+  api_key: 0bdd86d0-0428-45ca-8d4c-9ad6757889cc
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: jimbot
+  topic: sp500
+  prompt: jimbot_2025WK18.prompt
+
+oppomotionbot:
+  api_key: 2fc9dd58-c7ba-4540-8624-fa79da112cd4
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: oppomotionbot
+  topic: sp500
+  prompt: oppomotionbot_2025WK18.prompt
+
+opposebot:
+  api_key: f17d1216-9d29-489b-8245-23a45607ffd0
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: opposebot
+  topic: sp500
+  prompt: opposebot_2025WK18.prompt
+
+osnatbot:
+  api_key: f3d48e0f-63f2-45ca-9fe1-cc687c97f263
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: osnatbot
+  topic: sp500
+  prompt: osnatbot_2025WK18.prompt
+
+robotofrollstreet:
+  api_key: a0b7683c-b1f1-41d8-ba15-a5fda923f9eb
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: robotofrollstreet
+  topic: sp500
+  prompt: robotofrollstreet_2025WK18.prompt
+
+vancebot:
+  api_key: a86780c0-0004-4049-9513-1edf5fd16d50
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: vancebot
+  topic: sp500
+  prompt: vancebot_2025WK18.prompt
+
+fabulousbot:
+  api_key: 740feae8-e752-41c2-b1d1-d69ebb4b0142
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: fabulousbot
+  topic: sp500
+  prompt: fabulousbot_2025WK18.prompt
