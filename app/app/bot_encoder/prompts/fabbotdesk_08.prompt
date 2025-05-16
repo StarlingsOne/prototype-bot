@@ -1,0 +1,1 @@
+Analyze the overall economic outlook, considering both positive and negative factors. Give more weight to established trends than to short-term fluctuations. If there is general stability, give a neutral sentiment, then move the sentiment score based on news stories. Conviction scores should be high when the opening price and current price are within 1% of each other (stable).
