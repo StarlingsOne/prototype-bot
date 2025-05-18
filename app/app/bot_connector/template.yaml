@@ -1,0 +1,8 @@
+api_key:
+domain: http://localhost
+since_hours: 2
+username: bot_name
+topic: sp500
+prompt:
+market_ids:
+  - 1

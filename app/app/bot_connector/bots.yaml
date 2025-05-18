@@ -1,0 +1,450 @@
+buffbot_01:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_01
+  topic: sp500
+  prompt: buffbot_01.prompt
+  market_ids:
+  - 1
+buffbot_02:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_02
+  topic: sp500
+  prompt: buffbot_02.prompt
+  market_ids:
+  - 1
+buffbot_03:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_03
+  topic: sp500
+  prompt: buffbot_03.prompt
+  market_ids:
+  - 1
+buffbot_04:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_04
+  topic: sp500
+  prompt: buffbot_04.prompt
+  market_ids:
+  - 1
+buffbot_05:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_05
+  topic: sp500
+  prompt: buffbot_05.prompt
+  market_ids:
+  - 1
+buffbot_06:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_06
+  topic: sp500
+  prompt: buffbot_06.prompt
+  market_ids:
+  - 1
+buffbot_07:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_07
+  topic: sp500
+  prompt: buffbot_07.prompt
+  market_ids:
+  - 1
+buffbot_08:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_08
+  topic: sp500
+  prompt: buffbot_08.prompt
+  market_ids:
+  - 1
+buffbot_09:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_09
+  topic: sp500
+  prompt: buffbot_09.prompt
+  market_ids:
+  - 1
+buffbot_10:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: buffbot_10
+  topic: sp500
+  prompt: buffbot_10.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_01:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_01
+  topic: sp500
+  prompt: conspirounemotiondesk_01.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_02:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_02
+  topic: sp500
+  prompt: conspirounemotiondesk_02.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_03:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_03
+  topic: sp500
+  prompt: conspirounemotiondesk_03.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_04:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_04
+  topic: sp500
+  prompt: conspirounemotiondesk_04.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_05:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_05
+  topic: sp500
+  prompt: conspirounemotiondesk_05.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_06:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_06
+  topic: sp500
+  prompt: conspirounemotiondesk_06.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_07:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_07
+  topic: sp500
+  prompt: conspirounemotiondesk_07.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_08:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_08
+  topic: sp500
+  prompt: conspirounemotiondesk_08.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_09:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_09
+  topic: sp500
+  prompt: conspirounemotiondesk_09.prompt
+  market_ids:
+  - 1
+conspirounemotiondesk_10:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: conspirounemotiondesk_10
+  topic: sp500
+  prompt: conspirounemotiondesk_10.prompt
+  market_ids:
+  - 1
+fabbotdesk_01:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_01
+  topic: sp500
+  prompt: fabbotdesk_01.prompt
+  market_ids:
+  - 1
+fabbotdesk_02:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_02
+  topic: sp500
+  prompt: fabbotdesk_02.prompt
+  market_ids:
+  - 1
+fabbotdesk_03:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_03
+  topic: sp500
+  prompt: fabbotdesk_03.prompt
+  market_ids:
+  - 1
+fabbotdesk_04:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_04
+  topic: sp500
+  prompt: fabbotdesk_04.prompt
+  market_ids:
+  - 1
+fabbotdesk_05:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_05
+  topic: sp500
+  prompt: fabbotdesk_05.prompt
+  market_ids:
+  - 1
+fabbotdesk_06:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_06
+  topic: sp500
+  prompt: fabbotdesk_06.prompt
+  market_ids:
+  - 1
+fabbotdesk_07:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_07
+  topic: sp500
+  prompt: fabbotdesk_07.prompt
+  market_ids:
+  - 1
+fabbotdesk_08:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_08
+  topic: sp500
+  prompt: fabbotdesk_08.prompt
+  market_ids:
+  - 1
+fabbotdesk_09:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_09
+  topic: sp500
+  prompt: fabbotdesk_09.prompt
+  market_ids:
+  - 1
+fabbotdesk_10:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: fabbotdesk_10
+  topic: sp500
+  prompt: fabbotdesk_10.prompt
+  market_ids:
+  - 1
+jim_01:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_01
+  topic: sp500
+  prompt: jim_01.prompt
+  market_ids:
+  - 1
+jim_02:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_02
+  topic: sp500
+  prompt: jim_02.prompt
+  market_ids:
+  - 1
+jim_03:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_03
+  topic: sp500
+  prompt: jim_03.prompt
+  market_ids:
+  - 1
+jim_04:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_04
+  topic: sp500
+  prompt: jim_04.prompt
+  market_ids:
+  - 1
+jim_05:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_05
+  topic: sp500
+  prompt: jim_05.prompt
+  market_ids:
+  - 1
+jim_06:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_06
+  topic: sp500
+  prompt: jim_06.prompt
+  market_ids:
+  - 1
+jim_07:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_07
+  topic: sp500
+  prompt: jim_07.prompt
+  market_ids:
+  - 1
+jim_08:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_08
+  topic: sp500
+  prompt: jim_08.prompt
+  market_ids:
+  - 1
+jim_09:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_09
+  topic: sp500
+  prompt: jim_09.prompt
+  market_ids:
+  - 1
+jim_10:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: jim_10
+  topic: sp500
+  prompt: jim_10.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_01:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_01
+  topic: sp500
+  prompt: mediajunkiedesk_01.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_02:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_02
+  topic: sp500
+  prompt: mediajunkiedesk_02.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_03:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_03
+  topic: sp500
+  prompt: mediajunkiedesk_03.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_04:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_04
+  topic: sp500
+  prompt: mediajunkiedesk_04.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_05:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_05
+  topic: sp500
+  prompt: mediajunkiedesk_05.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_06:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_06
+  topic: sp500
+  prompt: mediajunkiedesk_06.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_07:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_07
+  topic: sp500
+  prompt: mediajunkiedesk_07.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_08:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_08
+  topic: sp500
+  prompt: mediajunkiedesk_08.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_09:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_09
+  topic: sp500
+  prompt: mediajunkiedesk_09.prompt
+  market_ids:
+  - 1
+mediajunkiedesk_10:
+  api_key: null
+  domain: http://localhost
+  since_hours: 2
+  username: mediajunkiedesk_10
+  topic: sp500
+  prompt: mediajunkiedesk_10.prompt
+  market_ids:
+  - 1
