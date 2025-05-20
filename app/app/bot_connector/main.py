@@ -71,6 +71,8 @@ def cmd_init(args):
         bot_entry["market_ids"] = list(bot_entry.get("market_ids", [1]))  # <- Fix alias issue
         bots[botname] = bot_entry
 
+        ensure_api_key(bot_entry)
+
         if args.move_prompts:
             target_dir = os.path.join(args.prompts_repo, fname)
             shutil.move(os.path.join(prompt_dir, fname), target_dir)
