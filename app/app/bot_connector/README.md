@@ -1,10 +1,10 @@
 ### 🔩 Directory Roles
 
-`bot_encoder/prompts/`: staging area for new prompt files (used to create bot YAMLs).
+* `bot_encoder/prompts/`: staging area for new prompt files (used to create bot YAMLs).
 
-`intake_streams/prompts/prompts_repo/`: "production" destination where final, versioned prompt files are stored.
+* `intake_streams/prompts/prompts_repo/`: "production" destination where final, versioned prompt files are stored.
 
-`bot_connector/`: CLI tooling for assembling YAMLs, e.g. init, update-api, market-add, etc.
+* `bot_connector/`: CLI tooling for assembling YAMLs, e.g. init, update-api, market-add, etc.
 
 
 ### Commands
@@ -31,6 +31,23 @@ The update-api command reads a YAML config (like bots.yaml) and updates each bot
 ```
 ./connector register-db --yaml bots.yaml
 ```
+
+### Fixing Market Usage
+
+* Markets should use a list within the bots yaml rather than a single entry.
+* `orchestrate` has been updated, `scheduler` and `bettingbot` should not need to be updated.
+
+### Fixing News Reading, Separate Process
+
+* We need to fix the way news is read so that bots don't read headlines on every single invocation otherwise our database will explode.
+
+### Modify `config.yaml` to Test
+
+* In theory if we just move the prompts and copy/paste our new bots yaml into the correct location we can test orchestration.
+
+### Scheduling
+
+* We probably should double check our gemini key limits before running a schedule, or schedule for fewer invocations per day.
 
 
 ### Inserting Bots Into SocialPredict Database

@@ -10,14 +10,14 @@ from datetime import datetime
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 
-DEFAULT_CONFIG = {
-    "since_hours": 12,
+TEMPLATE_CONFIG = {
+    "since_hours": 2,
     "domain": "http://localhost",
-    "market_id": 3,
+    "market_ids": [3],
     "username": "default",
     "api_key": "MISSING_API_KEY",
     "topic": None,
-    "prompt": "headline_sentiment.prompt",    
+    "prompt": "headline_sentiment.prompt",
 }
 
 def run_cmd(cmd_list):
@@ -43,29 +43,35 @@ def run_pipeline(bot_name: str, config: dict):
     print(f"\n=== Running bot '{bot_name}' for topic '{topic}' ===")
     print(f"📅 {datetime.now().isoformat()}")
 
-    steps = [
-        ["./input/readnews", topic],
-        [
-            "./input/sentiment",
-            "--prompt_name", prompt,
-            "--topic", topic,
-            "--since_hours", str(config["since_hours"]),
-        ],
-        [
+    # Step 1: Read news
+    if not run_cmd(["./input/readnews", topic]):
+        print(f"⚠️ Failed reading news for bot '{bot_name}'. Skipping remaining steps.")
+        return
+
+    # Step 2: Sentiment
+    sentiment_cmd = [
+        "./input/sentiment",
+        "--prompt_name", prompt,
+        "--topic", topic,
+        "--since_hours", str(config["since_hours"]),
+    ]
+    if not run_cmd(sentiment_cmd):
+        print(f"⚠️ Failed sentiment for bot '{bot_name}'. Skipping remaining steps.")
+        return
+
+    # Step 3: Betting - run for each market_id in list
+    for mid in config["market_ids"]:
+        betting_cmd = [
             "./output/bettingbot",
             "--domain", config["domain"],
-            "--market_id", str(config["market_id"]),
+            "--market_id", str(mid),
             "--username", config["username"],
             "--api_key", config["api_key"],
             "--identifier", topic
-        ],
-    ]
-
-    for step in steps:
-        if not run_cmd(step):
-            print(f"⚠️ Skipping remaining steps for bot '{bot_name}' due to previous failure.")
-            return  # Stop running commands for this bot only
-
+        ]
+        if not run_cmd(betting_cmd):
+            print(f"⚠️ Failed betting for market {mid} in bot '{bot_name}', continuing to next market.")
+            # Continue to the next market_id, do not abort all
 
 def load_all_bot_configs(yaml_path):
     if not yaml_path or not os.path.exists(yaml_path):
@@ -74,10 +80,15 @@ def load_all_bot_configs(yaml_path):
     with open(yaml_path, "r") as f:
         all_bots = yaml.safe_load(f)
 
-    return {
-        bot_name: {**DEFAULT_CONFIG, **bot_config}
-        for bot_name, bot_config in all_bots.items()
-    }
+    merged = {}
+    for bot_name, bot_config in all_bots.items():
+        config = {**TEMPLATE_CONFIG, **bot_config}
+        # Backwards compatibility: convert single market_id to market_ids
+        if "market_id" in bot_config and "market_ids" not in bot_config:
+            config["market_ids"] = [bot_config["market_id"]]
+        merged[bot_name] = config
+    return merged
+
 
 def main():
     parser = argparse.ArgumentParser(description="Run full prediction pipeline for bots.")
