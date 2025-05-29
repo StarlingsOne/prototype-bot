@@ -6,6 +6,7 @@ import json
 import sys
 import time
 import os
+import re
 from datetime import datetime, timedelta
 from guardrails import validate_sentiment_output
 
@@ -32,6 +33,13 @@ genai.configure(api_key=api_key)
 # Initialize the Gemini model
 model = genai.GenerativeModel("gemini-2.0-flash")
 
+def extract_first_json(text):
+    match = re.search(r'\{[\s\S]*?\}', text)
+    if match:
+        return match.group(0)
+    raise ValueError("No JSON object found in response.")
+
+
 def analyze_sentiment(prompt_name, topic, headlines):
 
     prompt = generate_prompt(prompt_name, topic, headlines)
@@ -46,8 +54,9 @@ def analyze_sentiment(prompt_name, topic, headlines):
         sys.exit(1)
 
     try:
-        parsed = json.loads(response.text)
-    except json.JSONDecodeError:
+        clean_json = extract_first_json(response.text)
+        parsed = json.loads(clean_json)
+    except Exception:
         print(f"Error: Failed to parse JSON from model response:\n{response.text}", file=sys.stderr)
         sys.exit(1)
 

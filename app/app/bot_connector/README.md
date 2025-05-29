@@ -41,6 +41,10 @@ The update-api command reads a YAML config (like bots.yaml) and updates each bot
 
 * We need to fix the way news is read so that bots don't read headlines on every single invocation otherwise our database will explode.
 
+### Fixing Prompt Concatenation
+
+* Prompts should be a central, "core" prompt which get concatenated around with a standard wrapper prompt which structures the data into an output.
+
 ### Modify `config.yaml` to Test
 
 * In theory if we just move the prompts and copy/paste our new bots yaml into the correct location we can test orchestration.

@@ -1,3 +1,9 @@
+### `./readnews`
+
+```
+./readnews sp500
+```
+
 ### `./sentiment`
 
 ```
