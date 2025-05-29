@@ -13,7 +13,7 @@ from guardrails import validate_sentiment_output
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from database_tools.postgres_handler import PostgresHandler
-from intake_streams.prompts.generate_prompt import generate_prompt
+from prompts.prompts.generate_prompt import generate_prompt
 
 
 # Define the path to the API key file

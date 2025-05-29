@@ -30,5 +30,5 @@ mkdir playground_keys/
 7. Do `exit`, which will allow you to exit from the container. You can get back into the container with `./run bash`.
 8. Having confirmed that, you can run a few different python scripts.
 
-* `./app/input/test [QUERY]` will generate a response from an input query, presuming you are in the `/app` directory.
+* `./app/sentiment/test [QUERY]` will generate a response from an input query, presuming you are in the `/app` directory.
 

@@ -191,7 +191,7 @@ def main():
     p_init.add_argument('--db-user', default="user")
     p_init.add_argument('--db-name', default="socialpredict_db")
     p_init.add_argument('--prompts', required=True, help="Directory of .prompt files")
-    p_init.add_argument('--prompts-repo', default="../../intake_streams/prompts/prompts_repo", help="Where to move prompt files (if --move-prompts)")
+    p_init.add_argument('--prompts-repo', default="../../prompts/prompts/prompts_repo", help="Where to move prompt files (if --move-prompts)")
     p_init.add_argument('--move-prompts', action="store_true", help="Move prompt files to prompts_repo")
     p_init.add_argument('--validate-prompts', action="store_true", help="Fail if duplicate prompt files found")
     p_init.set_defaults(func=cmd_init)

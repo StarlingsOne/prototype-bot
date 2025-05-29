@@ -2,7 +2,7 @@
 
 * `bot_encoder/prompts/`: staging area for new prompt files (used to create bot YAMLs).
 
-* `intake_streams/prompts/prompts_repo/`: "production" destination where final, versioned prompt files are stored.
+* `prompts/prompts/prompts_repo/`: "production" destination where final, versioned prompt files are stored.
 
 * `bot_connector/`: CLI tooling for assembling YAMLs, e.g. init, update-api, market-add, etc.
 
@@ -22,7 +22,7 @@
 
 #### `update`
 
-The update-api command reads a YAML config (like bots.yaml) and updates each bot's api_key and prompt based on what’s currently stored in the database. This would only be needed if the api keys were updated for some reason, and without wanting to delete the bots.
+* The update-api command reads a YAML config (like bots.yaml) and updates each bot's api_key and prompt based on what’s currently stored in the database. This would only be needed if the api keys were updated for some reason, and without wanting to delete the bots. This has not been tested.
 
 ### `register-db`
 
@@ -34,12 +34,35 @@ The update-api command reads a YAML config (like bots.yaml) and updates each bot
 
 ### Fixing Market Usage
 
-* Markets should use a list within the bots yaml rather than a single entry.
-* `orchestrate` has been updated, `scheduler` and `bettingbot` should not need to be updated.
+* `orchestrate` has been updated, `scheduler` and `bettingbot` should not need to be updated to work with new entry, `market_ids`, which acts as a list rather than a single entry.
 
 ### Fixing News Reading, Separate Process
 
 * We need to fix the way news is read so that bots don't read headlines on every single invocation otherwise our database will explode.
+* Let's create a completely new directory to hold `./readnews` and then an orchestrator, scheduler for this process, so that it can be an independent process that runs and inserts news into a database on an ongoing basis.
+* Then, we remove the step of, "read news," from the orchestration pipeline, and have the orchestrator look purely at the database for the most updated results.
+
+Remove this:
+
+```
+def run_pipeline(bot_name: str, config: dict):
+    topic = config.get("topic")
+    prompt = config.get("prompt")
+
+    if not topic:
+        raise ValueError(f"Missing topic for bot '{bot_name}'")
+
+    print(f"\n=== Running bot '{bot_name}' for topic '{topic}' ===")
+    print(f"📅 {datetime.now().isoformat()}")
+
+    # Step 1: Read news
+    if not run_cmd(["./newsfeed/readnews", topic]):
+        print(f"⚠️ Failed reading news for bot '{bot_name}'. Skipping remaining steps.")
+        return
+```
+
+* We could have the orchestrator ensure that the news process is running and writing news recently, and if not, wake up and read the news at least one time for the, "read news," function, as a catch-all.
+* Perhaps better yet, we could have the orchestrater just run readnews by default after checking the database. Of course read news is not it's own process now but part of the orchestrater.
 
 ### Fixing Prompt Concatenation
 
