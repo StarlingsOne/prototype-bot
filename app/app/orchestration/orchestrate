@@ -12,6 +12,7 @@ import os
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 NEWSFEEDS_DIR = os.path.join(PROJECT_ROOT, "newsfeeds")
+BETTINGBOT_PATH = os.path.join(PROJECT_ROOT, "bettingbot", "bettingbot")
 
 if NEWSFEEDS_DIR not in sys.path:
     sys.path.insert(0, NEWSFEEDS_DIR)
@@ -74,7 +75,7 @@ def run_pipeline(bot_name: str, config: dict):
     # Step 3: Betting - run for each market_id in list
     for mid in config["market_ids"]:
         betting_cmd = [
-            "./output/bettingbot",
+            BETTINGBOT_PATH,
             "--domain", config["domain"],
             "--market_id", str(mid),
             "--username", config["username"],

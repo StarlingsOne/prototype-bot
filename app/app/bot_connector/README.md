@@ -39,34 +39,15 @@
 ### Fixing News Reading, Separate Process
 
 * We need to fix the way news is read so that bots don't read headlines on every single invocation otherwise our database will explode.
-* Let's create a completely new directory to hold `./readnews` and then an orchestrator, scheduler for this process, so that it can be an independent process that runs and inserts news into a database on an ongoing basis.
-* Then, we remove the step of, "read news," from the orchestration pipeline, and have the orchestrator look purely at the database for the most updated results.
-
-Remove this:
-
-```
-def run_pipeline(bot_name: str, config: dict):
-    topic = config.get("topic")
-    prompt = config.get("prompt")
-
-    if not topic:
-        raise ValueError(f"Missing topic for bot '{bot_name}'")
-
-    print(f"\n=== Running bot '{bot_name}' for topic '{topic}' ===")
-    print(f"📅 {datetime.now().isoformat()}")
-
-    # Step 1: Read news
-    if not run_cmd(["./newsfeed/readnews", topic]):
-        print(f"⚠️ Failed reading news for bot '{bot_name}'. Skipping remaining steps.")
-        return
-```
-
-* We could have the orchestrator ensure that the news process is running and writing news recently, and if not, wake up and read the news at least one time for the, "read news," function, as a catch-all.
-* Perhaps better yet, we could have the orchestrater just run readnews by default after checking the database. Of course read news is not it's own process now but part of the orchestrater.
+* So we have changed the orchestrater to run readnews only if it hasn't been activated in the last 30 minutes.
 
 ### Fixing Prompt Concatenation
 
 * Prompts should be a central, "core" prompt which get concatenated around with a standard wrapper prompt which structures the data into an output.
+
+### Ensure Database Tracks Which Bot Made Sentiment Analysis
+
+* Make sentiment analysis trackable by bot, not just by time.
 
 ### Modify `config.yaml` to Test
 
