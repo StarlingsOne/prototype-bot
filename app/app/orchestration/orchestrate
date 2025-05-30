@@ -9,7 +9,6 @@ from datetime import datetime
 import sys
 import os
 
-
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
 NEWSFEEDS_DIR = os.path.join(PROJECT_ROOT, "newsfeeds")
@@ -17,7 +16,7 @@ NEWSFEEDS_DIR = os.path.join(PROJECT_ROOT, "newsfeeds")
 if NEWSFEEDS_DIR not in sys.path:
     sys.path.insert(0, NEWSFEEDS_DIR)
 
-from newsfeeds.news_utils import news_recently_loaded
+from news_utils import news_recently_loaded
 
 
 TEMPLATE_CONFIG = {
