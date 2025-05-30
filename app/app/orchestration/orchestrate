@@ -6,9 +6,19 @@ import yaml
 import os
 import random
 from datetime import datetime
+import sys
+import os
+
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+NEWSFEEDS_DIR = os.path.join(PROJECT_ROOT, "newsfeeds")
+
+if NEWSFEEDS_DIR not in sys.path:
+    sys.path.insert(0, NEWSFEEDS_DIR)
+
+from newsfeeds.news_utils import news_recently_loaded
+
 
 TEMPLATE_CONFIG = {
     "since_hours": 2,
@@ -43,10 +53,13 @@ def run_pipeline(bot_name: str, config: dict):
     print(f"\n=== Running bot '{bot_name}' for topic '{topic}' ===")
     print(f"📅 {datetime.now().isoformat()}")
 
-    # Step 1: Read news
-    if not run_cmd(["../newsfeeds/readnews", topic]):
-        print(f"⚠️ Failed reading news for bot '{bot_name}'. Skipping remaining steps.")
-        return
+    # Only run readnews if news hasn't been loaded in the last 30 minutes
+    if news_recently_loaded(topic, since_minutes=30):
+        print(f"⏩ News for topic '{topic}' is already loaded in the past 30 minutes. Skipping readnews.")
+    else:
+        if not run_cmd(["../newsfeeds/readnews", topic]):
+            print(f"⚠️ Failed reading news for bot '{bot_name}'. Skipping remaining steps.")
+            return
 
     # Step 2: Sentiment
     sentiment_cmd = [
