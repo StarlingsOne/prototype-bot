@@ -7,7 +7,6 @@ vancebot:
   prompt: vancebot_2025WK18.prompt
   market_ids:
   - 1  
-
 jimbot:
   api_key: 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f
   domain: http://localhost
@@ -16,4 +15,94 @@ jimbot:
   topic: sp500
   prompt: jimbot_2025WK18.prompt
   market_ids:
-  - 1    
+  - 1
+atlas_01:
+  api_key: a22ddb7e-b956-4339-a331-fe3823702a4z
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_01
+  topic: sp500
+  prompt: atlas_01.prompt
+  market_ids:
+  - 1
+atlas_02:
+  api_key: b12317a3-9292-48b4-9cbc-ea4170119ec8
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_02
+  topic: sp500
+  prompt: atlas_02.prompt
+  market_ids:
+  - 1
+atlas_03:
+  api_key: 35d21948-8e82-429e-8fa4-0a7fe1de533f
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_03
+  topic: sp500
+  prompt: atlas_03.prompt
+  market_ids:
+  - 1
+atlas_04:
+  api_key: 1004d33d-76d6-47b8-8b6e-92e76848d7d0
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_04
+  topic: sp500
+  prompt: atlas_04.prompt
+  market_ids:
+  - 1
+atlas_05:
+  api_key: 1da72969-c177-4cf1-b8aa-0f6bda6e0e35
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_05
+  topic: sp500
+  prompt: atlas_05.prompt
+  market_ids:
+  - 1
+atlas_06:
+  api_key: 10761beb-3fc8-4a15-9082-332db22640c2
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_06
+  topic: sp500
+  prompt: atlas_06.prompt
+  market_ids:
+  - 1
+atlas_07:
+  api_key: 9822a23e-10ce-4246-b4e1-063dfb9c2e22
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_07
+  topic: sp500
+  prompt: atlas_07.prompt
+  market_ids:
+  - 1
+atlas_08:
+  api_key: b26317ef-36d9-44e6-bef4-eb5ce0d0b62e
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_08
+  topic: sp500
+  prompt: atlas_08.prompt
+  market_ids:
+  - 1
+atlas_09:
+  api_key: 61d09168-1d8f-469e-aafb-18b8f4b45373
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_09
+  topic: sp500
+  prompt: atlas_09.prompt
+  market_ids:
+  - 1
+atlas_10:
+  api_key: a9a8425e-def5-4ac5-8850-03e28734fd78
+  domain: http://localhost
+  since_hours: 2
+  username: atlas_10
+  topic: sp500
+  prompt: atlas_10.prompt
+  market_ids:
+  - 1
