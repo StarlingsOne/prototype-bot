@@ -46,12 +46,16 @@ def cmd_register_db(args):
             entry["api_key"] = str(uuid.uuid4())
         sql = generate_insert_sql(botname, entry, hashed)
 
+        env = os.environ.copy()
+        env["PGPASSWORD"] = "password"  # Hardcoded Postgres password
+
         result = subprocess.run([
             "psql",
-            "-h", "socialpredict-postgres-container",  # Use Docker container name
+            "-h", "localhost",
+            "-p", "5433",
             "-U", args.db_user,
             "-d", args.db_name
-        ], input=sql.encode(), capture_output=True)
+        ], input=sql.encode(), capture_output=True, env=env)
 
         if result.returncode != 0:
             print(f"❌ Failed for {botname}:\n{result.stderr.decode()}")
