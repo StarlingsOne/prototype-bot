@@ -61,10 +61,12 @@ class PostgresHandler:
                     id SERIAL PRIMARY KEY,
                     inserted_at TIMESTAMPTZ DEFAULT NOW(),                        
                     sentiment JSON NOT NULL,
-                    identifier TEXT
+                    identifier TEXT,
+                    bot_name TEXT    -- <-- Add this line
                 )
             """)
             print("Ensured that the 'sentiment_results' table exists.")
+
 
     def fetch_news_headlines(self, identifier_filter=None, since=None):
         """
@@ -179,20 +181,21 @@ class PostgresHandler:
             cur.executemany(insert_query, rows_to_insert)
             print(f"Inserted {len(rows_to_insert)} news items into the database.")
 
-    def insert_sentiment_result(self, sentiment_json, identifier=None):
+    def insert_sentiment_result(self, sentiment_json, identifier=None, bot_name=None):
         """
         Insert a sentiment result into the sentiment_results table.
 
         Parameters:
-            sentiment_json (dict or str): A JSON object (or string) representing the sentiment analysis result.
+            sentiment_json (dict or str): JSON object or string representing the sentiment analysis result.
             identifier (str): Optional text identifier to label the result.
+            bot_name (str): Optional, the bot name or username.
         """
         with self.conn.cursor() as cur:
             insert_query = sql.SQL("""
-                INSERT INTO sentiment_results (sentiment, identifier)
-                VALUES (%s, %s)
+                INSERT INTO sentiment_results (sentiment, identifier, bot_name)
+                VALUES (%s, %s, %s)
             """)
-            cur.execute(insert_query, (json.dumps(sentiment_json), identifier))
+            cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
             print("Inserted sentiment result into the database.")
 
     def close(self):

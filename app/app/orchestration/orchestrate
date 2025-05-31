@@ -67,6 +67,7 @@ def run_pipeline(bot_name: str, config: dict):
         "--prompt_name", prompt,
         "--topic", topic,
         "--since_hours", str(config["since_hours"]),
+        "--username", bot_name
     ]
     if not run_cmd(sentiment_cmd):
         print(f"⚠️ Failed sentiment for bot '{bot_name}'. Skipping remaining steps.")

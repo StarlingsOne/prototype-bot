@@ -7,3 +7,13 @@ vancebot:
   prompt: vancebot_2025WK18.prompt
   market_ids:
   - 1  
+
+jimbot:
+  api_key: 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f
+  domain: http://localhost
+  since_hours: 2
+  username: jimbot
+  topic: sp500
+  prompt: jimbot_2025WK18.prompt
+  market_ids:
+  - 1    

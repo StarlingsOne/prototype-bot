@@ -75,8 +75,8 @@ def main():
     parser = argparse.ArgumentParser(description="Assess sentiment of news headlines on a given topic.")
     parser.add_argument("--prompt_name", type=str, required=True, help="The prompt name used for this sentiment analysis.")
     parser.add_argument("--topic", type=str, required=True, help="The topic to analyze sentiment for.")
-    parser.add_argument("--since_hours", type=int, default=24,
-        help="Only analyze headlines newer than this many hours (default: 24)")
+    parser.add_argument("--since_hours", type=int, default=24, help="Only analyze headlines newer than this many hours (default: 24)")
+    parser.add_argument("--username", type=str, required=True, help="Bot username or name for this sentiment run.")
 
     args = parser.parse_args()
 
@@ -95,9 +95,8 @@ def main():
 
     sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
 
-    # Generate an identifier using the topic and the current datetime.
     identifier = f"{args.topic}"
-    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier)
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
 
     print(f"Sentiment analysis saved with identifier: {identifier}")
     db_handler.close()
