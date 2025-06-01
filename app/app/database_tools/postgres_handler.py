@@ -61,39 +61,35 @@ class PostgresHandler:
                     id SERIAL PRIMARY KEY,
                     inserted_at TIMESTAMPTZ DEFAULT NOW(),                        
                     sentiment JSON NOT NULL,
-                    identifier TEXT
+                    identifier TEXT,
+                    bot_name TEXT    -- <-- Add this line
                 )
             """)
             print("Ensured that the 'sentiment_results' table exists.")
 
-    def fetch_news_headlines(self, identifier_filter=None, since=None):
-        """
-        Fetch news items from the database, optionally filtered by keyword and date.
 
-        Returns:
-            list of dict: Each dict has keys: id, title, pub_date, source
-        """
-        query = "SELECT id, title, pub_date, source FROM news"
+    def fetch_news_headlines(self, identifier_filter=None, since_published=None, since_inserted=None):
+        query = "SELECT id, title, pub_date, inserted_at, source FROM news"
         clauses = []
         params = []
 
         if identifier_filter:
             clauses.append("search_term = %s")
             params.append(identifier_filter)
-
-        if since:
+        if since_published:
             clauses.append("pub_date >= %s")
-            params.append(since)
+            params.append(since_published)
+        if since_inserted:
+            clauses.append("inserted_at >= %s")
+            params.append(since_inserted)
 
         if clauses:
             query += " WHERE " + " AND ".join(clauses)
-
         query += " ORDER BY id;"
 
         with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
             cur.execute(query, tuple(params))
             return cur.fetchall()
-
 
     def fetch_sentiment_results(self, identifier_filter, since=None):
         """
@@ -179,20 +175,33 @@ class PostgresHandler:
             cur.executemany(insert_query, rows_to_insert)
             print(f"Inserted {len(rows_to_insert)} news items into the database.")
 
-    def insert_sentiment_result(self, sentiment_json, identifier=None):
+    def deduplicate_news(self):
+        with self.conn.cursor() as cur:
+            cur.execute("""
+                DELETE FROM news a
+                USING news b
+                WHERE
+                    a.id > b.id
+                    AND LOWER(a.title) = LOWER(b.title)
+                    AND a.search_term = b.search_term;
+            """)
+            print("Deduplicated news table (by title + search_term, case-insensitive).")
+
+    def insert_sentiment_result(self, sentiment_json, identifier=None, bot_name=None):
         """
         Insert a sentiment result into the sentiment_results table.
 
         Parameters:
-            sentiment_json (dict or str): A JSON object (or string) representing the sentiment analysis result.
+            sentiment_json (dict or str): JSON object or string representing the sentiment analysis result.
             identifier (str): Optional text identifier to label the result.
+            bot_name (str): Optional, the bot name or username.
         """
         with self.conn.cursor() as cur:
             insert_query = sql.SQL("""
-                INSERT INTO sentiment_results (sentiment, identifier)
-                VALUES (%s, %s)
+                INSERT INTO sentiment_results (sentiment, identifier, bot_name)
+                VALUES (%s, %s, %s)
             """)
-            cur.execute(insert_query, (json.dumps(sentiment_json), identifier))
+            cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
             print("Inserted sentiment result into the database.")
 
     def close(self):

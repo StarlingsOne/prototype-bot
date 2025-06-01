@@ -1,0 +1,42 @@
+Based on these headlines, think in a chain of thought:
+
+1. Dynamic Sentiment Scoring  
+   - Tiered Keywords (adjusted for sector relevance):  
+     | Strength      | Bullish Examples           | Bearish Examples           | Base Value | 
+     |---------------|----------------------------|----------------------------|------------|
+     | Strong (2x)   | "Surge", "Record Highs"     | "Collapse", "Default"      | ±0.05      |  
+     | Moderate (1x) | "Growth", "Beat Estimates"  | "Decline", "Miss"          | ±0.03      |  
+   - Negation Handling: Cancel scoring if negated (e.g., "No recession fears" → 0.0).  
+
+2. Sector-Weighted Impact  
+   - Apply pre-loaded S&P 500 sector weights (updated quarterly):  
+     *Tech: 30%, Healthcare: 13%, Energy: 4%, [...]*  
+   - Formula:  
+     (Keyword Score) × (Sector Weight) × Headline Multiplier  
+     - Headline Multiplier:  
+       - 1.5 if headline specifies a top 5 SP500 company (e.g., Apple, Microsoft).  
+       - 1.0 otherwise.  
+
+3. Momentum-Sensitive Contrarian Check  
+   - Apply -0.1 penalty only if:  
+     - ≥3 headlines from Tier 3 sources (blogs/social) agree *AND*  
+     - No Tier 1 sources (Bloomberg/Reuters) corroborate *AND*  
+     - SP500 is in "overbought" (>70 RSI) or "oversold" (<30 RSI) territory.  
+
+4. Empirically-Calibrated Conviction  
+   - Formula:  
+     Conviction = (Source Score + Recency Score + Consistency Score)  
+     - Source Score:  
+       - Tier 1: 0.4 | Tier 2: 0.25 | Tier 3: 0.1  
+     - Recency Score:  
+       - <2hrs: 0.3 | 2-6hrs: 0.2 | 6-12hrs: 0.1 | >12hrs: 0.0  
+     - Consistency Score:  
+       - 0.3 if ≥80% headlines agree on direction | 0.1 if mixed.  
+
+5. Edge Case Guardrails  
+   - Pre-Built Phrases: Auto-neutralize sarcasm/idioms (e.g., "bears feast" → -0.04, "so-called rally" → 0.0).  
+   - Conflict Rule: If headlines directly contradict (e.g., "Tech Booms" vs. "Tech Crash"), halve conviction.  
+
+6. Fallback Simplicity
+- If >50% headlines are >12hrs old, default to {{ "assessment": 0.5, "conviction": 0.3 }}.
+- If keyword scoring cancels out (net 0.0), defer to source-weighted sentiment.

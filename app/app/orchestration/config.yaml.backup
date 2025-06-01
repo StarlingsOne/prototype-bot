@@ -78,3 +78,147 @@ vancebot:
   username: vancebot
   topic: sp500
   prompt: vancebot_2025WK18.prompt
+
+emotionbot:
+  api_key: 6d5eeeb4-8830-4eee-8b01-6f4d1c7fe8a7
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: emotionbot
+  topic: sp500
+  prompt: emotionbot_2025WK18.prompt
+
+followbot:
+  api_key: 5aecc32b-c1fe-4f32-92c6-2a0e402f02a4
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: followbot
+  topic: sp500
+  prompt: followbot_2025WK18.prompt
+
+jimbot:
+  api_key: 2d9c9f01-1b52-4b3e-9d05-ba21dcfec46f
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: jimbot
+  topic: sp500
+  prompt: jimbot_2025WK18.prompt
+
+oppomotionbot:
+  api_key: f57cb7b1-8245-42fb-a19d-7e56b667da92
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: oppomotionbot
+  topic: sp500
+  prompt: oppomotionbot_2025WK18.prompt
+
+opposebot:
+  api_key: ae5c1875-0525-42db-8b3b-1300ebbf1b5c
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: opposebot
+  topic: sp500
+  prompt: opposebot_2025WK18.prompt
+
+osnatbot:
+  api_key: a6d8af38-a38b-4e0c-a3f7-48373ce9778c
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: osnatbot
+  topic: sp500
+  prompt: osnatbot_2025WK18.prompt
+
+robotofrollstreet:
+  api_key: 9e0b6a01-9071-4601-9da7-82d565925568
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: robotofrollstreet
+  topic: sp500
+  prompt: robotofrollstreet_2025WK18.prompt
+
+vancebot:
+  api_key: 6e00ee82-3647-4001-86fd-3a3d690efc34
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: vancebot
+  topic: sp500
+  prompt: vancebot_2025WK18.prompt
+
+fabulousbot:
+  api_key: 8aabb7b5-c046-42a3-b29a-25f6c02ab342
+  domain: http://localhost
+  market_id: 2
+  since_hours: 2
+  username: fabulousbot
+  topic: sp500
+  prompt: fabulousbot_2025WK18.prompt
+
+jgybot:
+  api_key:
+  domain: https://localhost
+  market_id:
+  since_hours: 2
+  username: jgybot
+  topic: sp500
+  prompt: jgybot_2025WK19.prompt
+
+yolobot:
+  api_key:
+  domain: https://localhost
+  market_id:
+  since_hours: 2
+  username: yolobot
+  topic: sp500
+  prompt: yolobot_2025WK19.prompt
+
+atlas:
+  api_key:
+  domain: https://localhost
+  market_id:
+  since_hours: 2
+  username: atlas
+  topic: sp500
+  prompt: atlas_2025WK19.prompt
+
+futurefollowbot:
+  api_key:
+  domain: https://localhost
+  market_id:
+  since_hours: 2
+  username: atlas
+  topic: sp500
+  prompt: futurefollowbot_2025WK19.prompt
+
+futureopposebot:
+  api_key:
+  domain: https://localhost
+  market_id:
+  since_hours: 2
+  username: atlas
+  topic: sp500
+  prompt: futureopposebot_2025WK19.prompt
+
+andreabotconstant:
+  api_key:
+  domain: https://localhost
+  market_id:
+  since_hours: 2
+  username: atlas
+  topic: sp500
+  prompt: andreabotconstant_2025WK19.prompt
+
+andreabotproportional:
+  api_key:
+  domain: https://localhost
+  market_id:
+  since_hours: 2
+  username: atlas
+  topic: sp500
+  prompt: andreabotproportional_2025WK19.prompt

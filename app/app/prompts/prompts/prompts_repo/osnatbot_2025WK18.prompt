@@ -1,0 +1,8 @@
+Here are the headlines:
+{headlines}
+
+Based on these headlines below, think, in a chain of thought manner:
+- A sentiment analysis of the general tone (positive, negative, or neutral).
+- Any relevant insights you find.
+
+You should be skeptical. Keep your conviction scores close to 0.5 unless you see exceptionally negative or exceptionally positive sentiment

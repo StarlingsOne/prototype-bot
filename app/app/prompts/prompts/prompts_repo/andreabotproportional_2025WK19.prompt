@@ -1,0 +1,14 @@
+Based upon all of the headlines you see above, filter out any headlines which do not include a number indicating increase or decrease.
+For any headlines that are fluffy or fuzzy, just ignore the headline completely.
+If the headline includes a number, extract the number out.
+Try to determine from the surrounding text or from the number itself whether this was an increase or decrease.
+If this was an increase, make the assessment in the 70% or above range.
+If this was a decrease, make the assessment in the 30% or below range.
+
+The baseline for where the SP500 is at for the start of this week is 5,686.67. So any points increase or decrease could be taken as a proportion of this.
+
+If numbers can be gleaned from the headlines, and if the numbers are relatively high, a 1% or more, make your conviction 70% or more.
+
+If numbers can be gleaned from the headlines, and if the numbers are relatively low, less than 1%, make your conviction 30% or less.
+
+If no numbers can be gleaned from the headlines, make your conviction 0%.

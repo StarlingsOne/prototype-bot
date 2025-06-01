@@ -18,6 +18,7 @@ RUN apt-get update && apt-get install -y    \
         unzip                               \
         nano                                \
         tree                                \
+        postgresql-client                   \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 COPY --chown=$USER:$USER requirements.txt /app/requirements.txt

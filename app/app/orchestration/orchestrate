@@ -6,18 +6,28 @@ import yaml
 import os
 import random
 from datetime import datetime
+import sys
+import os
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
+NEWSFEEDS_DIR = os.path.join(PROJECT_ROOT, "newsfeeds")
+BETTINGBOT_PATH = os.path.join(PROJECT_ROOT, "bettingbot", "bettingbot")
 
-DEFAULT_CONFIG = {
-    "since_hours": 12,
+if NEWSFEEDS_DIR not in sys.path:
+    sys.path.insert(0, NEWSFEEDS_DIR)
+
+from news_utils import news_recently_inserted
+
+
+TEMPLATE_CONFIG = {
+    "since_hours": 2,
     "domain": "http://localhost",
-    "market_id": 3,
+    "market_ids": [3],
     "username": "default",
     "api_key": "MISSING_API_KEY",
     "topic": None,
-    "prompt": "headline_sentiment.prompt",    
+    "prompt": "headline_sentiment.prompt",
 }
 
 def run_cmd(cmd_list):
@@ -33,9 +43,10 @@ def run_cmd(cmd_list):
         print(f"❌ Command failed: {e}")
         return False
 
-def run_pipeline(bot_name: str, config: dict):
+def run_pipeline(bot_name: str, config: dict, since_insertion_hours=0.5):
     topic = config.get("topic")
     prompt = config.get("prompt")
+    since_publication_hours = config.get("since_hours")
 
     if not topic:
         raise ValueError(f"Missing topic for bot '{bot_name}'")
@@ -43,29 +54,39 @@ def run_pipeline(bot_name: str, config: dict):
     print(f"\n=== Running bot '{bot_name}' for topic '{topic}' ===")
     print(f"📅 {datetime.now().isoformat()}")
 
-    steps = [
-        ["./input/readnews", topic],
-        [
-            "./input/sentiment",
-            "--prompt_name", prompt,
-            "--topic", topic,
-            "--since_hours", str(config["since_hours"]),
-        ],
-        [
-            "./output/bettingbot",
+    # 1. News ingestion: only reload if nothing inserted recently (by insertion date)
+    if news_recently_inserted(topic, since_insertion_hours):
+        print(f"⏩ News for topic '{topic}' inserted in last {since_insertion_hours} hours. Skipping readnews.")
+    else:
+        if not run_cmd(["../newsfeeds/readnews", topic]):
+            print(f"⚠️ Failed reading news for bot '{bot_name}'. Skipping remaining steps.")
+            return
+
+    # Step 2: Sentiment
+    sentiment_cmd = [
+        "../sentiment/sentiment",
+        "--prompt_name", prompt,
+        "--topic", topic,
+        "--since_publication_hours", str(since_publication_hours),  # <-- must be spelled correctly!
+        "--username", bot_name
+    ]
+    if not run_cmd(sentiment_cmd):
+        print(f"⚠️ Failed sentiment for bot '{bot_name}'. Skipping remaining steps.")
+        return
+
+    # Step 3: Betting - run for each market_id in list
+    for mid in config["market_ids"]:
+        betting_cmd = [
+            BETTINGBOT_PATH,
             "--domain", config["domain"],
-            "--market_id", str(config["market_id"]),
+            "--market_id", str(mid),
             "--username", config["username"],
             "--api_key", config["api_key"],
             "--identifier", topic
-        ],
-    ]
-
-    for step in steps:
-        if not run_cmd(step):
-            print(f"⚠️ Skipping remaining steps for bot '{bot_name}' due to previous failure.")
-            return  # Stop running commands for this bot only
-
+        ]
+        if not run_cmd(betting_cmd):
+            print(f"⚠️ Failed betting for market {mid} in bot '{bot_name}', continuing to next market.")
+            # Continue to the next market_id, do not abort all
 
 def load_all_bot_configs(yaml_path):
     if not yaml_path or not os.path.exists(yaml_path):
@@ -74,17 +95,25 @@ def load_all_bot_configs(yaml_path):
     with open(yaml_path, "r") as f:
         all_bots = yaml.safe_load(f)
 
-    return {
-        bot_name: {**DEFAULT_CONFIG, **bot_config}
-        for bot_name, bot_config in all_bots.items()
-    }
+    merged = {}
+    for bot_name, bot_config in all_bots.items():
+        config = {**TEMPLATE_CONFIG, **bot_config}
+        # Backwards compatibility: convert single market_id to market_ids
+        if "market_id" in bot_config and "market_ids" not in bot_config:
+            config["market_ids"] = [bot_config["market_id"]]
+        merged[bot_name] = config
+    return merged
+
 
 def main():
     parser = argparse.ArgumentParser(description="Run full prediction pipeline for bots.")
     parser.add_argument("config", type=str, help="YAML config file with bot definitions")
     parser.add_argument("--bot", help="Optional: run only a specific bot")
     parser.add_argument("--topic", help="Optional: override topic")
-    parser.add_argument("--since_hours", type=int, help="Optional: override hours for news recency")
+    parser.add_argument("--since_insertion_hours", type=float, default=0.5,  # e.g., 0.5 hours = 30 min
+        help="If no news for the topic has been INSERTED in the last N hours, reload news (uses ingest timestamp).")
+    parser.add_argument("--since_publication_hours", type=float, default=2.0,
+        help="Filter news for sentiment/betting if PUBLISHED in the last N hours (uses article's publication date).")
 
     args = parser.parse_args()
     bot_configs = load_all_bot_configs(args.config)
@@ -95,12 +124,16 @@ def main():
         config = bot_configs[args.bot]
         if args.topic:
             config["topic"] = args.topic
-        if args.since_hours:
-            config["since_hours"] = args.since_hours
-        run_pipeline(args.bot, config)
+        if args.since_publication_hours is not None:
+            config["since_publication_hours"] = args.since_publication_hours
+        run_pipeline(args.bot, config, since_insertion_hours=args.since_insertion_hours)
     else:
-        for bot_name, config in bot_configs.items():
-            run_pipeline(bot_name, config)
+        bot_items = list(bot_configs.items())
+        random.shuffle(bot_items)
+        for bot_name, config in bot_items:
+            if args.since_publication_hours is not None:
+                config["since_publication_hours"] = args.since_publication_hours
+            run_pipeline(bot_name, config, since_insertion_hours=args.since_insertion_hours)
 
 if __name__ == "__main__":
     main()

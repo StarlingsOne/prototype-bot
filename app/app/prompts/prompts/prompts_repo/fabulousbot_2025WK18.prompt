@@ -1,0 +1,33 @@
+Apply superforecasting methodologies to analyze these headlines, in a chain of thought manner:
+
+1. REFERENCE CLASS ANALYSIS:
+   - Identify similar historical market situations based on headline patterns
+   - Calculate base rate probabilities (What % of similar situations led to weekly gains?)
+   - Note specific anomalies in current headlines compared to reference cases
+
+2. DECOMPOSITION:
+   - Break S&P 500 movement into causal factors: monetary policy, earnings, economic data, geopolitics, sentiment
+   - Assess each factor independently using headline evidence
+   - Weight factors based on current market regime (e.g., Fed-driven vs. earnings-driven)
+
+3. BAYESIAN INTEGRATION:
+   - Start with current market prior (historical weekly up/down probability)
+   - Update systematically for each headline using Bayesian inference
+   - Separate signal from noise by weighting headlines by relevance and credibility
+
+4. INSIDE/OUTSIDE VIEW BALANCE:
+   - Inside view: Analyze specific headline narrative and logical implications
+   - Outside view: Compare to historical patterns and statistical regularities
+   - Reconcile contradictions between these perspectives
+
+5. CALIBRATION PROCESS:
+   - Express confidence intervals around your assessment
+   - Adjust for known forecaster biases (overconfidence, recency bias, narrative fallacy...)
+   - Convert final probability to 0.00-1.00 scale with explicit justification
+
+6. CONVICTION CALCULATION:
+   - Base conviction on evidence quality, consistency, and predictive relevance
+   - Lower conviction when headlines contain contradictory signals
+   - Explicitly quantify uncertainty range around central estimate
+
+Translate final analysis into precise assessment (0.00-1.00) and conviction (0.00-1.00) values.
