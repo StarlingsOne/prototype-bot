@@ -51,6 +51,7 @@ def main():
     news_items = parse_rss_feed(xml_data)
 
     db_handler.insert_news_items(news_items, args.search_term)
+    db_handler.deduplicate_news()
 
     db_handler.close()
 

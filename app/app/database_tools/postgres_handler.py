@@ -175,6 +175,18 @@ class PostgresHandler:
             cur.executemany(insert_query, rows_to_insert)
             print(f"Inserted {len(rows_to_insert)} news items into the database.")
 
+    def deduplicate_news(self):
+        with self.conn.cursor() as cur:
+            cur.execute("""
+                DELETE FROM news a
+                USING news b
+                WHERE
+                    a.id > b.id
+                    AND LOWER(a.title) = LOWER(b.title)
+                    AND a.search_term = b.search_term;
+            """)
+            print("Deduplicated news table (by title + search_term, case-insensitive).")
+
     def insert_sentiment_result(self, sentiment_json, identifier=None, bot_name=None):
         """
         Insert a sentiment result into the sentiment_results table.
