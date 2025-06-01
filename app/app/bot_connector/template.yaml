@@ -1,6 +1,6 @@
 api_key:
 domain: http://localhost
-since_hours: 2
+since_hours: 2 # maps to publication date of news
 username: bot_name
 topic: sp500
 prompt:

@@ -68,34 +68,28 @@ class PostgresHandler:
             print("Ensured that the 'sentiment_results' table exists.")
 
 
-    def fetch_news_headlines(self, identifier_filter=None, since=None):
-        """
-        Fetch news items from the database, optionally filtered by keyword and date.
-
-        Returns:
-            list of dict: Each dict has keys: id, title, pub_date, source
-        """
-        query = "SELECT id, title, pub_date, source FROM news"
+    def fetch_news_headlines(self, identifier_filter=None, since_published=None, since_inserted=None):
+        query = "SELECT id, title, pub_date, inserted_at, source FROM news"
         clauses = []
         params = []
 
         if identifier_filter:
             clauses.append("search_term = %s")
             params.append(identifier_filter)
-
-        if since:
+        if since_published:
             clauses.append("pub_date >= %s")
-            params.append(since)
+            params.append(since_published)
+        if since_inserted:
+            clauses.append("inserted_at >= %s")
+            params.append(since_inserted)
 
         if clauses:
             query += " WHERE " + " AND ".join(clauses)
-
         query += " ORDER BY id;"
 
         with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
             cur.execute(query, tuple(params))
             return cur.fetchall()
-
 
     def fetch_sentiment_results(self, identifier_filter, since=None):
         """

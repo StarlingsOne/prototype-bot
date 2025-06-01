@@ -17,7 +17,6 @@ TEMPLATE_KEYS = [
     "market_ids"
 ]
 
-
 def generate_insert_sql(botname, entry, password_hash):
     return f"""
 DELETE FROM users WHERE username = '{botname}';

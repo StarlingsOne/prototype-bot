@@ -53,6 +53,15 @@
 
 * In theory if we just move the prompts and copy/paste our new bots yaml into the correct location we can test orchestration.
 
+### Publication Date of News vs. Insertion Date of News
+
+* We need to make sure the news in our database is refreshed consistently, which means we need a form of hook that reloads the news from the web, e.g. run, "readnews" the command line tool if there hasn't been anything inserted in the last half an hour.
+* Parallel to this, each individual bot has a since_hours entry, which is how far back in time they look at news in order to make a bet.
+* So we do need two distinct since_hours types, but the bot since_hours should map to the publication_date while the reaload function should map to the insertion_date.
+
+### Deduplicating News
+
+
 ### Scheduling
 
 * As of 31 May 2025, the gemini-flash-2.0 model allows a maximum of 62 bots across 6 markets for 4 times per day.
