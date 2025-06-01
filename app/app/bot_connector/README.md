@@ -6,7 +6,6 @@
 
 * `bot_connector/`: CLI tooling for assembling YAMLs, e.g. init, update-api, market-add, etc.
 
-
 ### Commands
 
 #### `init`
