@@ -1,3 +1,48 @@
+vancebot:
+  api_key: a86780c0-0004-4049-9513-1edf5fd16d50
+  domain: http://localhost
+  since_hours: 2
+  username: vancebot
+  topic: sp500
+  prompt: vancebot_2025WK18.prompt
+  market_ids:
+  - 1  
+jimbot:
+  api_key: 0bdd86d0-0428-45ca-8d4c-9ad6757889cc
+  domain: http://localhost
+  since_hours: 2
+  username: jimbot
+  topic: sp500
+  prompt: jimbot_2025WK18.prompt
+  market_ids:
+  - 1
+yolobot:
+  api_key: e38bfb20-98b2-45f8-9cf4-590b9ef180b8
+  domain: https://localhost
+  since_hours: 2
+  username: yolobot
+  topic: sp500
+  prompt: yolobot_2025WK19.prompt
+  market_ids:
+  - 1
+andreabotconstant:
+  api_key: 527b908f-aedc-4e14-96ca-a46f8365a3aa
+  domain: https://localhost
+  since_hours: 2
+  username: atlas
+  topic: sp500
+  prompt: andreabotconstant_2025WK19.prompt
+  market_ids:
+  - 1
+andreabotproportional:
+  api_key: f9b7ead6-5533-4672-a7d4-f5dd550448d8
+  domain: https://localhost
+  since_hours: 2
+  username: atlas
+  topic: sp500
+  prompt: andreabotproportional_2025WK19.prompt
+  market_ids:
+  - 1  
 atlas_01:
   api_key: a22ddb7e-b956-4339-a331-fe3823702a4z
   domain: http://localhost
