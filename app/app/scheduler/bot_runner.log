@@ -1,0 +1,2578 @@
+[HEALTH] 2025-06-02 07:45:20 Scheduler alive.
+[HEALTH] 2025-06-02 07:46:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:47:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:48:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:49:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:50:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:51:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:52:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:53:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:54:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:55:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:56:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:57:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:58:00 Scheduler alive.
+[HEALTH] 2025-06-02 07:59:00 Scheduler alive.
+[HEALTH] 2025-06-02 08:00:00 Scheduler alive.
+🚀 Running orchestrate at 2025-06-02 08:00:00 CDT
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Inserted 100 news items into the database.
+Deduplicated news table (by title + search_term, case-insensitive).
+Closed the database connection.
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 48
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 9
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 59
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 49
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 46
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.85}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+
+=== Running bot 'jim_04' for topic 'sp500' ===
+📅 2025-06-02T13:00:00.420879
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+
+→ Running: ../newsfeeds/readnews sp500
+
+→ Running: ../sentiment/sentiment --prompt_name jim_04.prompt --topic sp500 --since_publication_hours 2 --username jim_04
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'jim_04.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'jim_04']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'jim_04'. Skipping remaining steps.
+
+=== Running bot 'atlas_07' for topic 'sp500' ===
+📅 2025-06-02T13:01:13.936884
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name atlas_07.prompt --topic sp500 --since_publication_hours 2 --username atlas_07
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'atlas_07.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'atlas_07']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'atlas_07'. Skipping remaining steps.
+
+=== Running bot 'jim_10' for topic 'sp500' ===
+📅 2025-06-02T13:01:32.812635
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name jim_10.prompt --topic sp500 --since_publication_hours 2 --username jim_10
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'jim_10.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'jim_10']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'jim_10'. Skipping remaining steps.
+
+=== Running bot 'buffbot_02' for topic 'sp500' ===
+📅 2025-06-02T13:01:48.381904
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name buffbot_02.prompt --topic sp500 --since_publication_hours 2 --username buffbot_02
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'buffbot_02.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'buffbot_02']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'buffbot_02'. Skipping remaining steps.
+
+=== Running bot 'mediajunkiedesk_09' for topic 'sp500' ===
+📅 2025-06-02T13:01:52.919339
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name mediajunkiedesk_09.prompt --topic sp500 --since_publication_hours 2 --username mediajunkiedesk_09
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'mediajunkiedesk_09.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'mediajunkiedesk_09']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'mediajunkiedesk_09'. Skipping remaining steps.
+
+=== Running bot 'conspirounemotiondesk_03' for topic 'sp500' ===
+📅 2025-06-02T13:01:55.948066
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name conspirounemotiondesk_03.prompt --topic sp500 --since_publication_hours 2 --username conspirounemotiondesk_03
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'conspirounemotiondesk_03.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'conspirounemotiondesk_03']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'conspirounemotiondesk_03'. Skipping remaining steps.
+
+=== Running bot 'fabbotdesk_08' for topic 'sp500' ===
+📅 2025-06-02T13:01:58.971875
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name fabbotdesk_08.prompt --topic sp500 --since_publication_hours 2 --username fabbotdesk_08
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'fabbotdesk_08.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'fabbotdesk_08']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'fabbotdesk_08'. Skipping remaining steps.
+
+=== Running bot 'atlas_10' for topic 'sp500' ===
+📅 2025-06-02T13:02:03.123066
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name atlas_10.prompt --topic sp500 --since_publication_hours 2 --username atlas_10
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'atlas_10.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'atlas_10']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'atlas_10'. Skipping remaining steps.
+
+=== Running bot 'jim_06' for topic 'sp500' ===
+📅 2025-06-02T13:02:06.168041
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name jim_06.prompt --topic sp500 --since_publication_hours 2 --username jim_06
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'jim_06.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'jim_06']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'jim_06'. Skipping remaining steps.
+
+=== Running bot 'jim_02' for topic 'sp500' ===
+📅 2025-06-02T13:02:09.215364
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name jim_02.prompt --topic sp500 --since_publication_hours 2 --username jim_02
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'jim_02.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'jim_02']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'jim_02'. Skipping remaining steps.
+
+=== Running bot 'fabbotdesk_05' for topic 'sp500' ===
+📅 2025-06-02T13:02:12.233477
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name fabbotdesk_05.prompt --topic sp500 --since_publication_hours 2 --username fabbotdesk_05
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'fabbotdesk_05.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'fabbotdesk_05']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'fabbotdesk_05'. Skipping remaining steps.
+
+=== Running bot 'yolobot' for topic 'sp500' ===
+📅 2025-06-02T13:02:15.261835
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name yolobot_2025WK19.prompt --topic sp500 --since_publication_hours 2 --username yolobot
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'yolobot_2025WK19.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'yolobot']' returned non-zero exit status 1./app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.35, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.35, 'conviction': 0.85}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.85}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.65}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 46
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 56
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 50
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 47
+}
+]
+
+⚠️ Failed sentiment for bot 'yolobot'. Skipping remaining steps.
+
+=== Running bot 'buffbot_04' for topic 'sp500' ===
+📅 2025-06-02T13:02:24.941371
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name buffbot_04.prompt --topic sp500 --since_publication_hours 2 --username buffbot_04
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'buffbot_04.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'buffbot_04']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'buffbot_04'. Skipping remaining steps.
+
+=== Running bot 'fabbotdesk_06' for topic 'sp500' ===
+📅 2025-06-02T13:04:08.565369
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name fabbotdesk_06.prompt --topic sp500 --since_publication_hours 2 --username fabbotdesk_06
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'fabbotdesk_06.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'fabbotdesk_06']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'fabbotdesk_06'. Skipping remaining steps.
+
+=== Running bot 'conspirounemotiondesk_09' for topic 'sp500' ===
+📅 2025-06-02T13:04:21.778579
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name conspirounemotiondesk_09.prompt --topic sp500 --since_publication_hours 2 --username conspirounemotiondesk_09
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'conspirounemotiondesk_09.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'conspirounemotiondesk_09']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'conspirounemotiondesk_09'. Skipping remaining steps.
+
+=== Running bot 'buffbot_09' for topic 'sp500' ===
+📅 2025-06-02T13:04:32.636298
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name buffbot_09.prompt --topic sp500 --since_publication_hours 2 --username buffbot_09
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'buffbot_09.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'buffbot_09']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'buffbot_09'. Skipping remaining steps.
+
+=== Running bot 'fabbotdesk_01' for topic 'sp500' ===
+📅 2025-06-02T13:04:50.149203
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name fabbotdesk_01.prompt --topic sp500 --since_publication_hours 2 --username fabbotdesk_01
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'fabbotdesk_01.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'fabbotdesk_01']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'fabbotdesk_01'. Skipping remaining steps.
+
+=== Running bot 'buffbot_10' for topic 'sp500' ===
+📅 2025-06-02T13:04:59.766372
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name buffbot_10.prompt --topic sp500 --since_publication_hours 2 --username buffbot_10
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'buffbot_10.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'buffbot_10']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'buffbot_10'. Skipping remaining steps.
+
+=== Running bot 'andreabotconstant' for topic 'sp500' ===
+📅 2025-06-02T13:05:11.647656
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name andreabotconstant_2025WK19.prompt --topic sp500 --since_publication_hours 2 --username andreabotconstant
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'andreabotconstant_2025WK19.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'andreabotconstant']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'andreabotconstant'. Skipping remaining steps.
+
+=== Running bot 'mediajunkiedesk_02' for topic 'sp500' ===
+📅 2025-06-02T13:05:15.861594
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name mediajunkiedesk_02.prompt --topic sp500 --since_publication_hours 2 --username mediajunkiedesk_02
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'mediajunkiedesk_02.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'mediajunkiedesk_02']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'mediajunkiedesk_02'. Skipping remaining steps.
+
+=== Running bot 'buffbot_05' for topic 'sp500' ===
+📅 2025-06-02T13:06:05.197827
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name buffbot_05.prompt --topic sp500 --since_publication_hours 2 --username buffbot_05
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'buffbot_05.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'buffbot_05']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'buffbot_05'. Skipping remaining steps.
+
+=== Running bot 'conspirounemotiondesk_07' for topic 'sp500' ===
+📅 2025-06-02T13:06:08.221547
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name conspirounemotiondesk_07.prompt --topic sp500 --since_publication_hours 2 --username conspirounemotiondesk_07
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'conspirounemotiondesk_07.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'conspirounemotiondesk_07']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'conspirounemotiondesk_07'. Skipping remaining steps.
+
+=== Running bot 'jim_08' for topic 'sp500' ===
+📅 2025-06-02T13:06:11.654361
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name jim_08.prompt --topic sp500 --since_publication_hours 2 --username jim_08
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'jim_08.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'jim_08']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'jim_08'. Skipping remaining steps.
+
+=== Running bot 'conspirounemotiondesk_05' for topic 'sp500' ===
+📅 2025-06-02T13:06:14.733381
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection./app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.4, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 10
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 6
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 3
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 57
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 53
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 50
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 47
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 55
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]
+
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name conspirounemotiondesk_05.prompt --topic sp500 --since_publication_hours 2 --username conspirounemotiondesk_05
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'conspirounemotiondesk_05.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'conspirounemotiondesk_05']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'conspirounemotiondesk_05'. Skipping remaining steps.
+
+=== Running bot 'buffbot_01' for topic 'sp500' ===
+📅 2025-06-02T13:06:33.572615
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name buffbot_01.prompt --topic sp500 --since_publication_hours 2 --username buffbot_01
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'buffbot_01.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'buffbot_01']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'buffbot_01'. Skipping remaining steps.
+
+=== Running bot 'jim_05' for topic 'sp500' ===
+📅 2025-06-02T13:06:46.057915
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name jim_05.prompt --topic sp500 --since_publication_hours 2 --username jim_05
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'jim_05.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'jim_05']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'jim_05'. Skipping remaining steps.
+
+=== Running bot 'mediajunkiedesk_04' for topic 'sp500' ===
+📅 2025-06-02T13:06:51.768578
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name mediajunkiedesk_04.prompt --topic sp500 --since_publication_hours 2 --username mediajunkiedesk_04
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'mediajunkiedesk_04.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'mediajunkiedesk_04']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'mediajunkiedesk_04'. Skipping remaining steps.
+
+=== Running bot 'conspirounemotiondesk_10' for topic 'sp500' ===
+📅 2025-06-02T13:06:55.829549
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name conspirounemotiondesk_10.prompt --topic sp500 --since_publication_hours 2 --username conspirounemotiondesk_10
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'conspirounemotiondesk_10.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'conspirounemotiondesk_10']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'conspirounemotiondesk_10'. Skipping remaining steps.
+
+=== Running bot 'buffbot_03' for topic 'sp500' ===
+📅 2025-06-02T13:06:58.862931
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name buffbot_03.prompt --topic sp500 --since_publication_hours 2 --username buffbot_03
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'buffbot_03.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'buffbot_03']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'buffbot_03'. Skipping remaining steps.
+
+=== Running bot 'atlas_02' for topic 'sp500' ===
+📅 2025-06-02T13:07:01.892899
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name atlas_02.prompt --topic sp500 --since_publication_hours 2 --username atlas_02
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'atlas_02.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'atlas_02']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'atlas_02'. Skipping remaining steps.
+
+=== Running bot 'atlas_01' for topic 'sp500' ===
+📅 2025-06-02T13:07:04.933217
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name atlas_01.prompt --topic sp500 --since_publication_hours 2 --username atlas_01
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'atlas_01.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'atlas_01']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'atlas_01'. Skipping remaining steps.
+
+=== Running bot 'jim_01' for topic 'sp500' ===
+📅 2025-06-02T13:07:08.776833
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name jim_01.prompt --topic sp500 --since_publication_hours 2 --username jim_01
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'jim_01.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'jim_01']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'jim_01'. Skipping remaining steps.
+
+=== Running bot 'fabbotdesk_03' for topic 'sp500' ===
+📅 2025-06-02T13:07:11.805313
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name fabbotdesk_03.prompt --topic sp500 --since_publication_hours 2 --username fabbotdesk_03
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'fabbotdesk_03.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'fabbotdesk_03']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'fabbotdesk_03'. Skipping remaining steps.
+
+=== Running bot 'mediajunkiedesk_10' for topic 'sp500' ===
+📅 2025-06-02T13:07:14.849967
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name mediajunkiedesk_10.prompt --topic sp500 --since_publication_hours 2 --username mediajunkiedesk_10
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'mediajunkiedesk_10.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'mediajunkiedesk_10']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'mediajunkiedesk_10'. Skipping remaining steps.
+
+=== Running bot 'conspirounemotiondesk_02' for topic 'sp500' ===
+📅 2025-06-02T13:08:06.379535
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name conspirounemotiondesk_02.prompt --topic sp500 --since_publication_hours 2 --username conspirounemotiondesk_02
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'conspirounemotiondesk_02.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'conspirounemotiondesk_02']' returned non-zero exit status 1./app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 49
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 46
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 49
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.08}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 50
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 47
+}
+]
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.35, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.65, 'conviction': 0.7}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+
+⚠️ Failed sentiment for bot 'conspirounemotiondesk_02'. Skipping remaining steps.
+
+=== Running bot 'conspirounemotiondesk_01' for topic 'sp500' ===
+📅 2025-06-02T13:08:09.431070
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name conspirounemotiondesk_01.prompt --topic sp500 --since_publication_hours 2 --username conspirounemotiondesk_01
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'conspirounemotiondesk_01.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'conspirounemotiondesk_01']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'conspirounemotiondesk_01'. Skipping remaining steps.
+
+=== Running bot 'conspirounemotiondesk_08' for topic 'sp500' ===
+📅 2025-06-02T13:08:12.456924
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name conspirounemotiondesk_08.prompt --topic sp500 --since_publication_hours 2 --username conspirounemotiondesk_08
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'conspirounemotiondesk_08.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'conspirounemotiondesk_08']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'conspirounemotiondesk_08'. Skipping remaining steps.
+
+=== Running bot 'andreabotproportional' for topic 'sp500' ===
+📅 2025-06-02T13:08:15.507317
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name andreabotproportional_2025WK19.prompt --topic sp500 --since_publication_hours 2 --username andreabotproportional
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'andreabotproportional_2025WK19.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'andreabotproportional']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'andreabotproportional'. Skipping remaining steps.
+
+=== Running bot 'buffbot_06' for topic 'sp500' ===
+📅 2025-06-02T13:09:12.323228
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name buffbot_06.prompt --topic sp500 --since_publication_hours 2 --username buffbot_06
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'buffbot_06.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'buffbot_06']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'buffbot_06'. Skipping remaining steps.
+
+=== Running bot 'vancebot' for topic 'sp500' ===
+📅 2025-06-02T13:09:58.065927
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name vancebot_2025WK18.prompt --topic sp500 --since_publication_hours 2 --username vancebot
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'vancebot_2025WK18.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'vancebot']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'vancebot'. Skipping remaining steps.
+
+=== Running bot 'atlas_04' for topic 'sp500' ===
+📅 2025-06-02T13:10:08.616069
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name atlas_04.prompt --topic sp500 --since_publication_hours 2 --username atlas_04
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'atlas_04.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'atlas_04']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'atlas_04'. Skipping remaining steps.
+
+=== Running bot 'jim_03' for topic 'sp500' ===
+📅 2025-06-02T13:10:11.643762
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name jim_03.prompt --topic sp500 --since_publication_hours 2 --username jim_03
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'jim_03.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'jim_03']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'jim_03'. Skipping remaining steps.
+
+=== Running bot 'mediajunkiedesk_05' for topic 'sp500' ===
+📅 2025-06-02T13:10:14.664705
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name mediajunkiedesk_05.prompt --topic sp500 --since_publication_hours 2 --username mediajunkiedesk_05
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'mediajunkiedesk_05.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'mediajunkiedesk_05']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'mediajunkiedesk_05'. Skipping remaining steps.
+
+=== Running bot 'atlas_08' for topic 'sp500' ===
+📅 2025-06-02T13:10:25.209523
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name atlas_08.prompt --topic sp500 --since_publication_hours 2 --username atlas_08
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'atlas_08.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'atlas_08']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'atlas_08'. Skipping remaining steps.
+
+=== Running bot 'atlas_06' for topic 'sp500' ===
+📅 2025-06-02T13:10:35.657562
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name atlas_06.prompt --topic sp500 --since_publication_hours 2 --username atlas_06
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'atlas_06.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'atlas_06']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'atlas_06'. Skipping remaining steps.
+
+=== Running bot 'fabbotdesk_04' for topic 'sp500' ===
+📅 2025-06-02T13:10:45.273432
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews.
+
+→ Running: ../sentiment/sentiment --prompt_name fabbotdesk_04.prompt --topic sp500 --since_publication_hours 2 --username fabbotdesk_04
+❌ Command failed: Command '['../sentiment/sentiment', '--prompt_name', 'fabbotdesk_04.prompt', '--topic', 'sp500', '--since_publication_hours', '2', '--username', 'fabbotdesk_04']' returned non-zero exit status 1.
+⚠️ Failed sentiment for bot 'fabbotdesk_04'. Skipping remaining steps.
+
+=== Running bot 'atlas_09' for topic 'sp500' ===
+📅 2025-06-02T13:10:55.612549
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Closed the database connection.
+⏩ News for topic 'sp500' inserted in last 0.5 hours. Skipping readnews./app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.4, 'conviction': 0.75}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+💭 validated sentiment output: {'assessment': 0.45, 'conviction': 0.7}
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 99, in main
+    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
+  File "/app/app/database_tools/postgres_handler.py", line 204, in insert_sentiment_result
+    cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
+psycopg2.errors.UndefinedColumn: column "bot_name" of relation "sentiment_results" does not exist
+LINE 2: ...ERT INTO sentiment_results (sentiment, identifier, bot_name)
+                                                              ^
+
+/app/app/scheduler/../sentiment/sentiment:85: DeprecationWarning: datetime.datetime.utcnow() is deprecated and scheduled for removal in a future version. Use timezone-aware objects to represent datetimes in UTC: datetime.datetime.now(datetime.UTC).
+  since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
+Ensured that the 'news' table exists.
+Ensured that the 'sentiment_results' table exists.
+Traceback (most recent call last):
+  File "/app/app/scheduler/../sentiment/sentiment", line 106, in <module>
+    main()
+  File "/app/app/scheduler/../sentiment/sentiment", line 96, in main
+    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
+                       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/app/app/scheduler/../sentiment/sentiment", line 47, in analyze_sentiment
+    response = model.generate_content(prompt)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/generativeai/generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/ai/generativelanguage_v1beta/services/generative_service/client.py", line 835, in generate_content
+    response = rpc(
+               ^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/gapic_v1/method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 293, in retry_wrapped_func
+    return retry_target(
+           ^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 153, in retry_target
+    _retry_error_helper(
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_base.py", line 212, in _retry_error_helper
+    raise final_exc from source_exc
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/retry/retry_unary.py", line 144, in retry_target
+    result = target()
+             ^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/local/lib/python3.12/site-packages/google/api_core/grpc_helpers.py", line 78, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. [violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerMinutePerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.0-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 15
+}
+, links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, retry_delay {
+  seconds: 52
+}
+]
