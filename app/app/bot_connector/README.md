@@ -31,6 +31,19 @@
 ./connector register-db --yaml bots.yaml
 ```
 
+#### `market-remove`
+
+```
+./connector market-remove --input bots.yaml --output bots_out.yaml --market-id 1
+```
+
+#### `market-add`
+
+```
+./connector market-add --input bots_out.yaml --output bots_out.yaml --market-id 5
+```
+
+
 ### Fixing Market Usage
 
 * `orchestrate` has been updated, `scheduler` and `bettingbot` should not need to be updated to work with new entry, `market_ids`, which acts as a list rather than a single entry.
