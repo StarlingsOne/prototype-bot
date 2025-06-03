@@ -9,6 +9,7 @@ import os
 import re
 from datetime import datetime, timedelta
 from guardrails import validate_sentiment_output
+from sentiment.cross_process_rate_limiter import rate_limited_generate
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
@@ -44,10 +45,7 @@ def analyze_sentiment(prompt_name, topic, headlines):
 
     prompt = generate_prompt(prompt_name, topic, headlines)
 
-    response = model.generate_content(prompt)
-
-    RATE_LIMIT_SECONDS = 6
-    time.sleep(RATE_LIMIT_SECONDS)
+    response = rate_limited_generate(model, prompt)
 
     if not hasattr(response, "text"):
         print("Error: No text response received from the model.", file=sys.stderr)
