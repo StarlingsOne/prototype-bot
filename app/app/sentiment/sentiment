@@ -9,13 +9,12 @@ import os
 import re
 from datetime import datetime, timedelta
 from guardrails import validate_sentiment_output
-from sentiment.cross_process_rate_limiter import rate_limited_generate
+from cross_process_rate_limiter import rate_limited_generate
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 
 from database_tools.postgres_handler import PostgresHandler
 from prompts.prompts.generate_prompt import generate_prompt
-
 
 # Define the path to the API key file
 KEY_FILE_PATH = os.path.join(os.environ["KEYS_DIR"], "gemini", "gemini_key")
