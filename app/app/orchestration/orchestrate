@@ -5,6 +5,7 @@ import subprocess
 import yaml
 import os
 import random
+import time
 from datetime import datetime
 import sys
 import os
@@ -87,6 +88,10 @@ def run_pipeline(bot_name: str, config: dict, since_insertion_hours=0.5):
         if not run_cmd(betting_cmd):
             print(f"⚠️ Failed betting for market {mid} in bot '{bot_name}', continuing to next market.")
             # Continue to the next market_id, do not abort all
+
+    # Step 4: Wait - ensure 6 second wait before calling sentiment again.
+    RATE_LIMIT_SECONDS = 6
+    time.sleep(RATE_LIMIT_SECONDS)
 
 def load_all_bot_configs(yaml_path):
     if not yaml_path or not os.path.exists(yaml_path):
