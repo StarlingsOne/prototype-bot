@@ -4,23 +4,17 @@ import google.generativeai as genai
 import argparse
 import json
 import sys
-import time
 import os
 import re
-from datetime import datetime, timedelta
 from guardrails import validate_sentiment_output
 from sentiment.cross_process_rate_limiter import rate_limited_generate
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
 from database_tools.postgres_handler import PostgresHandler
-from prompts.prompts.generate_prompt import generate_prompt
-
 
 # Define the path to the API key file
 KEY_FILE_PATH = os.path.join(os.environ["KEYS_DIR"], "gemini", "gemini_key")
 
-# Read the GENAI API key from the file
 try:
     with open(KEY_FILE_PATH, "r") as key_file:
         api_key = key_file.read().strip()
@@ -28,10 +22,7 @@ except FileNotFoundError:
     print(f"Error: API key file not found at {KEY_FILE_PATH}", file=sys.stderr)
     sys.exit(1)
 
-# Configure the generative AI model with the API key
 genai.configure(api_key=api_key)
-
-# Initialize the Gemini model
 model = genai.GenerativeModel("gemini-2.0-flash")
 
 def extract_first_json(text):
@@ -40,11 +31,7 @@ def extract_first_json(text):
         return match.group(0)
     raise ValueError("No JSON object found in response.")
 
-
-def analyze_sentiment(prompt_name, topic, headlines):
-
-    prompt = generate_prompt(prompt_name, topic, headlines)
-
+def analyze_sentiment(prompt):
     response = rate_limited_generate(model, prompt)
 
     if not hasattr(response, "text"):
@@ -67,38 +54,23 @@ def analyze_sentiment(prompt_name, topic, headlines):
 
     return validated
 
-
 def main():
-    """Main function to parse arguments and run sentiment analysis."""
-    parser = argparse.ArgumentParser(description="Assess sentiment of news headlines on a given topic.")
-    parser.add_argument("--prompt_name", type=str, required=True, help="The prompt name used for this sentiment analysis.")
-    parser.add_argument("--topic", type=str, required=True, help="The topic to analyze sentiment for.")
-    parser.add_argument("--since_publication_hours", type=float, default=24.0, help="Only analyze headlines PUBLISHED within this many hours (default: 24.0)")
+    parser = argparse.ArgumentParser(description="Run sentiment with a prebuilt prompt.")
+    parser.add_argument("--prompt_file", type=str, required=True, help="Path to the file containing the full prompt.")
+    parser.add_argument("--identifier", type=str, required=True, help="Identifier for storing the result (usually topic or market/asset).")
     parser.add_argument("--username", type=str, required=True, help="Bot username or name for this sentiment run.")
 
     args = parser.parse_args()
 
+    with open(args.prompt_file) as f:
+        prompt = f.read()
+
+    sentiment_result = analyze_sentiment(prompt)
+
     db_handler = PostgresHandler()
-
-    since = datetime.utcnow() - timedelta(hours=args.since_publication_hours)
-
-    headlines = db_handler.fetch_news_headlines(
-        identifier_filter=args.topic,
-        since_published=since   # Explicit arg, matches your new handler signature
-    )
-    if not headlines:
-        print("Error: No headlines found in the database.", file=sys.stderr)
-        db_handler.close()
-        sys.exit(1)
-
-    sentiment_result = analyze_sentiment(args.prompt_name, args.topic, headlines)
-
-    identifier = f"{args.topic}"
-    db_handler.insert_sentiment_result(sentiment_result, identifier=identifier, bot_name=args.username)
-
-    print(f"Sentiment analysis saved with identifier: {identifier}")
+    db_handler.insert_sentiment_result(sentiment_result, identifier=args.identifier, bot_name=args.username)
+    print(f"Sentiment analysis saved with identifier: {args.identifier}")
     db_handler.close()
-
 
 if __name__ == "__main__":
     main()

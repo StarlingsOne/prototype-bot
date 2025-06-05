@@ -1,14 +1,18 @@
 #!/usr/bin/env python3
 
 import argparse
+from datetime import datetime, timezone, timedelta
 import subprocess
 import yaml
 import os
 import random
 import time
-from datetime import datetime
 import sys
 import os
+from prediction_market.api import extract_market_context, fetch_user_info, fetch_maximum_debt_allowed
+from prompts import generate_prompt
+from newsfeeds.readnews import readnews
+from database_tools.postgres_handler import PostgresHandler
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 PROJECT_ROOT = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))
@@ -46,8 +50,11 @@ def run_cmd(cmd_list):
 
 def run_pipeline(bot_name: str, config: dict, since_insertion_hours=0.5):
     topic = config.get("topic")
-    prompt = config.get("prompt")
+    prompt_template = config.get("prompt")
     since_publication_hours = config.get("since_hours")
+    domain = config.get("domain")
+    username = config.get("username")
+    market_ids = config.get("market_ids", [])
 
     if not topic:
         raise ValueError(f"Missing topic for bot '{bot_name}'")
@@ -55,27 +62,86 @@ def run_pipeline(bot_name: str, config: dict, since_insertion_hours=0.5):
     print(f"\n=== Running bot '{bot_name}' for topic '{topic}' ===")
     print(f"📅 {datetime.now().isoformat()}")
 
-    # 1. News ingestion: only reload if nothing inserted recently (by insertion date)
+    # 1. News ingestion
     if news_recently_inserted(topic, since_insertion_hours):
         print(f"⏩ News for topic '{topic}' inserted in last {since_insertion_hours} hours. Skipping readnews.")
     else:
         if not run_cmd(["../newsfeeds/readnews", topic]):
             print(f"⚠️ Failed reading news for bot '{bot_name}'. Skipping remaining steps.")
             return
+        
+    # 2. Fetch headlines from DB (using your existing logic)
+    db_handler = PostgresHandler()
+    since = datetime.now(timezone.utc) - timedelta(hours=since_publication_hours)
+    headlines = db_handler.fetch_news_headlines(identifier_filter=topic, since_published=since)
+    db_handler.close()
 
-    # Step 2: Sentiment
+    if not headlines:
+        print("No headlines found for topic", topic)
+        return
+
+    context["headlines"] = headlines
+
+    # 3. Fetch context for the first market (or loop if you want one per market)
+    market_id = market_ids[0] if market_ids else None
+    if not (domain and username and market_id):
+        print("Missing domain, username, or market_id for context build.")
+        return
+
+    # --- Fetch Prediction Market API data ---
+    try:
+        market_json = extract_market_context(domain, market_id)
+        user_json = fetch_user_info(domain, username)
+        max_debt = fetch_maximum_debt_allowed(domain)
+    except Exception as e:
+        print(f"Error fetching market/user/setup info: {e}")
+        return
+
+    # --- Extract Prediction Market fields for prompt ---
+    prob_changes = market_json.get("probabilityChanges", [])
+    latest_prob = prob_changes[-1]["probability"] if prob_changes else market_json["market"].get("initialProbability", 0.5)
+    resolution_datetime = market_json["market"].get("resolutionDateTime", "")
+
+    # Optionally compute hours to resolution
+    hours_to_resolution = None
+    if resolution_datetime:
+        try:
+            dt_resolution = datetime.fromisoformat(resolution_datetime.replace("Z", "+00:00"))
+            hours_to_resolution = (dt_resolution - datetime.now(timezone.utc)).total_seconds() / 3600
+        except Exception:
+            pass
+
+    context = {
+        "question_title": market_json["market"].get("questionTitle", ""),
+        "resolution_datetime": resolution_datetime,
+        "hours_to_resolution": hours_to_resolution,
+        "market_current_probability": latest_prob,
+        "market_total_volume": market_json.get("totalVolume", 0),
+        "bot_balance": user_json.get("accountBalance", 0),
+        "maximum_debt_allowed": max_debt,
+        "topic": topic,
+        # You’ll want to extract actual headlines below!
+        "headlines": "(fill in from your news logic)",
+    }
+
+    # --- Generate prompt (now you have all fields ready) ---
+    prompt_str = generate_prompt(prompt_template, **context)
+    with open("/tmp/generated_prompt.txt", "w") as f:
+        f.write(prompt_str)
+
+    # 5: Call sentiment script (pass prompt via file, stdin, or CLI arg)
     sentiment_cmd = [
         "../sentiment/sentiment",
-        "--prompt_name", prompt,
-        "--topic", topic,
-        "--since_publication_hours", str(since_publication_hours),  # <-- must be spelled correctly!
+        "--prompt_file", "/tmp/generated_prompt.txt",
+        "--identifier", topic,
         "--username", bot_name
     ]
+    run_cmd(sentiment_cmd)
     if not run_cmd(sentiment_cmd):
         print(f"⚠️ Failed sentiment for bot '{bot_name}'. Skipping remaining steps.")
         return
 
-    # Step 3: Betting - run for each market_id in list
+    # Step 6: Betting (unchanged)
     for mid in config["market_ids"]:
         betting_cmd = [
             BETTINGBOT_PATH,
@@ -87,11 +153,10 @@ def run_pipeline(bot_name: str, config: dict, since_insertion_hours=0.5):
         ]
         if not run_cmd(betting_cmd):
             print(f"⚠️ Failed betting for market {mid} in bot '{bot_name}', continuing to next market.")
-            # Continue to the next market_id, do not abort all
 
-    # Step 4: Wait - ensure 6 second wait before calling sentiment again.
     RATE_LIMIT_SECONDS = 6
     time.sleep(RATE_LIMIT_SECONDS)
+
 
 def load_all_bot_configs(yaml_path):
     if not yaml_path or not os.path.exists(yaml_path):
