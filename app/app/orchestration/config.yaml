@@ -6,7 +6,7 @@ atlas_01:
   topic: sp500
   prompt: atlas_01.prompt
   market_ids:
-  - 1
+  - 9
 atlas_02:
   api_key: b12317a3-9292-48b4-9cbc-ea4170119ec8
   domain: http://localhost
@@ -15,4 +15,4 @@ atlas_02:
   topic: sp500
   prompt: atlas_02.prompt
   market_ids:
-  - 1
+  - 9

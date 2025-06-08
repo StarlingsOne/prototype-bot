@@ -1,6 +1,6 @@
 import requests
 from datetime import datetime, timezone
-from prediction_market.context_schema import CONTEXT_SCHEMA
+from context.context_schema import CONTEXT_SCHEMA
 
 def fetch_user_info(domain, username):
     url = f"{domain}/api/v0/userinfo/{username}"
@@ -42,9 +42,9 @@ def extract_market_context(domain: str, market_id: int) -> dict:
     return {
         "question_title": market.get("questionTitle", ""),
         "resolution_datetime": resolution_datetime,
-        "hours_to_resolution": hours_to_resolution,  # float, or None
+        "hours_to_resolution": hours_to_resolution,
         "market_current_probability": latest_prob,
-        "market_total_volume": api_json.get("totalVolume", 0),
+        "market_total_volume": market.get("totalVolume", 0),
     }
 
 def fetch_maximum_debt_allowed(domain: str) -> int:

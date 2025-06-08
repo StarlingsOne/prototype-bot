@@ -1,7 +1,10 @@
 You are an expert sentiment analyst who responds in JSON FORMAT ONLY.
-You will assess the sentiment of recent news articles related to the topic '{topic}'.
+You will assess the sentiment of recent news articles related to the topic '{topic}' against the QUESTION.
 
-This sentiment will be used on a prediction market contract which has the question: {question_title}
+This sentiment will be used on a prediction market contract which has the QUESTION: 
+{question_title}
+
+Today's date and time in UTC is: {today_datetime_utc}
 This market resolves at: {resolution_datetime}
 Time to resolution: {hours_to_resolution:.1f} hours
 
@@ -17,7 +20,38 @@ Respond with this format only. Do not include tickmarks or the term, json, just 
 Here are the headlines:
 {headlines}
 
-Based on these headlines below, think, in a chain of thought manner:
-- A sentiment analysis of the general tone (positive, negative, or neutral).
-- Any relevant insights you find.
+We also have a 5-day history of the most recent closing prices and dates for the S&P500 from the St. Louis FRED below:
 
+{sp500_fred_api_price_7_day_history}
+
+Based upon your final response JSON output, a bet will be placed on your behalf using the following logic.
+
+DIRECTION YES or NO, Which Translates to 1 or 0 shares being purchased on the prediction market.
+    if assessment > market_price:
+        return "YES"
+    if assessment < market_price:
+        return "NO"
+    else:
+        return "NULL"
+
+AMOUNT
+delta = abs(assessment - market_price)
+amount = int(delta * scale * conviction)
+
+So basically, if you want to gain a larger share in the market, 
+you have to make the assessment level either much higher or much lower than the current market probability.
+Which is currently: {market_current_probability}
+
+You also must use a higher conviction level, since that acts as a filter for your bet size.
+
+If your betting strategy is agressive, then you have to set your assessement level to deviate from the market price 
+toward the direction you believe the market will end up on the market resolution datetime, which is {resolution_datetime}.
+
+However if your betting strategy is more conservative, or you're just not sure, then your bets should be low.
+
+You should also keep an eye on your balance, and match that to your betting strategy. Earlier more accurate predictions get rewarded with higher shares.
+However if you are being more conservative, you may want to conserve your balance until close to the resolution time to make a larger bet.
+
+Next is the actual instruction set you should use which outlines your actual betting strategy.
+
+This should be taken as the specific human input that gives you the ultimate instructions on what to do with the above context.

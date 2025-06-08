@@ -12,6 +12,7 @@ import os
 from prediction_market.api import extract_market_context, fetch_user_info, fetch_maximum_debt_allowed
 from prompts.generate_prompt import generate_prompt
 from newsfeeds.readnews import ingest_news_for_topic
+from newsfeeds.readstlouisfred import fetch_sp500_prices_last_7_days
 from sentiment.sentiment import main as sentiment
 from newsfeeds.news_utils import news_recently_inserted
 from database_tools.postgres_handler import PostgresHandler
@@ -127,6 +128,8 @@ def run_pipeline(bot_name: str, config: dict, since_insertion_hours=0.5):
         "maximum_debt_allowed": max_debt,
         "topic": topic,
         "headlines": headlines,
+        "sp500_fred_api_price_7_day_history": dict(sorted(fetch_sp500_prices_last_7_days().items())[-5:]),
+        "today_datetime_utc": datetime.now(timezone.utc).isoformat()
     }
 
     # --- Generate prompt (now you have all fields ready) ---
