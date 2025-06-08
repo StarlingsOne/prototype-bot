@@ -8,7 +8,8 @@ Time to resolution: {hours_to_resolution:.1f} hours
 Current market probability: {market_current_probability}
 Total volume: {market_total_volume}
 
-Your current balance is: {bot_balance} out of a total maximum debt allowed: -{maximum_debt_allowed}, meaning your balance can go down to this negative number.
+Your current balance is: {bot_balance} and you can go down to a low of -{maximum_debt_allowed}.
+After which point you can no longer bet and you lost the game.
 
 The JSON format of your response will look like this:  [ "assessment": X.XX, "conviction": Y.YY ] with X and Y being numbers and [] being curly braces.
 Respond with this format only. Do not include tickmarks or the term, json, just the object itself.

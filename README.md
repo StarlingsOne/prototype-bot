@@ -21,7 +21,7 @@ Test out a bot designed to use LLM's to classify sentiment and conviction level 
 mkdir playground_keys/
 ```
 
-2. Within that, make another directory, `gemini/`
+2. Within that, make another set of directories, `gemini/` and `stlouisfred`, and within those directories put keys `gemini_key` and `stlouisfred_key` respectively.
 3. Note, this directory will NOT go in the repo EVER. This is designed to be in a location parallel to the repo in a conventional location.
 4. Add a file `gemini_key` and put your Gemini API key in here. Again DO NOT REMOVE `keys/` from the `.gitignore` file for risk of leaking this online.
 

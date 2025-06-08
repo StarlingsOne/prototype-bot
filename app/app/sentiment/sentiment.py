@@ -65,6 +65,12 @@ def main():
     with open(args.prompt_file) as f:
         prompt = f.read()
 
+    print("\n" + "="*40)
+    print("FINAL PROMPT SENT TO MODEL:")
+    print("="*40)
+    print(prompt)
+    print("="*40 + "\n")
+
     sentiment_result = analyze_sentiment(prompt)
 
     db_handler = PostgresHandler()
