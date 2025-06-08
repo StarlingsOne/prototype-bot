@@ -1,9 +1,9 @@
 import os
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-PROMPT_DIR = os.path.join(SCRIPT_DIR, "prompts_repo")
-HEADER_PATH = os.path.join(SCRIPT_DIR, "headers", "header.prompt")
-FOOTER_PATH = os.path.join(SCRIPT_DIR, "footers", "footer.prompt")
+PROMPT_DIR = os.path.join(SCRIPT_DIR, "prompts/prompts_repo")
+HEADER_PATH = os.path.join(SCRIPT_DIR, "prompts/headers", "header.prompt")
+FOOTER_PATH = os.path.join(SCRIPT_DIR, "prompts/footers", "footer.prompt")
 
 def _load_section(path):
     if os.path.exists(path):
@@ -11,7 +11,7 @@ def _load_section(path):
             return f.read().strip()
     return ""
 
-def generate_prompt(prompt_name: str, topic: str, headlines: str) -> str:
+def generate_prompt(prompt_name: str, **context_vars) -> str:
     header = _load_section(HEADER_PATH)
     footer = _load_section(FOOTER_PATH)
     prompt_path = os.path.join(PROMPT_DIR, prompt_name)
@@ -21,6 +21,6 @@ def generate_prompt(prompt_name: str, topic: str, headlines: str) -> str:
     with open(prompt_path, "r") as f:
         template = f.read().strip()
 
-    # Join only non-empty sections to avoid blank lines if header/footer is missing
+    # Join only non-empty sections
     final_prompt = "\n\n".join([s for s in [header, template, footer] if s])
-    return final_prompt.format(topic=topic, headlines=headlines)
+    return final_prompt.format(**context_vars)

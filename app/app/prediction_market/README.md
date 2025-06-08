@@ -1,0 +1,1 @@
+* This API gives us access to the prediction market which we are betting on.

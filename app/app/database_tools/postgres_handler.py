@@ -26,6 +26,7 @@ class PostgresHandler:
             self.conn.autocommit = True
             self.create_news_table()
             self.create_sentiment_table()
+            self.create_sp500_price_table()
         except Exception as e:
             print(f"Error connecting to Postgres: {e}")
             raise
@@ -66,6 +67,21 @@ class PostgresHandler:
                 )
             """)
             print("Ensured that the 'sentiment_results' table exists.")
+
+    def create_sp500_price_table(self):
+        """Create the sp500_prices table if it doesn't already exist."""
+        with self.conn.cursor() as cur:
+            cur.execute("""
+                CREATE TABLE IF NOT EXISTS sp500_prices (
+                    id SERIAL PRIMARY KEY,
+                    price_date DATE NOT NULL,
+                    close_value FLOAT NOT NULL,
+                    source VARCHAR(32) DEFAULT 'fred',
+                    inserted_at TIMESTAMPTZ DEFAULT NOW(),
+                    UNIQUE (price_date, source)
+                )
+            """)
+            print("Ensured that the 'sp500_prices' table exists.")
 
 
     def fetch_news_headlines(self, identifier_filter=None, since_published=None, since_inserted=None):
@@ -203,6 +219,63 @@ class PostgresHandler:
             """)
             cur.execute(insert_query, (json.dumps(sentiment_json), identifier, bot_name))
             print("Inserted sentiment result into the database.")
+
+    def insert_sp500_price(self, price_date, close_value, source="fred"):
+        """Insert S&P500 closing price, avoiding duplicates."""
+        with self.conn.cursor() as cur:
+            cur.execute("""
+                INSERT INTO sp500_prices (price_date, close_value, source)
+                VALUES (%s, %s, %s)
+                ON CONFLICT (price_date, source) DO NOTHING
+            """, (price_date, close_value, source))
+            print(f"Inserted S&P500 price for {price_date} from {source}.")
+
+    def has_sp500_price_for_date(self, price_date, source="fred"):
+        """Return True if a price for price_date (and source) already exists."""
+        with self.conn.cursor() as cur:
+            cur.execute("""
+                SELECT 1 FROM sp500_prices
+                WHERE price_date = %s AND source = %s
+                LIMIT 1
+            """, (price_date, source))
+            return cur.fetchone() is not None
+        
+    def fetch_sp500_prices_between(self, start_date, end_date, source="fred"):
+        """
+        Fetch S&P500 closing prices between start_date and end_date (inclusive).
+
+        Returns:
+            List of dicts: [{ "price_date": date, "close_value": float }]
+        """
+        with self.conn.cursor(cursor_factory=psycopg2.extras.DictCursor) as cur:
+            cur.execute("""
+                SELECT price_date, close_value
+                FROM sp500_prices
+                WHERE price_date >= %s AND price_date <= %s AND source = %s
+                ORDER BY price_date ASC
+            """, (start_date, end_date, source))
+            rows = cur.fetchall()
+            # Convert to simple dicts if needed
+            return [dict(row) for row in rows]
+
+    def fetch_last_sp500_price_insert_time(self, source="fred"):
+        """
+        Returns the most recent 'inserted_at' timestamp from sp500_prices for given source,
+        or None if table is empty.
+        """
+        with self.conn.cursor() as cur:
+            cur.execute("""
+                SELECT inserted_at
+                FROM sp500_prices
+                WHERE source = %s
+                ORDER BY inserted_at DESC
+                LIMIT 1
+            """, (source,))
+            row = cur.fetchone()
+            if row and row[0]:
+                # row[0] should be a datetime object already
+                return row[0]
+            return None
 
     def close(self):
         """Close the database connection."""
