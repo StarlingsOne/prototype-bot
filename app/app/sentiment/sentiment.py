@@ -6,7 +6,7 @@ import json
 import sys
 import os
 import re
-from guardrails import validate_sentiment_output
+from sentiment.guardrails import validate_sentiment_output
 from sentiment.cross_process_rate_limiter import rate_limited_generate
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))

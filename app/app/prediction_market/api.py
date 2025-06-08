@@ -3,12 +3,24 @@ from datetime import datetime, timezone
 from prediction_market.context_schema import CONTEXT_SCHEMA
 
 def fetch_user_info(domain, username):
-    url = f"{domain}/v0/userinfo/{username}"
+    url = f"{domain}/api/v0/userinfo/{username}"
+    resp = requests.get(url)
+    try:
+        resp.raise_for_status()
+        user_json = resp.json()
+    except Exception as e:
+        print(f"[ERROR] Could not parse user info JSON from {url}")
+        print(f"[ERROR] Status code: {resp.status_code}")
+        print(f"[ERROR] Content: {resp.content!r}")
+        raise
+    return user_json
+
+
+def extract_market_context(domain: str, market_id: int) -> dict:
+    url = f"{domain}/api/v0/markets/{market_id}"
     resp = requests.get(url)
     resp.raise_for_status()
-    return resp.json()
-
-def extract_market_context(domin: str, market_id: int) -> dict:
+    api_json = resp.json()
     market = api_json.get("market", {})
     prob_changes = api_json.get("probabilityChanges", [])
     # Get the LAST probability change (latest), or fallback to initial

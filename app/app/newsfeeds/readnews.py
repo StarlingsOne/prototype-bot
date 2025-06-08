@@ -22,7 +22,6 @@ def fetch_rss_feed(search_term):
 
     return response.content
 
-
 def parse_rss_feed(xml_data):
     """Parse the RSS XML and extract headlines, publication dates, and sources."""
     root = ET.fromstring(xml_data)
@@ -37,6 +36,13 @@ def parse_rss_feed(xml_data):
 
     return news_items
 
+def ingest_news_for_topic(search_term):
+    db_handler = PostgresHandler()
+    xml_data = fetch_rss_feed(search_term)
+    news_items = parse_rss_feed(xml_data)
+    db_handler.insert_news_items(news_items, search_term)
+    db_handler.deduplicate_news()
+    db_handler.close()
 
 def main():
     parser = argparse.ArgumentParser(
@@ -44,17 +50,7 @@ def main():
     )
     parser.add_argument("search_term", type=str, help="Search term for Google News RSS")
     args = parser.parse_args()
-
-    db_handler = PostgresHandler()
-
-    xml_data = fetch_rss_feed(args.search_term)
-    news_items = parse_rss_feed(xml_data)
-
-    db_handler.insert_news_items(news_items, args.search_term)
-    db_handler.deduplicate_news()
-
-    db_handler.close()
-
+    ingest_news_for_topic(args.search_term)
 
 if __name__ == "__main__":
     main()
