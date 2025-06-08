@@ -3,7 +3,7 @@
 import requests
 import os
 import sys
-from datetime import datetime, timedelta
+from datetime import datetime, timedelta, timezone
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
 from database_tools.postgres_handler import PostgresHandler
@@ -43,7 +43,7 @@ def fetch_sp500_prices_last_7_days():
         return db_price_dict  # All up to date
     # 3. Rate limit: don't call API if last insert <5min ago
     last_insert = db_handler.fetch_last_sp500_price_insert_time()
-    if last_insert and (datetime.utcnow() - last_insert).total_seconds() < 300:
+    if last_insert and (datetime.now(timezone.utc) - last_insert).total_seconds() < 300:
         print("API recently called (<5min ago); skipping FRED fetch. Returning database values only.")
         return db_price_dict
     # 4. Batch API call for missing window
