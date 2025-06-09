@@ -8,7 +8,7 @@ import yaml
 import pytz
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-ORCHESTRATE_PATH = os.path.join(SCRIPT_DIR, "../orchestration/orchestrate")
+ORCHESTRATE_PATH = os.path.join(SCRIPT_DIR, "../orchestration/orchestrate.py")
 CONFIG_PATH = os.path.join(SCRIPT_DIR, "../orchestration/config.yaml")
 SCHEDULE_PATH = os.path.join(SCRIPT_DIR, "schedule.yaml")
 DEFAULT_SCHEDULE_NAME = "four_times_daily"
