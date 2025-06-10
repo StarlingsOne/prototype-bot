@@ -1,0 +1,4 @@
+#!/bin/bash
+
+cd /app/app
+nohup python3 -m scheduler.bot_runner >> scheduler/bot_runner.log 2>&1 &

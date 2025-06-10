@@ -9,7 +9,7 @@ import pytz
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 ORCHESTRATE_PATH = os.path.join(SCRIPT_DIR, "../orchestration/orchestrate.py")
-CONFIG_PATH = os.path.join(SCRIPT_DIR, "../orchestration/config.yaml")
+CONFIG_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "../orchestration/config.yaml"))
 SCHEDULE_PATH = os.path.join(SCRIPT_DIR, "schedule.yaml")
 DEFAULT_SCHEDULE_NAME = "four_times_daily"
 
@@ -31,7 +31,15 @@ def current_time(tz):
 def run_orchestration(tz):
     now = current_time(tz)
     print(f"🚀 Running orchestrate at {now.strftime('%Y-%m-%d %H:%M:%S %Z')}", flush=True)
-    subprocess.run([ORCHESTRATE_PATH, CONFIG_PATH], check=True)
+
+    env = os.environ.copy()
+    env["PYTHONPATH"] = os.path.abspath(os.path.join(SCRIPT_DIR, ".."))  # => /app/app
+
+    subprocess.run(
+        ["python3", "-m", "orchestration.orchestrate", CONFIG_PATH],
+        check=True,
+        env=env,
+    )
 
 def main():
     run_hours, tz = load_schedule_config()

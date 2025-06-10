@@ -1,3 +1,0 @@
-#!/bin/bash
-
-nohup ./bot_runner schedule.yaml >> bot_runner.log 2>&1 &
